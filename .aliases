@@ -1,0 +1,45 @@
+# This file set my aliases.
+
+# Listing
+alias ll='ls -l'
+alias lg='ls -lg'
+alias lh='ls -lh'
+alias la='ls -la'
+
+# Directories
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# Seach
+alias fn='find -name'
+alias ft='find -type'
+alias fp='find -perm'
+alias gw='grep -lir'
+
+# Apache
+alias htstart='su -c "/etc/rc.d/rc.httpd start"'
+alias htrestart='su -c "/etc/rc.d/rc.httpd restart"'
+alias htstop='su -c "/etc/rc.d/rc.httpd stop"'
+
+# Apache/Passenger (mod_rails)
+alias hprestart='touch tmp/restart.txt; htrestart'
+
+# Git
+alias gs='git status'
+alias ga='git add'
+alias gr='git rm'
+alias gb='git branch'
+alias gc='git commit'
+alias gp='git pull'
+alias gu='git push'
+alias gt='git tag'
+
+# SVN
+alias scheckout='svn checkout'
+alias   supdate='svn update'
+alias   sstatus='svn status'
+alias      slog='svn log'
+alias   sremove='svn delete'
+alias      sadd='svn add'
+alias   srevert='svn revert'
+
