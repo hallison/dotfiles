@@ -9,6 +9,7 @@ alias la='ls -la'
 # Directories
 alias ..='cd ..'
 alias ...='cd ../..'
+alias --='cd -'
 
 # Seach
 alias fn='find -name'
