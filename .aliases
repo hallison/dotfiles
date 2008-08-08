@@ -34,6 +34,7 @@ alias gu='git pull'
 alias gp='git push'
 alias gt='git tag'
 alias gl='git log --summary'
+alias gd='git diff --verbose'
 
 # SVN
 alias scheckout='svn checkout'
