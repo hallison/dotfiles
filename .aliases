@@ -1,5 +1,9 @@
 # This file set my aliases.
 
+# Tools
+alias ce='vim'
+alias ve='gvim'
+
 # Listing
 alias ll='ls -l'
 alias lg='ls -lg'
