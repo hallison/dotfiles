@@ -1,56 +1,9 @@
-# This file set my aliases.
-
-# Listing
-alias ls='ls $LS_OPTIONS'
-alias ll='ls -l'
-alias lg='ls -lg'
-alias lh='ls -lh'
-alias la='ls -la'
-
-# Directories
-alias ..='cd ..'
-alias ...='cd ../..'
-
-# Seach
-alias fn='find -name'
-alias ft='find -type'
-alias fp='find -perm'
-alias gw='grep -lir'
-
-# Apache
-alias htstart='su -c "/etc/rc.d/rc.httpd start"'
-alias htrestart='su -c "/etc/rc.d/rc.httpd restart"'
-alias htstop='su -c "/etc/rc.d/rc.httpd stop"'
-
-# Apache/Passenger (mod_rails)
-alias hprestart='[[ -d tmp ]] && touch tmp/restart.txt'
-
-# Git
-alias gs='git status'
-alias ga='git add'
-alias gr='git rm'
-alias gb='git branch'
-alias gc='git commit --verbose'
-alias gu='git pull'
-alias gp='git push'
-alias gt='git tag'
-alias gl='git log --summary'
-
-# SVN
-alias scheckout='svn checkout'
-alias   supdate='svn update'
-alias   sstatus='svn status'
-alias      slog='svn log'
-alias   sremove='svn delete'
-alias      sadd='svn add'
-alias   srevert='svn revert'
-
 # Arch Linux
-alias pka='su -c "pacman --sync"'
-alias pky='su -c "pacman --sync --refresh"'
-alias pku='su -c "pacman --upgrade"'
-alias pks='su -c "pacman --search"'
-alias pkq='su -c "pacman --query"'
-alias pkr='su -c "pacman --remove"'
+alias pka='su -c pacman --sync'
+alias pky='su -c pacman --sync --refresh'
+alias pku='su -c pacman --upgrade'
+alias pks='su -c pacman --search'
+alias pkq='su -c pacman --query'
+alias pkr='su -c pacman --remove'
 
 
