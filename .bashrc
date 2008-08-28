@@ -10,5 +10,8 @@ declare -x LS_OPTIONS='--color=auto'
 # Set my prompt
 PS1='\u@\h:\w$(git_current_branch)\$ '
 
-# Settings my aliases
-source ${HOME}/.aliases
+# Start aliases
+for alias_source in $HOME/.aliases.d/*.alias; do
+  source $alias_source
+done
+

@@ -1,9 +1,16 @@
 # Arch Linux
-alias pka='su -c pacman --sync'
-alias pky='su -c pacman --sync --refresh'
-alias pku='su -c pacman --upgrade'
-alias pks='su -c pacman --search'
-alias pkq='su -c pacman --query'
-alias pkr='su -c pacman --remove'
+alias     pkgadd='su -c pacman --sync'
+alias    pkgsync='su -c pacman --sync --refresh'
+alias pkgupgrade='su -c pacman --upgrade'
+alias  pkgsearch='su -c pacman --search'
+alias   pkgquery='su -c pacman --query'
+alias  pkgremove='su -c pacman --remove'
 
+# Slackware Linux
+alias     pkgadd='su -c installpkg'
+#alias    pkgsync=''
+alias pkgupgrade='su -c upgradepkg'
+#alias  pkgsearch=''
+#alias   pkgquery=''
+alias  pkgremove='su -c removepkg'
 
