@@ -5,6 +5,7 @@ function git_current_branch {
 
 # Set my applications on path
 declare -x PATH=$PATH:$HOME/programs/myscripts/bin
+declare -x LS_OPTIONS='--color=auto'
 
 # Set my prompt
 PS1='\u@\h:\w$(git_current_branch)\$ '

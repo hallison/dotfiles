@@ -1,6 +1,7 @@
 # This file set my aliases.
 
 # Listing
+alias ls='ls $LS_OPTIONS'
 alias ll='ls -l'
 alias lg='ls -lg'
 alias lh='ls -lh'
@@ -43,4 +44,13 @@ alias      slog='svn log'
 alias   sremove='svn delete'
 alias      sadd='svn add'
 alias   srevert='svn revert'
+
+# Arch Linux
+alias pka='su -c "pacman --sync"'
+alias pky='su -c "pacman --sync --refresh"'
+alias pku='su -c "pacman --upgrade"'
+alias pks='su -c "pacman --search"'
+alias pkq='su -c "pacman --query"'
+alias pkr='su -c "pacman --remove"'
+
 
