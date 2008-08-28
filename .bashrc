@@ -15,4 +15,4 @@ PS1='\u@\h:\w$(git_current_branch)\$ '
 for alias_source in $HOME/.aliases.d/*.alias; do
   source $alias_source
 done
-
+unset alias_source
