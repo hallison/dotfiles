@@ -7,6 +7,7 @@ function git_current_branch {
 declare -x PATH=$PATH:$HOME/programs/myscripts/bin
 declare -x LS_OPTIONS='--color=auto'
 declare -x EDITOR=vim
+declare -x INPUTRC=$HOME/.inputrc
 
 # Set my prompt
 PS1='\u@\h:\w$(git_current_branch)\$ '
