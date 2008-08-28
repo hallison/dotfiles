@@ -49,3 +49,5 @@ alias   sremove='svn delete'
 alias      sadd='svn add'
 alias   srevert='svn revert'
 
+# Ruby
+alias irb='irb --readline -r irb/completion -rubygems'
