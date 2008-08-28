@@ -1,0 +1,10 @@
+# Git
+alias gs='git status'
+alias ga='git add'
+alias gr='git rm'
+alias gb='git branch'
+alias gc='git commit --verbose'
+alias gu='git pull'
+alias gp='git push'
+alias gt='git tag'
+alias gl='git log --summary'
