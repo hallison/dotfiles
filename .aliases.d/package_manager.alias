@@ -1,8 +1,8 @@
-# Slackware Linux
-alias     pkgadd='su -c installpkg'
-#alias    pkgsync=''
-alias pkgupgrade='su -c upgradepkg'
-#alias  pkgsearch=''
-#alias   pkgquery=''
-alias  pkgremove='su -c removepkg'
+# Arch Linux
+alias     pkgadd='su -c pacman --sync'
+alias    pkgsync='sy -c pacman --sync --refresh'
+alias pkgupgrade='su -c pacman --upgrade'
+alias  pkgsearch='su -c pacman --search'
+alias   pkgquery='su -c pacman --query --search'
+alias  pkgremove='su -c pacman --remove'
 
