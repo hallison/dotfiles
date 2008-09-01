@@ -13,10 +13,10 @@ alias ...='cd ../..'
 alias fn='find -name'
 alias ft='find -type'
 alias fp='find -perm'
-alias gw='grep -lir'
+alias fw='grep -lir'
 
 # Tools
-alias ce='vim'
+alias ce='vim'  # Use bind CRTL-x-e
 alias ve='gvim'
 
 # Ruby
