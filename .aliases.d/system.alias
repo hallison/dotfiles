@@ -14,6 +14,7 @@ alias fn='find -name'
 alias ft='find -type'
 alias fp='find -perm'
 alias fw='grep -lir'
+alias fs='ps a | grep -i'
 
 # Tools
 alias ce='vim'  # Use bind CRTL-x-e
@@ -21,3 +22,4 @@ alias ve='gvim'
 
 # Ruby
 alias irb='irb --readline -r irb/completion -rubygems'
+alias rbw='ruby -W'

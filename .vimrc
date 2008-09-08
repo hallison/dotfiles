@@ -20,8 +20,10 @@ autocmd BufNewFile,BufRead *.textile set filetype=textile
 
 " Text should be encoded UTF-8
 set encoding=utf8
+setglobal encoding=utf-8
 " File should be encoded UTF-8
 set fileencoding=utf8
+setglobal fileencoding=utf-8
 " Show line numbers 
 set number
 " No line wraps
