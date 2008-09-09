@@ -28,6 +28,8 @@ setglobal fileencoding=utf-8
 set number
 " No line wraps
 set nowrap
+" Spell checking
+set spell spelllang=en,pt
 
 " The following configuration had been found in
 " http://lena.franken.de/linux/vim.html
@@ -63,7 +65,7 @@ set background=dark
 
 " New tab.
 nnoremap <TAB>n          :tabnew<CR>
-" Open a tab through plugin Netrw.
+" Open a tab through plug-in Netrw.
 nnoremap <TAB>o          :tabedit .<CR>
 " Split tab to edit selected file.
 nnoremap <TAB>s          :split .<CR>
