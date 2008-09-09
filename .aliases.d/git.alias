@@ -1,7 +1,9 @@
 # Git
+alias gk='git checkout'
 alias gs='git status'
 alias ga='git add'
 alias gr='git rm'
+alias gm='git merge'
 alias gb='git branch'
 alias gc='git commit --verbose'
 alias gu='git pull'

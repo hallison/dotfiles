@@ -20,12 +20,16 @@ autocmd BufNewFile,BufRead *.textile set filetype=textile
 
 " Text should be encoded UTF-8
 set encoding=utf8
+setglobal encoding=utf-8
 " File should be encoded UTF-8
 set fileencoding=utf8
+setglobal fileencoding=utf-8
 " Show line numbers 
 set number
 " No line wraps
 set nowrap
+" Spell checking
+set spell spelllang=en,pt
 
 " The following configuration had been found in
 " http://lena.franken.de/linux/vim.html
@@ -61,7 +65,7 @@ set background=dark
 
 " New tab.
 nnoremap <TAB>n          :tabnew<CR>
-" Open a tab through plugin Netrw.
+" Open a tab through plug-in Netrw.
 nnoremap <TAB>o          :tabedit .<CR>
 " Split tab to edit selected file.
 nnoremap <TAB>s          :split .<CR>
