@@ -3,6 +3,7 @@
 "
 " Txt2tags
 autocmd BufNewFile,BufRead *.t2t set filetype=txt2tags
+autocmd BufNewFile,BufRead *.txt2tags set filetype=txt2tags
 augroup txt2tags
   au!
   autocmd FileType txt2tags compiler txt2tags
@@ -18,6 +19,8 @@ autocmd BufNewFile,BufRead *.textile set filetype=textile
 " File options and formats
 " ========================
 
+" No backup
+set nobackup
 " Text should be encoded UTF-8
 set encoding=utf8
 setglobal encoding=utf-8
