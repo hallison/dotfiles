@@ -1,0 +1,5 @@
+# Apache - httpd
+alias hts='su -c "/etc/rc.d/rc.httpd start"'
+alias htr='su -c "/etc/rc.d/rc.httpd restart"'
+alias htp='su -c "/etc/rc.d/rc.httpd stop"'
+
