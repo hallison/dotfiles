@@ -19,6 +19,9 @@ set guifont=Terminus\ 12
 nnoremap <TAB>e :browse edit<CR>
 " Open new tab and edit selected file.
 nnoremap <TAB>o :browse tabedit<CR>
+" Split tab to edit selected file.
+nnoremap <TAB>s :browse split<CR>
+nnoremap <TAB>v :browse vsplit<CR>
 
 " File utils
 " ----------
