@@ -1,8 +1,0 @@
-# Slackware Linux
-alias     pkgadd='su -c installpkg'
-#alias    pkgsync=''
-alias pkgupgrade='su -c upgradepkg'
-#alias  pkgsearch=''
-#alias   pkgquery=''
-alias  pkgremove='su -c removepkg'
-
