@@ -4,6 +4,7 @@ alias ll='ls -l'
 alias lg='ls -lg'
 alias lh='ls -lh'
 alias la='ls -la'
+alias lt-'ls -og --time-style=\'+%Y-%m-%d %H:%M:%S\''
 
 # Directories
 alias ..='cd ..'
