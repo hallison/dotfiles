@@ -1,0 +1,15 @@
+# Ruby
+alias irb='irb --readline -r irb/completion -rubygems'
+alias rbw='ruby -W'
+
+# Rake
+alias rkd='rake --describe'
+alias rkl='rake --tasks'
+
+# RubyGems
+alias rgu='gem update'  # Ruby gem update
+alias rga='gem install' # Ruby gem install
+alias rgs='gem search'  # Ruby gem search
+alias rgl='gem list'    # Ruby gem list
+alias rgb='gem build'   # Ruby gem build
+
