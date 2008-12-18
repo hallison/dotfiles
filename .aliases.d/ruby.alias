@@ -7,9 +7,9 @@ alias rkd='rake --describe'
 alias rkl='rake --tasks'
 
 # RubyGems
-alias rgu='gem update'  # Ruby gem update
-alias rga='gem install' # Ruby gem install
-alias rgs='gem search'  # Ruby gem search
-alias rgl='gem list'    # Ruby gem list
-alias rgb='gem build'   # Ruby gem build
+alias rgu='gem update'
+alias rga='gem install'
+alias rgs='gem search'
+alias rgl='gem list'
+alias rgb='gem build'
 
