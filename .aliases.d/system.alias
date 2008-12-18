@@ -1,10 +1,9 @@
 # Listing
 alias ls='ls $LS_OPTIONS'
-alias ll='ls -l'
-alias lg='ls -lg'
-alias lh='ls -lh'
-alias la='ls -la'
-alias lt='ls -og --time-style="+%Y-%m-%d %H:%M:%S"'
+alias ll='ls -lh'
+alias lg='ls -lhg'
+alias la='ls -lha'
+alias lt='ls -ohg --time-style="+%Y-%m-%d %H:%M:%S"'
 
 # Directories
 alias ..='cd ..'
@@ -21,6 +20,5 @@ alias fs='ps aux | grep -i'
 alias ce='vim'  # Use bind CRTL-x-e
 alias ve='gvim'
 
-# Ruby
-alias irb='irb --readline -r irb/completion -rubygems'
-alias rbw='ruby -W'
+# Administration
+alias subash='sudo bash -l'
