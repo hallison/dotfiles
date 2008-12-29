@@ -22,3 +22,5 @@ alias ve='gvim'
 
 # Administration
 alias subash='sudo bash -l'
+alias psd='du -sh .*' # Print Size of Directory
+alias psa='du -sh *'  # Print Size of All-diretories 
