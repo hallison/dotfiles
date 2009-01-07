@@ -2,39 +2,51 @@ function prompt {
   function git_current_branch {
     gitdir="$PWD/.git"
     branch=$(git --git-dir="$gitdir" branch 2> /dev/null | grep ^\* | tr -d \*\ )
+    [[ $branch ]] && echo "${branch}"
+    return $?
+  }
+
+  function git_current_commits {
+    gitdir="$PWD/.git"
     commits=$(git --git-dir="$gitdir" log 2> /dev/null | grep -c ^commit)
-    [[ $branch ]] && printf "SCM: Git on branch $branch with $commits commits"
+    [[ $commits ]] && printf "%04d" "${commits}"
+    return $?
+  }
+
+  function git_summary {
+    branch=$(git_current_branch)
+    commits=$(git_current_commits)
+    [[ $branch && $commits ]] && echo "SCM Git on branch $(git_current_branch) and $(git_current_commits) commits."
+    return $?
   }
 
   function svn_current_revision {
     revision=$(svn info 2> /dev/null | grep Revision | tr -d /Revision:\ /)
-    [[ $revision ]] && printf "SCM: Subversion in revision %04d" "$revision"
+    [[ $revision ]] && printf "%04d" "$revision"
+    return $?
+  }
+
+  function svn_summary {
+    revision=$(svn_current_revision)
+    [[ $revision ]] && echo "SCM Subversion in revision #$(svn_current_revision)."
+    return $?
   }
 
   function directory_total_files {
     list=$(ls -lh)
-    total=$(echo "$list" | grep "total" | tr -d "toal ")
+    size=$(echo "$list" | grep "total" | tr -d "toal ")
     directories=$(grep -c ^d.* <<< "$list")
     files=$(grep -c ^-.* <<< "$list")
     links=$(grep -c ^l.* <<< "$list")
-    printf "%d dirs, %d files, using %s" "$directories" "$files" "$total"
+    printf "Directories: %03d - Files: %03d - Size %0.2f%sB" "$directories" "$files" "$(tr -d [A-Z] <<< $size)" "$(tr -d [0-9.] <<< $size)"
+    return $?
   }
 
-  function directory_metainfo {
-    metainfo=$(git_current_branch || svn_current_revision || echo "Common directory")
-    [[ $metainfo ]] && printf "${metainfo}"
+  function directory_scm_summary {
+    metainfo=$(git_summary || svn_summary)
+    [[ $metainfo ]] && echo "${metainfo}"
+    return $?
   }
-
-  function foot {
-    lmsg="[$(directory_total_files)]"
-    cmsg="( $USER )"
-    rmsg="[$(directory_metainfo)]"
-    size=$((COLUMNS/2))
-    lsize=$((${size}-${#lmsg}-${#cmsg}-2))
-    rsize=$((${size}-${#rmsg}-${#cmsg}-2))
-    border=$(printf "%-${#lmsg}s %0${lsize}d %${#cmsg}s %0${rsize}d %${#rmsg}s" "${lmsg}" 0 "${cmsg}" 0 "${rmsg}")
-    echo "${border//0/-}"
-  } 
 
   $@
 }
@@ -52,7 +64,12 @@ declare -x LC_ALL=en_US
 declare -x LC_CTYPE=UTF-8
 
 # Set my prompt
-PS1='\[\033[0m\]\[\033[1;32m\]$(prompt foot)\[\033[0m\]\[\033[1;34m\]\n\u@\h:\[\033[1;34m\]\w\[\033[0m\]\$ '
+PS_COLOR_SUMMARY='\[\033[1;32m\]'
+PS_COLOR_PATH='\[\033[1;34m\]'
+PS_COLOR_OFF='\[\033[0m\]'
+PS1="$PS_COLOR_SUMMARY[\$(prompt directory_total_files)]${PS_COLOR_OFF} \
+${PS_COLOR_SUMMARY}\$(prompt directory_scm_summary)${PS_COLOR_OFF}
+${PS_COLOR_PATH}\u@\h:\w\$ ${PS_COLOR_OFF}"
 
 # Start aliases
 for alias_source in $HOME/.aliases.d/*.alias; do
