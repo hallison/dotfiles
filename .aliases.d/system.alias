@@ -20,7 +20,11 @@ alias fs='ps aux | grep -i'
 alias ce='vim'  # Use bind CRTL-x-e
 alias ve='gvim'
 
+# Utilities
+alias df='df -h'
+alias du='du -sh'
+
 # Administration
-alias subash='sudo bash -l'
-alias psd='du -sh .*' # Print Size of Directory
-alias psa='du -sh *'  # Print Size of All-diretories 
+alias sush='sudo bash -l'
+alias  cdu='du . *'   # Current Directory Usage
+
