@@ -1,8 +1,8 @@
 function prompt {
   function git_current_branch {
     gitdir="$PWD/.git"
-    branch=$(git --git-dir="$gitdir" branch 2> /dev/null | grep ^\* | tr -d \*\ )
-    [[ $branch ]] && echo "${branch}"
+    branch=$(git --git-dir="$gitdir" branch 2> /dev/null | grep ^\* | tr -d '* \t')
+    [[ $branch ]] && printf "%s" "${branch}"
     return $?
   }
 
@@ -16,7 +16,7 @@ function prompt {
   function git_summary {
     branch=$(git_current_branch)
     commits=$(git_current_commits)
-    [[ $branch && $commits ]] && echo "SCM Git on branch $(git_current_branch) and $(git_current_commits) commits."
+    [[ $branch && $commits ]] && printf "%s" "(git $(git_current_branch), r$(git_current_commits))"
     return $?
   }
 
@@ -28,7 +28,7 @@ function prompt {
 
   function svn_summary {
     revision=$(svn_current_revision)
-    [[ $revision ]] && echo "SCM Subversion in revision #$(svn_current_revision)."
+    [[ $revision ]] && printf "%s" "(svn r$(svn_current_revision))"
     return $?
   }
 
@@ -64,12 +64,12 @@ declare -x LC_ALL=en_US
 declare -x LC_CTYPE=UTF-8
 
 # Set my prompt
-PS_COLOR_SUMMARY='\[\033[1;32m\]'
-PS_COLOR_PATH='\[\033[1;34m\]'
+PS_COLOR_SUMMARY='\[\033[0;36m\]'
+PS_COLOR_SCM='\[\033[0;36m\]'
+PS_COLOR_PATH='\[\033[0;34m\]'
 PS_COLOR_OFF='\[\033[0m\]'
-PS1="$PS_COLOR_SUMMARY[\$(prompt directory_total_files)]${PS_COLOR_OFF} \
-${PS_COLOR_SUMMARY}\$(prompt directory_scm_summary)${PS_COLOR_OFF}
-${PS_COLOR_PATH}\u@\h:\w\$ ${PS_COLOR_OFF}"
+PS1="$PS_COLOR_SUMMARY[\$(prompt directory_total_files)]${PS_COLOR_OFF}
+\u@\h:${PS_COLOR_PATH}\w${PS_COLOR_OFF}${PS_COLOR_SCM}\$(prompt directory_scm_summary)${PS_COLOR_OFF}\$ "
 
 # Start aliases
 for alias_source in $HOME/.aliases.d/*.alias; do
