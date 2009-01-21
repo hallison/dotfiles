@@ -1,5 +1,5 @@
 # Ruby
-alias irb='irb --readline -r irb/completion -rubygems'
+alias irb='irb --readline --simple-prompt -r rubygems -r irb/completion'
 alias rbw='ruby -W'
 
 # Rake
