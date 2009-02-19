@@ -68,8 +68,8 @@ PS_COLOR_SUMMARY='\[\033[0;36m\]'
 PS_COLOR_SCM='\[\033[0;36m\]'
 PS_COLOR_PATH='\[\033[0;34m\]'
 PS_COLOR_OFF='\[\033[0m\]'
-PS1="$PS_COLOR_SUMMARY[\$(prompt directory_total_files)]${PS_COLOR_OFF}
-\u@\h:${PS_COLOR_PATH}\w${PS_COLOR_OFF}${PS_COLOR_SCM}\$(prompt directory_scm_summary)${PS_COLOR_OFF}\$ "
+#PS1="$PS_COLOR_SUMMARY[\$(prompt directory_total_files)]${PS_COLOR_OFF}
+PS1="\u@\h:${PS_COLOR_PATH}\w${PS_COLOR_OFF}${PS_COLOR_SCM}\$(prompt directory_scm_summary)${PS_COLOR_OFF}\$ "
 
 # Start aliases
 for alias_source in $HOME/.aliases.d/*.alias; do
