@@ -65,7 +65,7 @@ function prompt {
 # Set my applications on path
 declare -x PATH=$PATH:$HOME/.local/bin:$HOME/.gem/ruby/1.8/bin
 # Set 'ls' command options
-declare -x LS_OPTIONS='--color=auto --group-directories-first'
+declare -x LS_OPTIONS='--color=auto --sort=extension'
 # Set my favorite editor
 declare -x EDITOR=vim
 # Set 'readline' command parameters for binds
