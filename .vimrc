@@ -57,8 +57,7 @@ set shiftround
 set statusline=\ %Y\ \|\ %{&ff}\ \|\ %04lx%04v/%04p%%\ %L\ \|\ %F%m%r%h%w
 set laststatus=2
 " Adjust color scheme
-colorscheme default
-set background=dark
+colorscheme darkdevel
 
 " Custom shortcuts
 " ================
@@ -100,7 +99,7 @@ nnoremap <TAB><DELETE>   :bdelete<CR>
 " Quickly save
 nnoremap <F2>   :write<CR>
 "nnoremap <F3>   :find<CR>
-nnoremap e      :edit .<CR>
+"nnoremap e      :edit .<CR>
 
 " Functions
 " =========
