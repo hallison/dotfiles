@@ -2,12 +2,11 @@
 " =========
 
 " Adjust color scheme
-colorscheme murphy
-if &term == "pcterm"
-  set background=dark
-endif
+colorscheme darkdevel
+
 " Font for gvim
-set guifont=Terminus\ 12
+"set guifont="Terminus 8,Monospace 8,Consolas 10,Courier 8"
+set guifont=Terminus\ 10
 
 " Custom shortcuts
 " ================
