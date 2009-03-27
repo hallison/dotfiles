@@ -4,11 +4,12 @@ alias rbw='ruby -W'
 
 # Rake
 alias rkd='rake --describe'
-alias rkl='rake --tasks'
+alias rkt='rake --tasks'
 
 # RubyGems
 alias rgu='gem update'
 alias rga='gem install'
+alias rgr='gem uninstall'
 alias rgs='gem search'
 alias rgl='gem list'
 alias rgb='gem build'

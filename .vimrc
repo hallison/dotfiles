@@ -10,11 +10,16 @@ augroup txt2tags
 augroup END
 set autowrite
 " Markdown
-autocmd BufNewFile,BufRead *.mkd set filetype=mkd
+autocmd BufNewFile,BufRead *.mkd      set filetype=mkd
+autocmd BufNewFile,BufRead *.mark     set filetype=mkd
 autocmd BufNewFile,BufRead *.markdown set filetype=mkd
 " Textile
-autocmd BufNewFile,BufRead *.text set filetype=textile
-autocmd BufNewFile,BufRead *.textile set filetype=textile
+autocmd BufNewFile,BufRead *.txl      set filetype=textile
+autocmd BufNewFile,BufRead *.text     set filetype=textile
+autocmd BufNewFile,BufRead *.textile  set filetype=textile
+" HAML
+autocmd BufNewFile,BufRead *.hml      set filetype=haml
+autocmd BufNewFile,BufRead *.haml     set filetype=haml
 
 " File options and formats
 " ========================
