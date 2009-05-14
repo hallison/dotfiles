@@ -19,6 +19,7 @@ alias fs='ps aux | grep -i'
 # Tools
 alias ce='vim'  # Use bind CRTL-x-e
 alias ve='gvim'
+alias vx='gvim +":VE ."'
 
 # Utilities
 alias df='df -h'

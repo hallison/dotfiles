@@ -65,7 +65,7 @@ function prompt {
 # Set my applications on path
 declare -x PATH=$PATH:$HOME/.local/bin:$HOME/.gem/ruby/1.8/bin
 # Set 'ls' command options
-declare -x LS_OPTIONS='--color=auto --sort=extension'
+declare -x LS_OPTIONS='--color=auto'
 # Set my favorite editor
 declare -x EDITOR=vim
 # Set 'readline' command parameters for binds
@@ -84,3 +84,4 @@ PS1="\u@\h:${PS_COLOR_PATH}\w${PS_COLOR_OFF}${PS_COLOR_SCM}\$(prompt directory_s
 
 prompt load_aliases
 prompt completion
+
