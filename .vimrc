@@ -20,6 +20,8 @@ autocmd BufNewFile,BufRead *.textile  set filetype=textile
 " HAML
 autocmd BufNewFile,BufRead *.hml      set filetype=haml
 autocmd BufNewFile,BufRead *.haml     set filetype=haml
+" Ruby test unit
+autocmd BufNewFile,BufRead test_*.rb  compiler rubyunit
 
 " File options and formats
 " ========================
@@ -98,6 +100,18 @@ nnoremap <TAB><LEFT>     :bprevious<CR>
 nnoremap <TAB><INSERT>   :badd .<CR>
 nnoremap <TAB><DELETE>   :bdelete<CR>
 
+nnoremap ,b1 :buffer 1<Return>
+nnoremap ,b2 :buffer 2<Return>
+nnoremap ,b3 :buffer 3<Return>
+nnoremap ,b4 :buffer 4<Return>
+nnoremap ,b5 :buffer 5<Return>
+nnoremap ,b6 :buffer 6<Return>
+nnoremap ,b7 :buffer 7<Return>
+nnoremap ,b8 :buffer 8<Return>
+nnoremap ,b9 :buffer 9<Return>
+nnoremap ,b0 :buffer 10<Return>
+
+
 " File edit utils
 " ---------------
 
@@ -127,3 +141,9 @@ endfunction
 inoremap <TAB>   <C-R>=TabWrapper("forward")<CR>
 inoremap <S-TAB> <C-R>=TabWrapper("backward")<CR>
 inoremap <C-TAB> <C-R>=TabWrapper("keyword")<CR>
+
+noremap ,m   :make %<Return>
+noremap ,r   :source %<Return>
+noremap ,vr  :edit ~.vimrc<Return>
+noremap ,gr  :edit ~.gvimrc<Return>
+
