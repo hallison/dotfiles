@@ -1,0 +1,6 @@
+if test -d $HOME/.aliases.d; then
+  for file in $HOME/.aliases.d/*; do
+    source $file
+  done
+fi
+

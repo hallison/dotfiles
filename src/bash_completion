@@ -1,0 +1,8 @@
+test -f /etc/bash_completion && source /etc/bash_completion
+
+if test -d $HOME/.bash_completion.d; then
+  for file in $HOME/.bash_completion.d/*; do
+    source $file
+  done
+fi
+

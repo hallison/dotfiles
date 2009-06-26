@@ -1,0 +1,7 @@
+function aliases { echo aliases*; return 0; }
+function prompt { echo prompt*; return 0; }
+function profile { echo bashrc inputrc profile; return 0; }
+function completion { echo bash_completion*; return 0; }
+function vim { echo vim* gvim*; return 0; }
+function all { aliases; prompt; profile; completion; vim; return 0; }
+

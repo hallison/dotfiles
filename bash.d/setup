@@ -1,0 +1,28 @@
+SOURCE=$(dirname $BASH_SOURCE)/../src
+
+function install {
+  test -e $1 && cp -rv $1 $HOME/.$1
+  return 0
+}
+
+function uninstall {
+  test -e $1 && rm -rv $HOME/.$1
+  return 0
+}
+
+function setup {
+  pushd $SOURCE
+  command=${1:?"command is required: install or uninstall"}
+  shift
+  while [[ ${#} -gt 0 ]]; do
+    files=${1}
+    sources=($($files))
+    printf "\n%s ...\n" $"Bash $command $files"
+    for file in ${sources[*]}; do
+      printf "  %s\n" "$file"
+      #$command
+    done
+    shift
+  done
+}
+
