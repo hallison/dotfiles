@@ -1,0 +1,28 @@
+dotfiles=${dotfiles:-src/*}
+
+desc install "Install all sources to ${HOME}."
+task install {
+  local prefix=""
+  for origin in ${dotfiles}; do
+    prefix=${HOME}/.${origin#*/}
+    if test -d ${origin}; then
+      run mkdir -p ${prefix}
+      dotfiles=${origin}/*
+      invoke install
+    else
+      run cp -rv ${origin} ${prefix}
+      echo ${prefix} >> .uninstall
+    fi
+  done
+}
+
+desc uninstall "Uninstall all sources from ${HOME}."
+task uninstall {
+  local files=$(readfile .uninstall)
+
+  for origin in ${files}; do
+    run rm ${origin}
+  done
+}
+
+# vim: filetype=sh

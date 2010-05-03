@@ -1,8 +1,0 @@
-LIBRARY=$(dirname $BASH_SOURCE)/bash.d
-HOME=${HOME:-~}
-
-source $LIBRARY/files
-source $LIBRARY/setup
-
-setup install ${@}
-
