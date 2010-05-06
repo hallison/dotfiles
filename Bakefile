@@ -1,4 +1,4 @@
-dotfiles=${dotfiles:-src/*}
+dotfiles=${dotfiles:-dot/*}
 
 desc install "Install all sources to ${HOME}."
 task install {
@@ -11,18 +11,19 @@ task install {
       invoke install
     else
       run cp -rv ${origin} ${prefix}
-      echo ${prefix} >> .uninstall
+      echo ${prefix} >> ${HOME}/.dotfiles-uninstall
     fi
   done
 }
 
 desc uninstall "Uninstall all sources from ${HOME}."
 task uninstall {
-  local files=$(readfile .uninstall)
+  local files=$(readfile ${HOME}/.dotfiles-uninstall)
 
   for origin in ${files}; do
     run rm ${origin}
   done
+  rm ~/.dotfiles-uninstall
 }
 
 # vim: filetype=sh
