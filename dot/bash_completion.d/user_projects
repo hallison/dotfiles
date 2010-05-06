@@ -1,0 +1,27 @@
+function _user_projects {
+  PROJECTS_PATH="${PROJECTS_PATH:-$HOME/development/applications}"
+  COMPREPLY=()
+
+  local current="${COMP_WORDS[COMP_CWORD]}"
+  local projects=$(echo $PROJECTS_PATH/* | sed 's/ /\n/g' | sed 's/\/.*\///g')
+
+  COMPREPLY=($(compgen -W "${projects}" -- "${current}"))
+
+  return 0
+}
+
+function code {
+  if [[ -d ${PROJECTS_PATH}/$1 ]]; then
+    command=pushd
+  elif [[ -f ${PROJECTS_PATH}/$1 ]]; then
+    command=$VISUAL
+  else
+    command=ls
+  fi
+  
+  $command ${PROJECTS_PATH}/$1
+
+  return 0
+}
+
+complete -o bashdefault -o default -o nospace -F _user_projects code

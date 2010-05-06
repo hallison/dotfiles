@@ -1,0 +1,24 @@
+: +++ profile
+
+# Set my applications on path
+PATH=${HOME}/.local/bin:${HOME}/.gem/ruby/1.8/bin:/var/lib/gems/1.8/bin:${PATH}
+
+# Set 'ls' command options
+LS_OPTIONS='--color=auto'
+
+# Set my favorite editor
+EDITOR=vim
+VISUAL=gvim
+
+# Set 'readline' command parameters for binds
+INPUTRC=${HOME}/.inputrc
+
+# Set Ruby development options
+RUBYOPT="-w -rubygems"
+RUBYDEV=true
+
+# Check if use Bash
+test ${BASH} && login=yes source ~/.bashrc
+
+: --- profile
+

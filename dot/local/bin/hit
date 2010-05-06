@@ -1,0 +1,18 @@
+#!/bin/bash
+
+function push-all {
+  declare -a branches=($(git branch | tr -d \*))
+
+  for branch in ${branches[@]}; do
+    git push ${@} ${branch}
+  done
+  return 0
+}
+
+function tag {
+  : ${1:?tag file is required}
+  git tag -a -s -F ${1} ${1%.tag}
+  return $?
+}
+
+${@}

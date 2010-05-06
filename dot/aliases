@@ -1,0 +1,9 @@
+: begin aliases
+
+if test -d ${HOME}/.aliases.d; then
+  for file in ${HOME}/.aliases.d/*.alias; do
+    source ${file}
+  done
+fi
+
+: end aliases

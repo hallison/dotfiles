@@ -1,0 +1,17 @@
+: +++ bashrc
+
+SOURCE_PATH=(
+  /etc/bash_completion
+  ${HOME}/.aliases
+)
+
+if test -z "${login}"; then
+  source ${HOME}/.profile
+else
+  for file in ${SOURCE_PATH[@]}; do
+    test -f ${file} && source ${file}
+  done
+fi
+
+: --- bashrc
+

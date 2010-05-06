@@ -1,0 +1,39 @@
+_PS_COLOR_RED='\[\033[0;31m\]'
+_PS_COLOR_GREEN='\[\033[0;32m\]'
+_PS_COLOR_BROWN='\[\033[0;33m\]'
+_PS_COLOR_BLUE='\[\033[0;34m\]'
+_PS_COLOR_PURPLE='\[\033[0;35m\]'
+_PS_COLOR_CYAN='\[\033[0;36m\]'
+_PS_COLOR_GRAY='\[\033[0;37m\]'
+_PS_COLOR_BRED='\[\033[1;31m\]'
+_PS_COLOR_BGREEN='\[\033[1;32m\]'
+_PS_COLOR_BBROWN='\[\033[1;33m\]'
+_PS_COLOR_BBLUE='\[\033[1;34m\]'
+_PS_COLOR_BPURPLE='\[\033[1;35m\]'
+_PS_COLOR_BCYAN='\[\033[1;36m\]'
+_PS_COLOR_BGRAY='\[\033[1;37m\]'
+_PS_COLOR_OFF='\[\033[0m\]'
+_PS_COLOR_ON=''
+
+declare -x PS_USER='\u'
+declare -x PS_HOST='\h'
+declare -x PS_PATH='\w'
+declare -x PS_SCM=""
+declare -x PS_INFO=""
+declare -x PS_FORMAT=""
+
+function _prompt_init {
+  basepath=$(dirname ${BASH_SOURCE})
+  for file in $basepath/prompt.d/*.sh; do
+    source $file
+  done
+
+  _prompt_scm && _prompt_scm_format || _prompt_common_format
+#  _prompt_ssh && _prompt_ssh_format || _prompt_common_format
+}
+
+function _prompt_common_format {
+  PS_FORMAT="${PS_USER}@${PS_HOST}:${PS_PATH}\$ "
+}
+
+echo "${PS_FORMAT}"

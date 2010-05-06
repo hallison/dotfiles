@@ -1,0 +1,56 @@
+" GUI style
+" ============================================================================
+
+" adjust color scheme
+colorscheme darkdevel
+
+" font for gvim
+set guifont=Monaco\ 8.7,Terminus\ 9
+
+" set window size
+set lines=55
+set columns=182
+
+" Custom shortcuts
+" ============================================================================
+
+" find a word, only gvim.
+nnoremap <leader>f :promptfind<cr>
+
+" find and replace a word, only gvim.
+nnoremap <leader>r :promptrepl<cr>
+
+" find file in current directory.
+"vmap <F4>           :find<CR>
+" move current line to up.
+inoremap <c-s-up> <esc>Vd-1gP-1gi
+
+" move current line to down.
+inoremap <c-s-down> <esc>Vd+1gP-1gi
+
+" turn off useless toolbar
+set guioptions-=T
+
+" turn off menu bar
+set guioptions-=m
+
+" turn off right-hand scroll-bar
+set guioptions-=R
+set guioptions-=L
+set guioptions-=r
+set guioptions-=l
+
+" show/hidden tool bar
+nnoremap <leader>st :set guioptions+=T<CR>
+nnoremap <leader>ht :set guioptions-=T<CR>
+
+" show/hidden menu bar
+nnoremap <leader>sm :set guioptions+=m<CR>
+nnoremap <leader>hm :set guioptions-=m<CR>
+
+" show/hidden right-hand scroll bar
+nnoremap <leader>ss :set guioptions+=r<CR>
+nnoremap <leader>hs :set guioptions-=r<CR>
+
+" http://vim.wikia.com/wiki/Quick_yank_and_paste
+

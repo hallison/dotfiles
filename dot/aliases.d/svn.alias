@@ -1,0 +1,8 @@
+# SVN
+alias svk='svn checkout'
+alias svu='svn update'
+alias svs='svn status'
+alias svl='svn log'
+alias svr='svn delete'
+alias sva='svn add'
+alias svr='svn revert'
