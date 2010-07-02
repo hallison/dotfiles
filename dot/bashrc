@@ -1,5 +1,8 @@
 : +++ bashrc
 
+shopt -s cdspell
+shopt -s dirspell
+
 SOURCE_PATH=(
   /etc/bash_completion
   ${HOME}/.aliases

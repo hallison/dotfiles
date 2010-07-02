@@ -8,17 +8,17 @@ colorscheme darkdevel
 set guifont=Monaco\ 8.7,Terminus\ 9
 
 " set window size
-set lines=55
+set lines=56
 set columns=182
 
 " Custom shortcuts
 " ============================================================================
 
 " find a word, only gvim.
-nnoremap <leader>f :promptfind<cr>
+nnoremap <leader>pf :promptfind<cr>
 
 " find and replace a word, only gvim.
-nnoremap <leader>r :promptrepl<cr>
+nnoremap <leader>pr :promptrepl<cr>
 
 " find file in current directory.
 "vmap <F4>           :find<CR>
@@ -53,4 +53,3 @@ nnoremap <leader>ss :set guioptions+=r<CR>
 nnoremap <leader>hs :set guioptions-=r<CR>
 
 " http://vim.wikia.com/wiki/Quick_yank_and_paste
-

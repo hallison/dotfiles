@@ -1,8 +1,8 @@
 --- 
 :verbose: true
-gem: --no-ri --no-rdoc
+gem: --no-ri --no-rdoc --verbose --user-install
 :sources: 
-- http://gems.gemcutter.org/
+- http://rubygems.org/
 - http://gems.rubyforge.org/
 :backtrace: false
 :benchmark: false

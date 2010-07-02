@@ -27,3 +27,4 @@ if test -e /etc/bash_completion.d/git; then
   complete -o bashdefault -o default -o nospace -F _git_log      gl
 fi
 
+# vim: filetype=sh

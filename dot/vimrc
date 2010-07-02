@@ -1,6 +1,9 @@
 " File types
 " ============================================================================
 
+" enable file type detection
+filetype on
+
 autocmd BufNewFile,BufRead *.{t2t,txt2tags}         set filetype=txt2tags
 autocmd BufNewFile,BufRead *.{md,mkd,mark,markdown} set filetype=markdown
 autocmd BufNewFile,BufRead *.{tx,txl,text,textile}  set filetype=textile
@@ -15,6 +18,7 @@ autocmd FileType txt,txt2tags,markdown,textile set
   \ wrap
   \ wrapscan
   \ wrapmargin=78
+  \ formatoptions+=t
 
 " Paths
 " ============================================================================
@@ -40,6 +44,7 @@ set directory=$HOME/.vim/swap/,.,$HOME/tmp,/tmp
 
 autocmd BufNewFile,BufRead {test_*,*_test}.rb compiler rubyunit
 autocmd FileType txt2tags compiler txt2tags
+autocmd FileType ruby     compiler ruby
 
 " use only Bash for shell script
 let is_bash=1
@@ -83,6 +88,9 @@ set backspace=indent,eol,start
 
 " no line wraps
 set nowrap nowrapscan
+
+" load indentation files
+filetype plugin indent on
 
 " Spelling
 " ============================================================================
@@ -135,6 +143,8 @@ set ignorecase
 " duration to show brace matches (1/10)
 set matchtime=2
 
+set modeline
+
 " disable arrows in insert mode
 inoremap <up>     <nop>
 inoremap <right>  <nop>
@@ -152,7 +162,7 @@ set equalalways
 
 set listchars=trail:.,tab:▸\ ,eol:¬
 
-nnoremap <leader>l :set list
+nnoremap <leader>l :set list<cr>
 
 " Status line
 " ============================================================================
@@ -170,32 +180,25 @@ nnoremap <leader>tf    :tabfirst<cr>
 nnoremap <leader>tl    :tablast<cr>
 
 nnoremap <leader>tn    :tabnew<cr>
-nnoremap <leader>to    :tabedit %:h/<cr>
-nnoremap <leader>ts    :split %:h/<cr>
-nnoremap <leader>tv    :vsplit %:h/<cr>
 nnoremap <leader>tq    :tabclose<cr>
 
-nnoremap <leader>t0    :tabmove 0<cr>
-nnoremap <leader>t1    :tabmove 1<cr>
-nnoremap <leader>t2    :tabmove 2<cr>
-nnoremap <leader>t3    :tabmove 3<cr>
-nnoremap <leader>t4    :tabmove 4<cr>
-nnoremap <leader>t5    :tabmove 5<cr>
-nnoremap <leader>t6    :tabmove 6<cr>
-nnoremap <leader>t7    :tabmove 7<cr>
-nnoremap <leader>t8    :tabmove 8<cr>
-nnoremap <leader>t9    :tabmove 9<cr>
+nnoremap <a-1> 1gt
+nnoremap <a-2> 2gt
+nnoremap <a-3> 3gt
+nnoremap <a-4> 4gt
+nnoremap <a-5> 5gt
+nnoremap <a-6> 6gt
+nnoremap <a-7> 7gt
+nnoremap <a-8> 8gt
+nnoremap <a-9> 9gt
+nnoremap <a-0> 10gt
 
 " Buffers
 " ============================================================================
 
-nnoremap <leader>lb    :buffers<cr>
+nnoremap <leader>bs    :buffers<cr>
 nnoremap <a-{>         :bprevious<cr>
 nnoremap <a-}>         :bnext<cr>
-nnoremap <leader>bf    :bfirst<cr>
-nnoremap <leader>bl    :blast<cr>
-nnoremap <leader>ba    :badd 
-nnoremap <leader>br    :bdelete<cr>
 
 nnoremap <leader>b1    :buffer 1<cr>
 nnoremap <leader>b2    :buffer 2<cr>
@@ -216,8 +219,8 @@ nnoremap <f2>   :write<cr>
 noremap <leader>m   :make %<cr>
 noremap <leader>s   :source %<cr>
 
-noremap <leader>vr  :edit $HOME/.vimrc<cr>
-noremap <leader>gr  :edit $HOME/.gvimrc<cr>
+noremap <leader>evr  :edit $HOME/.vimrc<cr>
+noremap <leader>egr  :edit $HOME/.gvimrc<cr>
 
 nnoremap <c-tab> <c-w>w
 
@@ -262,7 +265,7 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " Sessions
 " ============================================================================
 
-let g:sessions_code_path = "$HOME/development/applications"
+let g:sessions_project_path = "$HOME/Code/applications:$HOME/Code/resources:$HOME/Code/websites"
 
 " Bash
 " ============================================================================

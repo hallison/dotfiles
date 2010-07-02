@@ -1,4 +1,4 @@
-: begin aliases
+: +++ aliases
 
 if test -d ${HOME}/.aliases.d; then
   for file in ${HOME}/.aliases.d/*.alias; do
@@ -6,4 +6,6 @@ if test -d ${HOME}/.aliases.d; then
   done
 fi
 
-: end aliases
+: --- aliases
+
+# vim: filetype=sh
