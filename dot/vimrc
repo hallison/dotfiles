@@ -143,13 +143,19 @@ set ignorecase
 " duration to show brace matches (1/10)
 set matchtime=2
 
+" enable commands in comments
 set modeline
 
+" enable selection
+set selectmode=key
+set keymodel=startsel
+set selectmode=key,mouse
+
 " disable arrows in insert mode
-inoremap <up>     <nop>
-inoremap <right>  <nop>
-inoremap <down>   <nop>
-inoremap <left>   <nop>
+"inoremap <up>     <nop>
+"inoremap <right>  <nop>
+"inoremap <down>   <nop>
+"inoremap <left>   <nop>
 
 " Windows
 " ============================================================================
@@ -174,13 +180,13 @@ set laststatus=2
 " ============================================================================
 
 nnoremap <leader>lt    :tabs<cr>
-nnoremap <a-[>         :tabprevious<cr>
-nnoremap <a-]>         :tabnext<cr>
-nnoremap <leader>tf    :tabfirst<cr>
-nnoremap <leader>tl    :tablast<cr>
+nnoremap <a-[>         :silent tabprevious<cr>
+nnoremap <a-]>         :silent tabnext<cr>
+nnoremap <leader>tf    :silent tabfirst<cr>
+nnoremap <leader>tl    :silent tablast<cr>
 
-nnoremap <leader>tn    :tabnew<cr>
-nnoremap <leader>tq    :tabclose<cr>
+nnoremap <leader>tn    :silent tabnew<cr>
+nnoremap <leader>tq    :silent tabclose<cr>
 
 nnoremap <a-1> 1gt
 nnoremap <a-2> 2gt
@@ -192,6 +198,17 @@ nnoremap <a-7> 7gt
 nnoremap <a-8> 8gt
 nnoremap <a-9> 9gt
 nnoremap <a-0> 10gt
+
+nnoremap <leader>tm0 :silent tabmove 0<cr>
+nnoremap <leader>tm1 :silent tabmove 1<cr>
+nnoremap <leader>tm2 :silent tabmove 2<cr>
+nnoremap <leader>tm3 :silent tabmove 3<cr>
+nnoremap <leader>tm4 :silent tabmove 4<cr>
+nnoremap <leader>tm5 :silent tabmove 5<cr>
+nnoremap <leader>tm6 :silent tabmove 6<cr>
+nnoremap <leader>tm7 :silent tabmove 7<cr>
+nnoremap <leader>tm8 :silent tabmove 8<cr>
+nnoremap <leader>tm9 :silent tabmove 9<cr>
 
 " Buffers
 " ============================================================================
@@ -225,12 +242,12 @@ noremap <leader>egr  :edit $HOME/.gvimrc<cr>
 nnoremap <c-tab> <c-w>w
 
 " Move lines around
-nnoremap <c-j> :m+<CR>==
-nnoremap <c-k> :m-2<CR>==
-inoremap <c-j> <Esc>:m+<CR>==gi
-inoremap <c-k> <Esc>:m-2<CR>==gi
-vnoremap <c-j> :m'>+<CR>gv=gv
-vnoremap <c-k> :m-2<CR>gv=gv
+nnoremap <c-j> :move+<cr>==
+nnoremap <c-k> :move-2<cr>==
+inoremap <c-j> <esc>:move+<cr>==gi
+inoremap <c-k> <esc>:move-2<cr>==gi
+vnoremap <c-j> :move'>+<cr>gv=gv
+vnoremap <c-k> :move-2<cr>gv=gv
 
 " TODO files
 " ============================================================================
@@ -273,7 +290,7 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " Sessions
 " ============================================================================
 
-let g:sessions_project_path = "$HOME/Code/applications:$HOME/Code/resources:$HOME/Code/websites"
+let g:sessions_project_path = "$HOME/Code/applications:$HOME/Code/frameworks:$HOME/Code/resources:$HOME/Code/websites"
 
 " Bash
 " ============================================================================
@@ -281,3 +298,6 @@ let g:sessions_project_path = "$HOME/Code/applications:$HOME/Code/resources:$HOM
 let is_bash=1
 map <leader>bsx :!chmod +x %<cr>
 
+" NERD tree
+" ============================================================================
+map <leader>x :NERDTreeToggle<cr>

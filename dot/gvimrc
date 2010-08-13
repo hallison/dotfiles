@@ -22,11 +22,6 @@ nnoremap <leader>pr :promptrepl<cr>
 
 " find file in current directory.
 "vmap <F4>           :find<CR>
-" move current line to up.
-inoremap <c-s-up> <esc>Vd-1gP-1gi
-
-" move current line to down.
-inoremap <c-s-down> <esc>Vd+1gP-1gi
 
 " turn off useless toolbar
 set guioptions-=T
