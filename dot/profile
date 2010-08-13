@@ -3,7 +3,7 @@
 # Set Ruby development options
 export GEM_HOME=${HOME}/.gem/ruby/1.8
 export GEM_PATH=${HOME}/.gem/ruby/1.8
-export RUBYOPT="-w -rubygems"
+export RUBYOPT="-rubygems"
 export RUBYENV=development
 
 # Set my applications on path
