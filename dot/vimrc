@@ -300,4 +300,4 @@ map <leader>bsx :!chmod +x %<cr>
 
 " NERD tree
 " ============================================================================
-map <leader>x :NERDTreeToggle<cr>
+map <leader><tab> :NERDTreeToggle<cr>
