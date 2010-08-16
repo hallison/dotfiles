@@ -250,6 +250,13 @@ inoremap <c-k> <esc>:move-2<cr>==gi
 vnoremap <c-j> :move'>+<cr>gv=gv
 vnoremap <c-k> :move-2<cr>gv=gv
 
+" Folding
+" ============================================================================
+
+set foldmethod=indent
+set foldlevelstart=1
+set foldnestmax=2
+
 " TODO files
 " ============================================================================
 
