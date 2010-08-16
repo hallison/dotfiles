@@ -229,10 +229,11 @@ nnoremap <leader>b9    :buffer 9<cr>
 nnoremap <leader>b0    :buffer 10<cr>
 
 " quickly save
-nnoremap <f2>   :write<cr>
+nnoremap <f2>   :silent write<cr>
+nnoremap <s-f2>   :silent wall<cr>
+
 "nnoremap <f3>   :find<cr>
 "nnoremap e      :edit .<cr>
-
 noremap <leader>m   :make %<cr>
 noremap <leader>s   :source %<cr>
 

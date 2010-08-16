@@ -15,10 +15,10 @@ set columns=182
 " ============================================================================
 
 " find a word, only gvim.
-nnoremap <leader>pf :promptfind<cr>
+nnoremap <f3> :promptfind<cr>
 
 " find and replace a word, only gvim.
-nnoremap <leader>pr :promptrepl<cr>
+nnoremap <f4> :promptrepl<cr>
 
 " find file in current directory.
 "vmap <F4>           :find<CR>
@@ -35,16 +35,3 @@ set guioptions-=L
 set guioptions-=r
 set guioptions-=l
 
-" show/hidden tool bar
-nnoremap <leader>st :set guioptions+=T<CR>
-nnoremap <leader>ht :set guioptions-=T<CR>
-
-" show/hidden menu bar
-nnoremap <leader>sm :set guioptions+=m<CR>
-nnoremap <leader>hm :set guioptions-=m<CR>
-
-" show/hidden right-hand scroll bar
-nnoremap <leader>ss :set guioptions+=r<CR>
-nnoremap <leader>hs :set guioptions-=r<CR>
-
-" http://vim.wikia.com/wiki/Quick_yank_and_paste
