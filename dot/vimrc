@@ -234,8 +234,12 @@ nnoremap <s-f2> :wall<cr>
 
 "nnoremap <f3>   :find<cr>
 "nnoremap e      :edit .<cr>
-noremap <leader>m   :make %<cr>
-noremap <leader>s   :source %<cr>
+
+" make buffer
+noremap <leader>mb   :make %<cr>
+
+" source buffer
+noremap <leader>sb   :source %<cr>
 
 noremap <leader>evr  :edit $HOME/.vimrc<cr>
 noremap <leader>egr  :edit $HOME/.gvimrc<cr>
@@ -258,8 +262,14 @@ set foldmethod=indent
 set foldlevelstart=1
 set foldnestmax=2
 
-map <leader>z :set foldenable
-map <leader>Z :set nofoldenable
+map <leader>z :set foldenable<cr>
+map <leader>Z :set nofoldenable<cr>
+
+" Scrolling
+" ============================================================================
+
+" limit in 3 lines bellow and above.
+set scrolloff=3
 
 " TODO files
 " ============================================================================
@@ -313,3 +323,22 @@ map <leader>bsx :!chmod +x %<cr>
 " NERD tree
 " ============================================================================
 map <leader><tab> :NERDTreeToggle<cr>
+
+" Command-T
+" ============================================================================
+nmap <silent><leader>f  :CommandT<cr>
+nmap <silent><leader>ff :CommandTFlush<cr>
+
+" Ruby-Debugger
+" ============================================================================
+":let g:ruby_debugger_fast_sender = 1
+nnoremap <silent><leader>.b  call g:RubyDebugger.toggle_breakpoint()<cr>
+nnoremap <silent><leader>.v  call g:RubyDebugger.open_variables()<cr>
+nnoremap <silent><leader>.m  call g:RubyDebugger.open_breakpoints()<cr>
+nnoremap <silent><leader>.t  call g:RubyDebugger.open_frames()<cr>
+nnoremap <silent><leader>.s  call g:RubyDebugger.step()<cr>
+nnoremap <silent><leader>.f  call g:RubyDebugger.finish()<cr>
+nnoremap <silent><leader>.n  call g:RubyDebugger.next()<cr>
+nnoremap <silent><leader>.c  call g:RubyDebugger.continue()<cr>
+nnoremap <silent><leader>.e  call g:RubyDebugger.exit()<cr>
+nnoremap <silent><leader>.d  call g:RubyDebugger.remove_breakpoints()<cr>
