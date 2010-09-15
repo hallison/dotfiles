@@ -299,7 +299,7 @@ map <leader>cff :read commit.tmp<cr>
 " VimExplorer
 " ============================================================================
 
-"let g:VEConf_externalExplorer = "thunar"
+let g:VEConf_externalExplorer = "thunar"
 let g:VEConf_showHiddenFiles = 0
 let g:VEConf_filePanelSortType = 1
 let g:VEConf_treeSortDirection = 1
@@ -326,19 +326,20 @@ map <leader><tab> :NERDTreeToggle<cr>
 
 " Command-T
 " ============================================================================
-nmap <silent><leader>f  :CommandT<cr>
-nmap <silent><leader>ff :CommandTFlush<cr>
+nmap <silent><leader>gf  :CommandT<cr>
+nmap <silent><leader>gff :CommandTFlush<cr>
 
 " Ruby-Debugger
 " ============================================================================
 ":let g:ruby_debugger_fast_sender = 1
-nnoremap <silent><leader>.b  call g:RubyDebugger.toggle_breakpoint()<cr>
-nnoremap <silent><leader>.v  call g:RubyDebugger.open_variables()<cr>
-nnoremap <silent><leader>.m  call g:RubyDebugger.open_breakpoints()<cr>
-nnoremap <silent><leader>.t  call g:RubyDebugger.open_frames()<cr>
-nnoremap <silent><leader>.s  call g:RubyDebugger.step()<cr>
-nnoremap <silent><leader>.f  call g:RubyDebugger.finish()<cr>
-nnoremap <silent><leader>.n  call g:RubyDebugger.next()<cr>
-nnoremap <silent><leader>.c  call g:RubyDebugger.continue()<cr>
-nnoremap <silent><leader>.e  call g:RubyDebugger.exit()<cr>
-nnoremap <silent><leader>.d  call g:RubyDebugger.remove_breakpoints()<cr>
+noremap <silent><leader>.b  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.toggle_breakpoint()<cr>
+noremap <silent><leader>.v  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.open_variables()<cr>
+noremap <silent><leader>.m  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.open_breakpoints()<cr>
+noremap <silent><leader>.t  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.open_frames()<cr>
+noremap <silent><leader>.s  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.step()<cr>
+noremap <silent><leader>.f  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.finish()<cr>
+noremap <silent><leader>.n  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.next()<cr>
+noremap <silent><leader>.c  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.continue()<cr>
+noremap <silent><leader>.e  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.exit()<cr>
+noremap <silent><leader>.d  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.remove_breakpoints()<cr>
+
