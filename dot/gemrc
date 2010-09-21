@@ -1,6 +1,6 @@
 --- 
 :verbose: true
-gem: --no-ri --no-rdoc --verbose --user-install
+gem: --no-ri --no-rdoc --verbose
 :sources: 
 - http://rubygems.org/
 - http://gems.rubyforge.org/
