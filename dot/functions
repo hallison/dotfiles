@@ -1,0 +1,65 @@
+# ===========================================================================
+# Git
+# ===========================================================================
+
+# Push the changes to all remotes in Git work copy
+function git-push-to-all {
+  : ${1:remote name is required}
+  local branch="$(git symbolic-ref HEAD 2>/dev/null)"
+        branch=${branch##*/}
+  for remote in $(git remote); do
+    echo "Pushing to ${remote} ..."
+    git push $remote $branch
+    echo
+  done
+  return 0
+}
+
+# Create a Git tag for versioning using a changelog file.
+# Usage:   git-tag-version [file].tag
+# Example:
+#   $ git-tag-version v0.1.0.tag # tag named to v0.1.0
+function git-tag-version {
+  : ${1:?tag file is required}
+  git tag -a -s -F ${1} ${1%.tag}
+  return ${?}
+}
+
+# Delete all files in stage with "deleted" tag.
+# Usage: git-delete-all
+function git-delete-all {
+  declare -a deleteds=$(git status | sed -n "/deleted/s/^.*[: ]/ /p")
+  declare    confirm="${1:-n}"
+  
+  echo "Deleted files in stage area:"
+  echo "${deleteds[*]// /  - }"
+
+  read -p "Are you sure [y/N]? " confirm
+
+  if [[ ${confirm:0:1} =~ [yY] ]]; then
+    for delete in ${deleteds[@]}; do
+      git rm ${delete}
+    done
+  else
+    echo "Nothing to do."
+  fi
+  return 0
+}
+
+# ===========================================================================
+# SSH
+# ===========================================================================
+
+# Push the SSH public key to remote hosts.
+# Inspired in http://github.com/rtomayko/dotfiles/blob/rtomayko/.bashrc.
+function ssh-push-cert {
+  : ${1:?host is required}
+  test -f ~/.ssh/id_dsa.pub || ssh-keygen -t dsa
+  for host in "$@"; do
+    echo "Pushing to $host ..."
+    ssh $host "cat >> ~/.ssh/authorized_keys" < ~/.ssh/id_dsa.pub
+  done
+  unset host
+}
+
+# vim: filetype=sh

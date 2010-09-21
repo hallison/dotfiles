@@ -1,20 +1,138 @@
-: +++ bashrc
-
+# Bash options
+# ============================================================================
 shopt -s cdspell
 shopt -s dirspell
 
+# Profile Environment
+# ============================================================================
+
+# Set my applications on path
+export PATH=./bin:${HOME}/.local/bin:${PATH}
+
+# Set my shortcuts
+export CDPATH=${HOME}/Code:.:${HOME}:${HOME}/Games
+
+# Set 'ls' command options
+export LS_OPTIONS='--color=auto'
+
+# Set my favorite editor
+export EDITOR=vim
+export VISUAL=gvim
+
+# Set 'readline' command parameters for binds
+export INPUTRC=${HOME}/.inputrc
+
+# RVM Settings
+test -s ${HOME}/.rvm/scripts/rvm && source ${HOME}/.rvm/scripts/rvm
+
+# Load all sources
 SOURCE_PATH=(
   /etc/bash_completion
-  ${HOME}/.aliases
+  ~/.localrc
+  ~/.aliases
+  ~/.functions
 )
 
-if test -z "${login}"; then
-  source ${HOME}/.profile
-else
-  for file in ${SOURCE_PATH[@]}; do
-    test -f ${file} && source ${file}
-  done
+for file in ${SOURCE_PATH[@]}; do
+  test -f ${file} && source ${file}
+done
+
+# Aliases
+# ============================================================================
+
+# Listing
+alias ls='ls $LS_OPTIONS'
+alias ll='ls -lh'
+alias lg='ls -lhg'
+alias la='ls -lha'
+alias lt='ls -ohg --time-style="+%Y-%m-%d %H:%M:%S"'
+
+# Directories
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# Seach
+alias fn='find -name'
+alias ft='find -type'
+alias fp='find -perm'
+alias fw='grep -lir'
+alias fs='ps aux | grep -i'
+
+# Tools
+alias ce='vim'           # Use bind CRTL-x-e, console editor
+alias ve='gvim'          # Visual editor
+alias vx='gvim +":VE ."' # Visual editor with file explorer
+
+# Utilities
+alias  df='df -h'
+alias  du='du -sh'
+alias cdu='du . *'   # Current Directory Usage
+
+# Administration
+alias sush='sudo -E bash -l'
+alias reload='source ~/.bashrc'
+
+# SCM
+# ============================================================================
+
+# Git
+alias go='git checkout'
+alias gs='git status'
+alias ga='git add'
+alias gr='git rm'
+alias gd='git diff'
+alias gm='git merge'
+alias gb='git branch'
+alias gc='git commit --verbose'
+alias gu='git pull'
+alias gp='git push'
+alias gt='git tag'
+alias gl='git log --summary'
+alias gF='git ls-files'
+
+if test -e /etc/bash_completion.d/git; then
+  complete -o bashdefault -o default -o nospace -F _git_checkout go
+  complete -o bashdefault -o default -o nospace -F _git_add      ga
+  complete -o bashdefault -o default -o nospace -F _git_rm       gr
+  complete -o bashdefault -o default -o nospace -F _git_diff     gd
+  complete -o bashdefault -o default -o nospace -F _git_merge    gm
+  complete -o bashdefault -o default -o nospace -F _git_branch   gb
+  complete -o bashdefault -o default -o nospace -F _git_commit   gc
+  complete -o bashdefault -o default -o nospace -F _git_pull     gu
+  complete -o bashdefault -o default -o nospace -F _git_push     gp
+  complete -o bashdefault -o default -o nospace -F _git_tag      gt
+  complete -o bashdefault -o default -o nospace -F _git_log      gl
 fi
 
-: --- bashrc
+# SVN
+alias svk='svn checkout'
+alias svu='svn update'
+alias svs='svn status'
+alias svl='svn log'
+alias svr='svn delete'
+alias sva='svn add'
+alias svr='svn revert'
 
+# Development
+# ============================================================================
+
+# Ruby
+alias  irb='irb --readline --simple-prompt -r rubygems -r irb/completion'
+
+# Rake
+alias rake='rake --require rubygems'
+alias  rkd='rake --describe'
+alias  rkt='rake --tasks'
+alias  rkp='rake --prereqs'
+alias  rks='rake --system'
+
+# RubyGems
+alias rgu='gem update'
+alias rga='gem install'
+alias rgr='gem uninstall'
+alias rgs='gem search --remote'
+alias rgl='gem list'
+alias rgb='gem build'
+
+# vim: filetype=sh
