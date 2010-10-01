@@ -28,9 +28,8 @@ test -s ${HOME}/.rvm/scripts/rvm && source ${HOME}/.rvm/scripts/rvm
 # Load all sources
 SOURCE_PATH=(
   /etc/bash_completion
-  ~/.localrc
-  ~/.aliases
-  ~/.functions
+  ${HOME}/.localrc
+  ${HOME}/.functions
 )
 
 for file in ${SOURCE_PATH[@]}; do
@@ -138,4 +137,17 @@ alias rgs='gem search --remote'
 alias rgl='gem list'
 alias rgb='gem build'
 
+# Prompt
+# ============================================================================
+PS_COLOR_RED="\[\033[0;31m\]"
+PS_COLOR_GREEN="\[\033[0;32m\]"
+PS_COLOR_BROWN="\[\033[0;33m\]"
+PS_COLOR_BLUE="\[\033[0;34m\]"
+PS_CLEAR="\[\033[0m\]"
+
+PROMPT_COMMAND='printf "%s" '
+PS1="\$(prompt --all)${PS_COLOR_GREEN}\w${PS_CLEAR}\$ "
+PS2="\w -> "
+PS3="\w ? "
+PS4="${BASH_SOURCE##*/}:${LINENO}> "
 # vim: filetype=sh

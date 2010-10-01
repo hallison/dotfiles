@@ -72,4 +72,57 @@ function ssh-push-cert {
   unset host
 }
 
+# ===========================================================================
+# Prompting
+# ===========================================================================
+
+function prompt {
+  declare COLOR_RED="\033[0;31m"
+  declare COLOR_GREEN="\033[0;32m"
+  declare COLOR_BROWN="\033[0;33m"
+  declare COLOR_BLUE="\033[0;34m"
+  declare COLOR_OFF="\033[0m"
+  declare COLOR_ON=${COLOR_BLUE}
+
+  function __prompt_ssh {
+    if test -n "${SSH_CONNECTION}"; then
+      printf "[${COLOR_ON}${LOGNAME}@${HOSTNAME}${COLOR_OFF}]"
+      return 0
+    fi
+    return 1
+  }
+
+  function __prompt_git {
+    local git=($(git show-ref --heads 2> /dev/null))
+    if test -n "${git}"; then
+      # Get hash and branch reference
+      # 0: hash
+      # 1: branch
+      # 2: remote
+      # 3: status
+      git[2]=$(git config --get branch.${git[1]##*/}.remote)
+      git[3]=$(git status --short)
+      test -n "${git[3]}" && COLOR_ON=${COLOR_RED} || COLOR_ON=${COLOR_GREEN}
+      printf "[${COLOR_ON}${git[0]:0:7}:${git[1]##*/}@${git[2]:-anyone}${COLOR_OFF}]"
+      return 0
+    fi
+    return 1
+  }
+
+  function __prompt_path {
+    declare    basedir=${PWD/${HOME}\/}
+    declare -a workdir=(${basedir//\// })
+    declare -i max=${#workdir[@]}
+    declare -i min=max-2
+    declare    path=${workdir[@]:min:max}
+    [[ $min -eq 0 ]] && printf "~/${basedir}" || printf "~/[%02d]/%s" ${min} ${path// //}
+  }
+
+  if test "${1}" == "--all"; then
+    echo "$(__prompt_ssh; __prompt_git)"
+  else
+    ${1/--/__prompt_}
+  fi
+}
+
 # vim: filetype=sh
