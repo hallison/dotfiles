@@ -1,0 +1,66 @@
+#!/usr/bin/env ruby
+
+require "optparse"
+require "webrick"
+
+program = File.basename(__FILE__)
+
+ARGV.options do |arguments|
+  logfile = "/dev/null"
+  config  = {
+    :Ip           => "0.0.0.0",
+    :Port         => "9000",
+    :DocumentRoot => "."
+  }
+
+  arguments.summary_indent = "  "
+  arguments.summary_width  = 24
+  arguments.banner = <<-end_banner.gsub(/^[ ]{4}/, '')
+    WEBrick v#{WEBrick::VERSION}
+
+    Usage:
+      #{program} [options]
+
+  end_banner
+
+  arguments.separator "Global options:"
+
+  arguments.on("-i", "--host-ip", nil, "Listen on host (default: #{config[:Ip]})") do |ip|
+    config[:Ip] = ip
+  end
+
+  arguments.on("-p", "--port", nil, "Use port (default: #{config[:Port]})") do |port|
+    config[:Port] = port
+  end
+
+  arguments.on("-d", "--sharedir", nil, "Use directory (default: #{config[:DocumentRoot]})") do |dir|
+    config[:DocumentRoot] = dir
+  end
+
+  arguments.on("-l", "--log", String, "Use I/O log (default: #{config[:Logger]})") do |file|
+    logfile = file
+  end
+
+  unless ARGV.empty?
+    arguments.parse!
+  else
+    puts arguments
+    exit 0
+  end
+
+  begin
+    config[:Logger] = WEBrick::Log::new(logfile, 7)
+    server = WEBrick::HTTPServer.new(config)
+    thread = Thread.new { server.start }
+    trap "INT" do
+      server.shutdown
+    end
+    thread.join
+  rescue Exception => error
+    puts "Error     : #{error.class}: #{error.message}"
+    puts "Backtrace : "
+    puts error.backtrace
+    exit 1
+  end
+end
+
