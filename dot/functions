@@ -77,13 +77,6 @@ function ssh-push-cert {
 # ===========================================================================
 
 function prompt {
-  declare COLOR_RED="\033[0;31m"
-  declare COLOR_GREEN="\033[0;32m"
-  declare COLOR_BROWN="\033[0;33m"
-  declare COLOR_BLUE="\033[0;34m"
-  declare COLOR_OFF="\033[0m"
-  declare COLOR_ON=${COLOR_BLUE}
-
   function __prompt_ssh {
     if test -n "${SSH_CONNECTION}"; then
       printf "[${COLOR_ON}${LOGNAME}@${HOSTNAME}${COLOR_OFF}]"
@@ -100,10 +93,12 @@ function prompt {
       # 1: branch
       # 2: remote
       # 3: status
+      # 4: commits
       git[2]=$(git config --get branch.${git[1]##*/}.remote)
       git[3]=$(git status --short)
+      git[4]=$(git log --format=oneline 2> /dev/null | wc -l)
       test -n "${git[3]}" && COLOR_ON=${COLOR_RED} || COLOR_ON=${COLOR_GREEN}
-      printf "[${COLOR_ON}${git[0]:0:7}:${git[1]##*/}@${git[2]:-anyone}${COLOR_OFF}]"
+      printf "[${COLOR_ON}%-6s:%06d${COLOR_OFF}] %s@%s: " ${git[0]:0:6} ${git[4]} ${git[1]##*/} ${git[2]:-anyone}
       return 0
     fi
     return 1

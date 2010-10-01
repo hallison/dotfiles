@@ -139,15 +139,23 @@ alias rgb='gem build'
 
 # Prompt
 # ============================================================================
-PS_COLOR_RED="\[\033[0;31m\]"
-PS_COLOR_GREEN="\[\033[0;32m\]"
-PS_COLOR_BROWN="\[\033[0;33m\]"
-PS_COLOR_BLUE="\[\033[0;34m\]"
-PS_CLEAR="\[\033[0m\]"
+COLOR_RED="\033[0;31m"
+COLOR_GREEN="\033[0;32m"
+COLOR_BROWN="\033[0;33m"
+COLOR_BLUE="\033[0;34m"
+COLOR_OFF="\033[0m"
+COLOR_ON=${COLOR_GREEN}
+
+PS_COLOR_RED="\[${COLOR_RED}\]"
+PS_COLOR_GREEN="\[${COLOR_GREEN}\]"
+PS_COLOR_BROWN="\[${COLOR_BROWN}\]"
+PS_COLOR_BLUE="\[${COLOR_BLUE}\]"
+PS_CLEAR="\[${COLOR_OFF}\]"
 
 PROMPT_COMMAND='printf "%s" '
 PS1="\$(prompt --all)${PS_COLOR_GREEN}\w${PS_CLEAR}\$ "
-PS2="\w -> "
-PS3="\w ? "
+PS2="\$(prompt --all)\w${PS_COLOR_RED}>${PS_CLEAR}   "
+PS3="#? "
 PS4="${BASH_SOURCE##*/}:${LINENO}> "
+
 # vim: filetype=sh
