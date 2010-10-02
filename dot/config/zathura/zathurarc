@@ -1,0 +1,17 @@
+# colors
+set statusbar_bgcolor #777777
+set statusbar_fgcolor #0F0F0F
+
+# settings
+#set height 1024
+#set width 768
+set adjust_open width
+
+# key bindings
+map <PageUp> navigate previous
+map <PageDown> navigate next
+
+map + zoom in
+map - zoom out
+
+map <C-q> quit
