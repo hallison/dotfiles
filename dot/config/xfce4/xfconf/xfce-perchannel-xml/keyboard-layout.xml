@@ -5,6 +5,6 @@
     <property name="XkbDisable" type="bool" value="false"/>
     <property name="XkbLayout" type="string" value="us,us"/>
     <property name="XkbVariant" type="string" value="alt-intl,"/>
-    <property name="XkbModel" type="string" value="hp250x"/>
+    <property name="XkbModel" type="string" value="evdev"/>
   </property>
 </channel>
