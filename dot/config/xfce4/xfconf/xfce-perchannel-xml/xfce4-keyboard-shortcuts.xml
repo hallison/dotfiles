@@ -32,6 +32,7 @@
       <property name="&lt;Super&gt;p" type="string" value="xfmedia"/>
       <property name="&lt;Super&gt;s" type="string" value="xfce4-settings-manager"/>
       <property name="&lt;Super&gt;b" type="string" value="xfbrowser4"/>
+      <property name="&lt;Super&gt;x" type="string" value="thunar"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
