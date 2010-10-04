@@ -26,12 +26,26 @@ function git-push-to-all {
 }
 
 # Create a Git tag for versioning using a changelog file.
-# Usage:   git-tag-version [file].tag
+# Usage:   git-tag-version <file>.tag [date]
 # Example:
-#   $ git-tag-version v0.1.0.tag # tag named to v0.1.0
+#   # tag named to v0.1.0
+#   $ git-tag-version v0.1.0.tag
 function git-tag-version {
   : ${1:?tag file is required}
   git tag -a -s -F ${1} ${1%.tag}
+  return ${?}
+}
+
+# Create a Git retag.
+# Usage:   git-retag-version <file>.tag <commit> <timestamp>
+# Example:
+#   # create tag using commit reference and timestamp
+#   $ git-tag-version v0.0.1.tag 49107a62fbe04d2e7f74d9873bd32347ac101991 "2010-10-01 23:58:00"
+function git-retag-version {
+  : ${1:? Tag file is required}
+  : ${2:? Commit is required}
+  : ${3:? Timestamp is required}
+  GIT_COMITTER_DATE="${3}" git tag -a -s -F ${1} ${1%.tag} ${2}
   return ${?}
 }
 
