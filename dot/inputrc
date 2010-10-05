@@ -63,3 +63,12 @@ $endif
 # "\e[F": end-of-line
 
 $endif
+
+$if mode=vi
+set convert-meta on
+"\t": dynamic-complete-history
+"\C-p": dynamic-complete-history
+"\C-n": menu-complete
+"\C-l": clear-screen
+$endif
+
