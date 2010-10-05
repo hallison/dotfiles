@@ -25,6 +25,21 @@ export INPUTRC=${HOME}/.inputrc
 # RVM Settings
 test -s ${HOME}/.rvm/scripts/rvm && source ${HOME}/.rvm/scripts/rvm
 
+# Shell options
+# ============================================================================
+
+set -o vi
+
+shopt -s autocd
+shopt -s checkwinsize
+shopt -s cmdhist
+shopt -s dotglob
+shopt -s extglob
+shopt -s globstart
+shopt -s gnu_errfmt
+shopt -s histappend
+shopt -s no_empty_cmd_completion
+
 # Load all sources
 SOURCE_PATH=(
   /etc/bash_completion
