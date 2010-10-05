@@ -91,9 +91,14 @@ function ssh-push-cert {
 # ===========================================================================
 
 function prompt {
+
+  PROMPT_FORMAT=""
+  PROMPT=()
+
   function __prompt_ssh {
     if test -n "${SSH_CONNECTION}"; then
-      printf "[${COLOR_ON}${LOGNAME}@${HOSTNAME}${COLOR_OFF}]"
+      PROMPT_FORMAT="[${PS_COLOR_ON}%s@%s${PS_COLOR_OFF}]"
+      PROMPT=(${LOGNAME} ${HOSTNAME})
       return 0
     fi
     return 1
@@ -111,8 +116,9 @@ function prompt {
       git[2]=$(git config --get branch.${git[1]##*/}.remote)
       git[3]=$(git status --short)
       git[4]=$(git log --format=oneline 2> /dev/null | wc -l)
-      test -n "${git[3]}" && COLOR_ON=${COLOR_RED} || COLOR_ON=${COLOR_GREEN}
-      printf "[${COLOR_ON}%-6s:%06d${COLOR_OFF}] %s@%s: " ${git[0]:0:6} ${git[4]} ${git[1]##*/} ${git[2]:-anyone}
+      test -n "${git[3]}" && PS_COLOR_ON=${PS_COLOR_RED} || PS_COLOR_ON=${PS_COLOR_GREEN}
+      PROMPT_FORMAT="[${PS_COLOR_ON}%-6s:%06d${PS_COLOR_OFF}] %s@%s: "
+      PROMPT=(${git[0]:0:6} ${git[4]:-0} ${git[1]##*/} ${git[2]:-anyone})
       return 0
     fi
     return 1
@@ -124,14 +130,26 @@ function prompt {
     declare -i max=${#workdir[@]}
     declare -i min=max-2
     declare    path=${workdir[@]:min:max}
-    [[ $min -eq 0 ]] && printf "~/${basedir}" || printf "~/[%02d]/%s" ${min} ${path// //}
+    if test $min -eq 0; then
+      PROMPT_FORMAT="%s"
+      PROMPT=(~/${basedir})
+    else
+      PROMPT_FORMAT="~/[%02d]/%s"
+      PROMPT=(${min} ${path// //})
+    fi
   }
 
-  if test "${1}" == "--all"; then
-    echo "$(__prompt_ssh; __prompt_git)"
-  else
-    ${1/--/__prompt_}
-  fi
+  function __prompt_check {
+    __prompt_ssh || __prompt_git
+  }
+
+  ${1/--/__prompt_}
+
+  PS1="$(printf "${PROMPT_FORMAT}" ${PROMPT[@]})${PS_COLOR_GREEN}\w${PS_COLOR_OFF}\$ "
+  PS2="$(printf "${PROMPT_FORMAT}" ${PROMPT[@]})\w${PS_COLOR_RED}>${PS_COLOR_OFF}   "
+  PS3="#? "
+  PS4="${BASH_SOURCE##*/}:${LINENO}> "
+
 }
 
 # vim: filetype=sh
