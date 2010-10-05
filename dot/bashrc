@@ -35,7 +35,7 @@ shopt -s checkwinsize
 shopt -s cmdhist
 shopt -s dotglob
 shopt -s extglob
-shopt -s globstart
+shopt -s globstar
 shopt -s gnu_errfmt
 shopt -s histappend
 shopt -s no_empty_cmd_completion
