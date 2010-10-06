@@ -84,7 +84,8 @@ alias  du='du -sh'
 alias cdu='du . *'   # Current Directory Usage
 
 # Administration
-alias sush='sudo -E bash -l'
+alias sudo='sudo -E'
+alias sush='sudo bash -l'
 alias reload='source ~/.bashrc'
 
 # SCM
