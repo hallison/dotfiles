@@ -105,7 +105,7 @@ function prompt {
   }
 
   function __prompt_git {
-    local git=($(git show-ref --heads 2> /dev/null))
+    local git=($(git show-ref --heads 2>/dev/null | grep $(git symbolic-ref HEAD 2>/dev/null) 2>/dev/null))
     if test -n "${git}"; then
       # Get hash and branch reference
       # 0: hash
