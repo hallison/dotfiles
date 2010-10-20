@@ -29,10 +29,10 @@ function git-push-to-all {
 # Usage:   git-tag-version <file>.tag [date]
 # Example:
 #   # tag named to v0.1.0
-#   $ git-tag-version v0.1.0.tag
+#   $ git-tag-version v0.1.0.rdoc
 function git-tag-version {
   : ${1:?tag file is required}
-  git tag -a -s -F ${1} ${1%.tag}
+  git tag -a -s -F ${1} ${1%.*}
   return ${?}
 }
 
