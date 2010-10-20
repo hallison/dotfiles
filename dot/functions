@@ -105,20 +105,22 @@ function prompt {
   }
 
   function __prompt_git {
-    local git=($(git show-ref --heads 2>/dev/null | grep $(git symbolic-ref HEAD 2>/dev/null) 2>/dev/null))
-    if test -n "${git}"; then
+    local branch=$(git symbolic-ref HEAD 2>/dev/null)
+    if test -n "${branch}"; then
       # Get hash and branch reference
       # 0: hash
       # 1: branch
       # 2: remote
       # 3: status
       # 4: commits
-      git[2]=$(git config --get branch.${git[1]##*/}.remote)
-      git[3]=$(git status --short)
-      git[4]=$(git log --format=oneline 2> /dev/null | wc -l)
-      test -n "${git[3]}" && PS_COLOR_ON=${PS_COLOR_RED} || PS_COLOR_ON=${PS_COLOR_GREEN}
+      local branch="${branch##*/}"
+      local hash="$(git show-ref --heads 2>/dev/null | grep ${branch})"
+      local remote="$(git config --get branch.${branch##*/}.remote)"
+      local status="$(git status --short)"
+      local -i commits="$(git log --format=oneline 2> /dev/null | wc -l)"
+      test -n "${status}" && PS_COLOR_ON=${PS_COLOR_RED} || PS_COLOR_ON=${PS_COLOR_GREEN}
       PROMPT_FORMAT="[${PS_COLOR_ON}%-6s:%06d${PS_COLOR_OFF}] %s@%s: "
-      PROMPT=(${git[0]:0:6} ${git[4]:-0} ${git[1]##*/} ${git[2]:-anyone})
+      PROMPT=(${hash:0:6} ${commits:-0} ${branch} ${remote:-anyone})
       return 0
     fi
     return 1
