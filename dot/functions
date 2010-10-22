@@ -45,7 +45,7 @@ function git-retag-version {
   : ${1:? Tag file is required}
   : ${2:? Commit is required}
   : ${3:? Timestamp is required}
-  GIT_COMITTER_DATE="${3}" git tag -a -s -F ${1} ${1%.tag} ${2}
+  GIT_COMITTER_DATE="${3}" git tag -a -s -F ${1} ${1%.*} ${2}
   return ${?}
 }
 
