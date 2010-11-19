@@ -32,7 +32,9 @@ function git-push-to-all {
 #   $ git-tag-version v0.1.0.rdoc
 function git-tag-version {
   : ${1:?tag file is required}
-  git tag -a -s -F ${1} ${1%.*}
+  local tag=${1##*/}
+  git tag -a -s -F ${1} ${tag%.*}
+  unset tag
   return ${?}
 }
 
@@ -45,7 +47,9 @@ function git-retag-version {
   : ${1:? Tag file is required}
   : ${2:? Commit is required}
   : ${3:? Timestamp is required}
-  GIT_COMITTER_DATE="${3}" git tag -a -s -F ${1} ${1%.*} ${2}
+  local tag=${1##*/}
+  GIT_COMITTER_DATE="${3}" git tag -a -s -F ${1} ${tag%.*} ${2}
+  unset tag
   return ${?}
 }
 
