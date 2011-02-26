@@ -154,7 +154,7 @@ function prompt {
   PS1="$(printf "${PROMPT_FORMAT}" ${PROMPT[@]})${PS_COLOR_GREEN}\w${PS_COLOR_OFF}\$ "
   PS2="$(printf "${PROMPT_FORMAT}" ${PROMPT[@]})\w${PS_COLOR_RED}>${PS_COLOR_OFF}   "
   PS3="#? "
-  PS4="${BASH_SOURCE##*/}:${LINENO}> "
+  PS4="\${BASH_SOURCE##*/}:\${LINENO}> "
 
 }
 
