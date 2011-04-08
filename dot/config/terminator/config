@@ -1,0 +1,123 @@
+[global_config]
+# dbus                    = false
+  focus                   = system        # List    : click, sloopy, system. Default: click
+# handle_size             = -1            # Range   : 0-5, -1 (turn-off)
+# geometry_hint           = true
+# window_state            = normal        # List    : normal, maximise, fullscreen, hidden.
+# bordless                = false
+# tab_position            = top           # List    : top, left, right, bottom.
+  close_button_on_tab     = false         # Boolean.
+# scroll_tabbar           = false
+# try_posix_regexp        = false
+# title_transmit_fg_color = "#FFFFFF"
+# title_transmit_bg_color = "#C80003"
+# title_receive_fg_color  = "#FFFFFF"
+# title_receive_bg_color  = "#0076C9"
+# title_inactive_fg_color = "#000000"
+# title_inactive_bg_color = "#C0BEBF"
+# enabled_plugins         = LaunchpadBugURLHandler, LaunchpadCodeURLHandler
+
+[keybindings]
+# zoom_in          = <Ctrl>plus
+# zoom_out         = <Ctrl>minus
+# zoom_normal      = <Ctrl>0
+# new_tab          = <Ctrl><Shift>T
+# cycle_next       = <Ctrl>Tab
+# cycle_prev       = <Ctrl><Shift>N
+# go_prev          = <Ctrl><Shift>P
+# go_up            = <Alt>Up
+# go_down          = <Alt>Down
+# go_left          = <Alt>Left
+# go_right         = <Alt>Right
+# split_horiz      = <Ctrl><Shift>O
+# split_vert       = <Ctrl><Shift>E
+# close_term       = <Ctrl><Shift>W
+# copy             = <Ctrl><Shift>C
+# paste            = <Ctrl><Shift>V
+# toggle_scrollbar = <Ctrl><Shift>S
+# search           = <Ctrl><Shift>F
+# close_window     = <Ctrl><Shift>Q
+# resize_up        = <Ctrl><Shift>Up
+# resize_down      = <Ctrl><Shift>Down
+# resize_left      = <Ctrl><Shift>Left
+# resize_right     = <Ctrl><Shift>Right
+# move_tab_right   = <Ctrl><Shift>Page_Down
+# move_tab_left    = <Ctrl><Shift>Page_Up
+# toggle_zoom      = <Ctrl><Shift>X
+# scaled_zoom      = <Ctrl><Shift>Z
+# next_tab         = <Ctrl>Page_Down
+# prev_tab         = <Ctrl>Page_Up
+  switch_to_tab_1  = <Alt><Shift>1
+  switch_to_tab_2  = <Alt><Shift>2
+  switch_to_tab_3  = <Alt><Shift>3
+  switch_to_tab_4  = <Alt><Shift>4
+  switch_to_tab_5  = <Alt><Shift>5
+  switch_to_tab_6  = <Alt><Shift>6
+  switch_to_tab_7  = <Alt><Shift>7
+  switch_to_tab_8  = <Alt><Shift>8
+  switch_to_tab_9  = <Alt><Shift>9
+  switch_to_tab_10 = <Alt><Shift>0
+# full_screen      = F11
+# reset            = <Ctrl><Shift>R
+# reset_clear      = <Ctrl><Shift>G
+# hide_window      = <Ctrl><Shift><Alt>a
+# group_all        = <Super>g
+# ungroup_all      = <Super><Shift>G
+# group_tab        = <Super>t
+# ungroup_tab      = <Super><Shift>T
+# new_window       = <Ctrl><Shift>I
+# new_terminator   = <Super>i
+
+[profiles]
+  [[default]]
+#   allow_bold              = True
+#   antialias               = True
+#   audible_bell            = False
+#   visible_bell            = False
+#   urgent_bell             = False
+#   icon_bell               = True
+#   force_no_bell           = False
+#   use_theme_colors        = False
+#   background_color        = '#000000'
+#   background_darkness     = 0.5 # Range: 0.0..1.0
+    background_type         = transparent # List: solid, image, transparent
+#   background_image        = Nothing
+#   backspace_binding       = ascii-del # List: ascii-del, control-h, escape-sequence
+#   delete_binding          = escape-sequence # List: ascii-del, control-h, escape-sequence
+#   color_scheme            = grey_on_black # List: grey_on_black, black_on_yellow, black_on_white, white_on_black, green_on_black, orange_on_black, ambience.
+#   cursor_blink            = True
+#   cursor_color            = "#00DE00"
+#   cursor_shape            = block # List: block, ibeam, underline.
+#   emulation               = xterm
+#   use_system_font         = True
+    font                    = "Terminus 10"
+#   foreground_color        = "#AAAAAA"
+#   scrollbar_position      = right # List: left, right, disabled.
+#   show_titlebar           = True
+#   scroll_background       = True
+#   scroll_on_keystroke     = True
+#   scroll_on_output        = True
+#   alternate_screen_scroll = True
+#   scrollback_lines        = 1500
+#   scrollback_infinite     = False
+#   focus_on_close          = auto # List prev, next, auto
+#   exit_action             = close # List: close, restart
+#   # palette               = # Hex-decimal.
+#   word_chars              = '-A-Za-z0-9,./?%&#:_'
+#   mouse_autohide          = True
+#   use_custom_command      = False
+#   custo_command           = Nothing
+#   http_proxy              = Nothing
+#   encoding                = UTF-8
+#   copy_on_selection       = False
+
+#[layouts]
+#  [[default]]
+#    [[window0]]
+#      type = Window
+#    [[child1]]
+#      type = Terminal
+#      parent = window0
+
+
+# vim: filetype=config
