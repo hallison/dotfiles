@@ -1,0 +1,56 @@
+# You can edit this file by hand.
+# The # character at the beginning of a line comments out the line.
+# Blank lines are ignored.
+
+# The Default color scheme is used for any directory that does not have
+# a specified scheme.  A color scheme set for a base directory will also
+# be used for the sub directories.
+
+# The standard ncurses colors are: 
+# Default = -1 can be used for transparency
+# Black = 0
+# Red = 1
+# Green = 2
+# Yellow = 3
+# Blue = 4
+# Magenta = 5
+# Cyan = 6
+# White = 7
+
+# Vifm supports 256 colors you can use color numbers 0-255
+#	(requires properly set up terminal).
+
+# COLORSCHEME=OneWordDescription
+# DIRECTORY=/Full/Path/To/Base/Directory
+# COLOR=Window_name=foreground_color_number=background_color_number
+
+
+#COLORSCHEME=Default
+COLORSCHEME=Darkdevel
+#DIRECTORY=/
+DIRECTORY=/
+#COLOR=MENU=white=black
+COLOR=MENU=white=default
+#COLOR=BORDER=black=white
+COLOR=BORDER=black=white
+#COLOR=WIN=white=black
+COLOR=WIN=white=default
+#COLOR=STATUS_BAR=white=black
+COLOR=STATUS_BAR=white=black
+#COLOR=CURR_LINE=white=blue
+COLOR=CURR_LINE=white=black
+#COLOR=DIRECTORY=cyan=black
+COLOR=DIRECTORY=blue=default
+#COLOR=LINK=yellow=black
+COLOR=LINK=cyan=default
+#COLOR=SOCKET=magenta=black
+COLOR=SOCKET=magenta=default
+#COLOR=DEVICE=red=black
+COLOR=DEVICE=yellow=default
+#COLOR=EXECUTABLE=green=black
+COLOR=EXECUTABLE=green=default
+#COLOR=SELECTED=magenta=black
+COLOR=SELECTED=magenta=black
+#COLOR=CURRENT=blue=black
+COLOR=CURRENT=yellow=black
+
