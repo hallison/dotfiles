@@ -6,11 +6,11 @@ task install {
   for origin in ${dotfiles}; do
     prefix=${HOME}/.${origin#*/}
     if test -d ${origin}; then
-      run mkdir -p ${prefix}
+      mkdir -p ${prefix}
       dotfiles=${origin}/*
       invoke install
     else
-      run cp -rv ${origin} ${prefix}
+      cp -rv ${origin} ${prefix}
       echo ${prefix} >> ${HOME}/.dotfiles-uninstall
     fi
   done
@@ -21,7 +21,7 @@ task uninstall {
   local files=$(readfile ${HOME}/.dotfiles-uninstall)
 
   for origin in ${files}; do
-    run rm ${origin}
+    rm ${origin}
   done
   rm ~/.dotfiles-uninstall
 }
