@@ -1,0 +1,69 @@
+alignment top_right
+background yes
+border_width 1
+cpu_avg_samples 2
+default_color BBBBBB
+default_outline_color white
+default_shade_color white
+double_buffer yes
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+gap_x 8
+gap_y 32
+maximum_width 200
+max_port_monitor_connections 64
+max_specials 512
+max_user_text 16384
+minimum_size 330 10
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+own_window_colour black
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_type normal
+own_window yes
+stippled_borders 2
+update_interval 1
+uppercase no
+use_spacer right
+use_xft yes
+xftalpha 0.0
+xftfont  Monaco:size=8
+
+TEXT
+${alignc}${uid_name 406990}@${nodename}
+${alignc}${sysname} ${kernel}
+${alignc}${machine}
+${hr}
+${alignc}${time %F %H:%M:%S}
+${hr}
+Uptime  ${alignc}${uptime}${color}
+CPU     ${alignc}${cpubar      10,110      }${alignr}${cpu            }%
+Memory  ${alignc}${membar      10,110      }${alignr}${memperc        }%
+Swap    ${alignc}${swapbar     10,110      }${alignr}${swapperc       }%
+Entropy ${alignc}${entropy_bar 10,110      }${alignr}${entropy_perc   }%
+Battery ${alignc}${battery_bar 10,110      }${alignr}${battery_percent}%
+${hr}
+/       ${alignc}${fs_bar      10,110 /root}${alignr}${fs_used_perc /root}%
+/boot   ${alignc}${fs_bar      10,110 /boot}${alignr}${fs_used_perc /boot}%
+/home   ${alignc}${fs_bar      10,110 /home}${alignr}${fs_used_perc /home}%
+${hr}
+CPU
+${cpugraph}
+${loadgraph}
+Memory
+${memgraph}
+Disk read
+${diskiograph_read}
+Disk write
+${diskiograph_write}
+Status
+${hr}
+Volume       ${mixer}% ${mixerbar}
+Temperature  ${execi 5 state-sensors -t}% ${execibar 5 state-sensors -t}
+${if_running mpd}
+${include /home/hallison/.conky/mpdrc}
+${endif}

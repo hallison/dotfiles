@@ -1,0 +1,27 @@
+TEXT
+# ${mpd_album}                Album in current MPD song
+# ${mpd_artist}               Artist in current MPD song must be enabled at compile
+# ${mpd_bar (height),(width)} Bar of mpd's progress
+# ${mpd_bitrate}              Bitrate of current song
+# ${mpd_elapsed}              Song's elapsed time
+# ${mpd_file}                 Prints the file name of the current MPD song
+# ${mpd_length}               Song's length
+# ${mpd_name}                 Prints the MPD name field
+# ${mpd_percent}              Percent of song's progress
+# ${mpd_random}               Random status (On/Off)
+# ${mpd_repeat}               Repeat status (On/Off)
+# ${mpd_smart (max length)}   Prints the song name in either the form "artist - title" or file name, depending on whats available
+# ${mpd_status}               Playing, stopped, et cetera.
+# ${mpd_title  (max length)}  Title of current MPD song
+# ${mpd_track}                Prints the MPD track field
+# ${mpd_vol}                  MPD's volume
+Music Player
+${hr}
+${mpd_artist}
+${mpd_title}
+${mpd_status}\
+${if_match "$mpd_random" == "On"}, Random${endif}\
+${if_match "$mpd_repeat" == "On"}, Repeat${endif}
+${mpd_bar 10, 166}${alignr}${mpd_percent}%
+${mpd_bitrate}kbps ${mpd_elapsed}/${mpd_length}
+${hr}
