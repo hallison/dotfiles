@@ -71,3 +71,6 @@ set convert-meta on
 "\C-l": clear-screen
 $endif
 
+"\e[1;3A": history-search-backward
+"\e[1;3B": history-search-forward
+
