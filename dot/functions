@@ -4,8 +4,33 @@
 
 # Create path and push into directories hash.
 function mkpath {
-  mkdir -p ${@}
-  pushd ${@}
+  mkdir -p "${*}"
+  pushd "${*}"
+}
+
+# Move files to trash placed in ~/.local/share/Trash
+function trash {
+  local trash_path_files="${HOME}/.local/share/Trash/files"
+  local trash_path_info="${HOME}/.local/share/Trash/info"
+
+  mkdir -p ${trash_path_files}
+  mkdir -p ${trash_path_info}
+
+  for file in ${@}; do
+    if [[ -e ${file} ]]; then
+      local info=""
+      local path=$(readlink -f ${file})
+
+      info="${info}[Trash Info]\n"
+      info="${info}Path=${path}\n"
+      info="${info}DeletionDate=$(date +%FT%T)\n"
+
+      echo -e ${info}
+      echo -e ${trash_path_info}/$(basename ${path}).trashinfo
+      echo -e ${trash_path_files}/$(basename ${path})
+
+    fi
+  done
 }
 
 # ===========================================================================

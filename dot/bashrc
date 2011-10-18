@@ -7,7 +7,7 @@ shopt -s dirspell
 # ============================================================================
 
 # Set my applications on path
-export PATH=./bin:${HOME}/.local/bin:${PATH}
+export PATH=./bin:${HOME}/.local/bin:$HOME/.luarocks/bin:${PATH}
 
 # Set my shortcuts
 export CDPATH=${HOME}/Code:.:${HOME}:${HOME}/Games
@@ -17,13 +17,20 @@ export LS_OPTIONS='--color=auto'
 
 # Set my favorite editor
 export EDITOR=vim
-export VISUAL=gvim
+export VISUAL="gvim -f"
 
 # Set 'readline' command parameters for binds
 export INPUTRC=${HOME}/.inputrc
 
 # RVM Settings
-test -s ${HOME}/.rvm/scripts/rvm && source ${HOME}/.rvm/scripts/rvm
+if test -s /etc/rvmrc; then
+  source /etc/rvmrc
+  source ${rvm_path}/scripts/rvm
+elif test -s ${HOME}/.rvm/scripts/rvm; then
+  source ${HOME}/.rvm/scripts/rvm
+else
+  : rvm not found
+fi
 
 # Shell options
 # ============================================================================
@@ -89,6 +96,8 @@ alias sudo='sudo -E'
 alias sush='sudo bash -l'
 alias reload='source ~/.bashrc'
 
+alias rm='gvfs-trash'
+
 # SCM
 # ============================================================================
 
@@ -108,17 +117,17 @@ alias gl='git log --summary'
 alias gF='git ls-files'
 
 if test -e /etc/bash_completion.d/git; then
-  complete -o bashdefault -o default -o nospace -F _git_checkout go
-  complete -o bashdefault -o default -o nospace -F _git_add      ga
-  complete -o bashdefault -o default -o nospace -F _git_rm       gr
-  complete -o bashdefault -o default -o nospace -F _git_diff     gd
-  complete -o bashdefault -o default -o nospace -F _git_merge    gm
-  complete -o bashdefault -o default -o nospace -F _git_branch   gb
-  complete -o bashdefault -o default -o nospace -F _git_commit   gc
-  complete -o bashdefault -o default -o nospace -F _git_pull     gu
-  complete -o bashdefault -o default -o nospace -F _git_push     gp
-  complete -o bashdefault -o default -o nospace -F _git_tag      gt
-  complete -o bashdefault -o default -o nospace -F _git_log      gl
+  complete -o default -o nospace -F _git_checkout go
+  complete -o default -o nospace -F _git_add      ga
+  complete -o default -o nospace -F _git_rm       gr
+  complete -o default -o nospace -F _git_diff     gd
+  complete -o default -o nospace -F _git_merge    gm
+  complete -o default -o nospace -F _git_branch   gb
+  complete -o default -o nospace -F _git_commit   gc
+  complete -o default -o nospace -F _git_pull     gu
+  complete -o default -o nospace -F _git_push     gp
+  complete -o default -o nospace -F _git_tag      gt
+  complete -o default -o nospace -F _git_log      gl
 fi
 
 # SVN

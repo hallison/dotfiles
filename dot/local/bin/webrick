@@ -3,7 +3,8 @@
 require "optparse"
 require "webrick"
 
-program = File.basename(__FILE__)
+@program = File.basename(__FILE__)
+@trace   = false
 
 ARGV.options do |arguments|
   logfile = "/dev/null"
@@ -19,25 +20,33 @@ ARGV.options do |arguments|
     WEBrick v#{WEBrick::VERSION}
 
     Usage:
-      #{program} [options]
+      #{@program} [options]
 
   end_banner
 
   arguments.separator "Global options:"
 
-  arguments.on("-i", "--host-ip", nil, "Listen on host (default: #{config[:Ip]})") do |ip|
+  arguments.on("-t", "--trace", nil, "Trace results") do
+    @trace = true
+  end
+
+  arguments.on("-i,--host-ip", String, "Listen on host (default: #{config[:Ip]})") do |ip|
+    puts "#{__LINE__}: Configuring Ip to #{ip}" if @trace
     config[:Ip] = ip
   end
 
-  arguments.on("-p", "--port", nil, "Use port (default: #{config[:Port]})") do |port|
+  arguments.on("-p,--port", String, "Use port (default: #{config[:Port]})") do |port|
+    puts "#{__LINE__}: Configuring port to #{port}" if @trace
     config[:Port] = port
   end
 
-  arguments.on("-d", "--sharedir", nil, "Use directory (default: #{config[:DocumentRoot]})") do |dir|
+  arguments.on("-d,--sharedir", String, "Use directory (default: #{config[:DocumentRoot]})") do |dir|
+    puts "#{__LINE__}: Configuring shared directory to #{dir}" if @trace
     config[:DocumentRoot] = dir
   end
 
-  arguments.on("-l", "--log", String, "Use I/O log (default: #{config[:Logger]})") do |file|
+  arguments.on("-l,--log", String, "Use I/O log (default: #{config[:Logger]})") do |file|
+    puts "#{__LINE__}: Configuring log file to #{file}" if @trace
     logfile = file
   end
 
@@ -57,9 +66,10 @@ ARGV.options do |arguments|
     end
     thread.join
   rescue Exception => error
-    puts "Error     : #{error.class}: #{error.message}"
-    puts "Backtrace : "
-    puts error.backtrace
+    puts "Error : #{error.class}: #{error.message}"
+    if @trace
+      puts error.backtrace
+    end
     exit 1
   end
 end

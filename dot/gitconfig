@@ -18,7 +18,8 @@
   br = branch
   df = diff
   lg = log -p
-  ls = log HEAD --stat --no-merges
+  #ls = log HEAD --stat --no-merges
+  ls = ls-tree HEAD:
   # who did this
   wdt = shortlog -se --
   msg = commit --allow-empty -m
@@ -30,3 +31,6 @@
   auto = 1
 [push]
 	default = matching
+
+# vim: filetype=gitconfig
+
