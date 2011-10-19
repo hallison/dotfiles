@@ -146,7 +146,7 @@ alias svr='svn revert'
 alias r187='rvm 1.8.7'
 alias r192='rvm 1.9.2'
 alias  rbx='rvm rbx'
-alias  irb='irb --readline --simple-prompt -r rubygems -r irb/completion'
+alias  irb='irb --readline --simple-prompt -r irb/completion'
 
 # Rake
 alias rake='rake --require rubygems'
