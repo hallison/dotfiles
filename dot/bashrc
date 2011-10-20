@@ -94,7 +94,7 @@ alias tree='tree --charset=ascii --dirsfirst'
 # Administration
 alias sudo='sudo -E'
 alias sush='sudo bash -l'
-alias reload='source ~/.bashrc'
+alias bashrc='source ~/.bashrc'
 
 alias rm='gvfs-trash'
 
