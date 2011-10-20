@@ -1,0 +1,18 @@
+! XTerm configurations
+XTerm.backarrowKeyIsErase       : False
+XTerm.fullscreen                : False
+XTerm.hold                      : False
+! XTerm.hpFunctionKeys          : (HP keyboard type)
+! XTerm.iconGeometry            : (size or position when iconified
+! XTerm.iconName                : 
+! XTerm.keyboardType            : 
+! XTerm.maxBufSize              : 32768
+XTerm.maximized                 : False
+XTerm.messages                  : True
+! XTerm*menuLocale              : C
+! XTerm*minBufSize              : 4096
+XTerm*background          : Black
+XTerm*foreground          : Gray
+XTerm*scrollBar           : On
+XTerm*scrollbar*thickness : 5
+

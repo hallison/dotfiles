@@ -1,0 +1,6 @@
+My dot files for X11 applications
+=================================
+
+My configurations (a.k.a dot files) for X11 applications, that is,
+customizations for GUI programs on X Window System.
+
