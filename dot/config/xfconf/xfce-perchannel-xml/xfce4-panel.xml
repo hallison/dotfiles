@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-panel" version="1.0">
+  <property name="plugins" type="empty">
+    <property name="notes" type="empty">
+      <property name="global" type="empty">
+        <property name="font-description" type="string" value="Monospace 10"/>
+      </property>
+    </property>
+    <property name="plugin-1" type="string" value="applicationsmenu">
+      <property name="show-menu-icons" type="bool" value="true"/>
+      <property name="show-button-title" type="bool" value="false"/>
+      <property name="custom-menu-file" type="string" value=""/>
+      <property name="button-icon" type="string" value="/usr/share/pixmaps/xfce4_xicon3.png"/>
+      <property name="button-title" type="string" value="Xfce Menu"/>
+      <property name="custom-menu" type="bool" value="false"/>
+    </property>
+    <property name="plugin-3" type="string" value="showdesktop"/>
+    <property name="plugin-4" type="string" value="windowmenu">
+      <property name="urgentcy-notification" type="bool" value="true"/>
+      <property name="style" type="uint" value="1"/>
+      <property name="all-workspaces" type="bool" value="true"/>
+      <property name="workspace-actions" type="bool" value="true"/>
+    </property>
+    <property name="plugin-5" type="string" value="separator">
+      <property name="style" type="uint" value="1"/>
+    </property>
+    <property name="plugin-6" type="string" value="launcher">
+      <property name="move-first" type="bool" value="false"/>
+      <property name="arrow-position" type="bool" value="false"/>
+      <property name="items" type="array">
+        <value type="string" value="13029698060.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-7" type="string" value="launcher">
+      <property name="move-first" type="bool" value="false"/>
+      <property name="arrow-position" type="bool" value="false"/>
+      <property name="items" type="array">
+        <value type="string" value="13029698060.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-8" type="string" value="launcher">
+      <property name="move-first" type="bool" value="false"/>
+      <property name="arrow-position" type="bool" value="false"/>
+      <property name="items" type="array">
+        <value type="string" value="13029698060.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-9" type="string" value="launcher">
+      <property name="move-first" type="bool" value="false"/>
+      <property name="arrow-position" type="bool" value="false"/>
+      <property name="items" type="array">
+        <value type="string" value="13029698060.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-10" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-11" type="string" value="xkb-plugin"/>
+    <property name="plugin-12" type="string" value="netload"/>
+    <property name="plugin-13" type="string" value="netload"/>
+    <property name="plugin-14" type="string" value="diskperf"/>
+    <property name="plugin-15" type="string" value="diskperf"/>
+    <property name="plugin-16" type="string" value="systemload"/>
+    <property name="plugin-17" type="string" value="xfce4-sensors-plugin"/>
+    <property name="plugin-18" type="string" value="xfce4-cpu-freq-plugin"/>
+    <property name="plugin-19" type="string" value="xfce4-cpu-freq-plugin"/>
+    <property name="plugin-20" type="string" value="cpugraph"/>
+    <property name="plugin-21" type="string" value="systray">
+      <property name="show-frame" type="bool" value="false"/>
+      <property name="rows" type="uint" value="1"/>
+      <property name="names-visible" type="array">
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="ario"/>
+        <value type="string" value="thunar"/>
+        <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="gajim"/>
+        <value type="string" value="notes"/>
+      </property>
+    </property>
+    <property name="plugin-22" type="string" value="xfce4-mixer-plugin"/>
+    <property name="plugin-23" type="string" value="separator">
+      <property name="style" type="uint" value="1"/>
+    </property>
+    <property name="plugin-24" type="string" value="datetime"/>
+    <property name="plugin-25" type="string" value="separator">
+      <property name="style" type="uint" value="1"/>
+    </property>
+    <property name="plugin-26" type="string" value="actions">
+      <property name="first-action" type="uint" value="0"/>
+    </property>
+    <property name="plugin-27" type="string" value="tasklist">
+      <property name="grouping" type="uint" value="1"/>
+      <property name="include-all-workspaces" type="bool" value="false"/>
+      <property name="flat-buttons" type="bool" value="false"/>
+      <property name="show-handle" type="bool" value="false"/>
+      <property name="show-labels" type="bool" value="false"/>
+    </property>
+    <property name="plugin-28" type="string" value="pager">
+      <property name="rows" type="uint" value="1"/>
+      <property name="show-names" type="bool" value="false"/>
+      <property name="workspace-scrolling" type="bool" value="true"/>
+    </property>
+    <property name="plugin-2" type="string" value="directorymenu">
+      <property name="base-directory" type="string" value="/home/hallison"/>
+    </property>
+  </property>
+  <property name="panels" type="uint" value="1">
+    <property name="panel-0" type="empty">
+      <property name="size" type="uint" value="28"/>
+      <property name="length" type="uint" value="100"/>
+      <property name="locked" type="bool" value="true"/>
+      <property name="autohide" type="bool" value="false"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="1"/>
+        <value type="int" value="2"/>
+        <value type="int" value="3"/>
+        <value type="int" value="4"/>
+        <value type="int" value="5"/>
+        <value type="int" value="6"/>
+        <value type="int" value="7"/>
+        <value type="int" value="8"/>
+        <value type="int" value="9"/>
+        <value type="int" value="27"/>
+        <value type="int" value="10"/>
+        <value type="int" value="28"/>
+        <value type="int" value="11"/>
+        <value type="int" value="12"/>
+        <value type="int" value="13"/>
+        <value type="int" value="14"/>
+        <value type="int" value="15"/>
+        <value type="int" value="16"/>
+        <value type="int" value="17"/>
+        <value type="int" value="20"/>
+        <value type="int" value="21"/>
+        <value type="int" value="22"/>
+        <value type="int" value="23"/>
+        <value type="int" value="24"/>
+        <value type="int" value="25"/>
+        <value type="int" value="26"/>
+      </property>
+      <property name="horizontal" type="bool" value="true"/>
+      <property name="position" type="string" value="p=9;x=0;y=0"/>
+      <property name="leave-opacity" type="uint" value="50"/>
+      <property name="enter-opacity" type="uint" value="100"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="background-alpha" type="uint" value="100"/>
+    </property>
+  </property>
+</channel>
