@@ -1,0 +1,37 @@
+" GUI style
+" ============================================================================
+
+" adjust color scheme
+colorscheme darkdevel
+
+" font for gvim
+set guifont=Terminus\ 10,Monospace\ 8
+
+" set window size
+set lines=48
+set columns=158
+
+" Custom shortcuts
+" ============================================================================
+
+" find a word, only gvim.
+nnoremap <f3> :promptfind<cr>
+
+" find and replace a word, only gvim.
+nnoremap <f4> :promptrepl<cr>
+
+" find file in current directory.
+"vmap <F4>           :find<CR>
+
+" turn off useless toolbar
+set guioptions-=T
+
+" turn off menu bar
+set guioptions-=m
+
+" turn off right-hand scroll-bar
+set guioptions-=R
+set guioptions-=L
+set guioptions-=r
+set guioptions-=l
+
