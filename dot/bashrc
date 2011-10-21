@@ -1,0 +1,185 @@
+# Bash options
+# ============================================================================
+shopt -s cdspell
+shopt -s dirspell
+
+# Profile Environment
+# ============================================================================
+
+# Set my applications on path
+export PATH=./bin:${HOME}/.local/bin:$HOME/.luarocks/bin:${PATH}
+
+# Set my shortcuts
+export CDPATH=${HOME}/Code:.:${HOME}:${HOME}/Games
+
+# Set 'ls' command options
+export LS_OPTIONS='--color=auto'
+
+# Set my favorite editor
+export EDITOR=vim
+export VISUAL="gvim -f"
+
+# Set 'readline' command parameters for binds
+export INPUTRC=${HOME}/.inputrc
+
+# RVM Settings
+if test -s /etc/rvmrc; then
+  source /etc/rvmrc
+  source ${rvm_path}/scripts/rvm
+elif test -s ${HOME}/.rvm/scripts/rvm; then
+  source ${HOME}/.rvm/scripts/rvm
+else
+  : rvm not found
+fi
+
+# Shell options
+# ============================================================================
+
+set -o vi
+
+shopt -s autocd
+shopt -s checkwinsize
+shopt -s cmdhist
+shopt -s dotglob
+shopt -s extglob
+shopt -s globstar
+shopt -s gnu_errfmt
+shopt -s histappend
+shopt -s no_empty_cmd_completion
+
+# Load all sources
+SOURCE_PATH=(
+  /etc/bash_completion
+  ${HOME}/.localrc
+  ${HOME}/.functions
+)
+
+for file in ${SOURCE_PATH[@]}; do
+  test -f ${file} && source ${file}
+done
+
+# Aliases
+# ============================================================================
+
+# Listing
+alias ls='ls $LS_OPTIONS'
+alias ll='ls -lh'
+alias lg='ls -lhg'
+alias la='ls -lha'
+alias lt='ls -ohg --time-style="+%Y-%m-%d %H:%M:%S"'
+
+# Directories
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# Seach
+alias fn='find -name'
+alias ft='find -type'
+alias fp='find -perm'
+alias fw='grep -lir'
+alias fs='ps aux | grep -i'
+
+# Tools
+alias ce='vim'           # Use bind CRTL-x-e, console editor
+alias ve='gvim'          # Visual editor
+alias vx='gvim +":VE ."' # Visual editor with file explorer
+
+# Utilities
+alias  df='df -h'
+alias  du='du -sh'
+alias cdu='du . *'   # Current Directory Usage
+alias tree='tree --charset=ascii --dirsfirst'
+
+# Administration
+alias sudo='sudo -E'
+alias sush='sudo bash -l'
+alias .bashrc='source ~/.bashrc'
+
+alias rm='gvfs-trash'
+
+# SCM
+# ============================================================================
+
+# Git
+alias go='git checkout'
+alias gs='git status'
+alias ga='git add'
+alias gr='git rm'
+alias gd='git diff'
+alias gm='git merge'
+alias gb='git branch'
+alias gc='git commit --verbose'
+alias gu='git pull'
+alias gp='git push'
+alias gt='git tag'
+alias gl='git log --summary'
+alias gF='git ls-files'
+
+if test -e /etc/bash_completion.d/git; then
+  complete -o default -o nospace -F _git_checkout go
+  complete -o default -o nospace -F _git_add      ga
+  complete -o default -o nospace -F _git_rm       gr
+  complete -o default -o nospace -F _git_diff     gd
+  complete -o default -o nospace -F _git_merge    gm
+  complete -o default -o nospace -F _git_branch   gb
+  complete -o default -o nospace -F _git_commit   gc
+  complete -o default -o nospace -F _git_pull     gu
+  complete -o default -o nospace -F _git_push     gp
+  complete -o default -o nospace -F _git_tag      gt
+  complete -o default -o nospace -F _git_log      gl
+fi
+
+# SVN
+alias svk='svn checkout'
+alias svu='svn update'
+alias svs='svn status'
+alias svl='svn log'
+alias svr='svn delete'
+alias sva='svn add'
+alias svr='svn revert'
+
+# Development
+# ============================================================================
+
+# Ruby
+alias r187='rvm 1.8.7'
+alias r192='rvm 1.9.2'
+alias  rbx='rvm rbx'
+alias  irb='irb --readline --simple-prompt -r irb/completion'
+
+# Rake
+alias rake='rake --require rubygems'
+alias  rkd='rake --describe'
+alias  rkt='rake --tasks'
+alias  rkp='rake --prereqs'
+alias  rks='rake --system'
+
+# RubyGems
+alias rgu='gem update'
+alias rga='gem install'
+alias rgr='gem uninstall'
+alias rgs='gem search --remote'
+alias rgl='gem list'
+alias rgb='gem build'
+
+# Prompt
+# ============================================================================
+
+export COLOR_RED="\033[0;31m"
+export COLOR_GREEN="\033[0;32m"
+export COLOR_BROWN="\033[0;33m"
+export COLOR_BLUE="\033[0;34m"
+export COLOR_OFF="\033[0m"
+export COLOR_ON=${COLOR_GREEN}
+ 
+export PS_COLOR_RED="\[${COLOR_RED}\]"
+export PS_COLOR_GREEN="\[${COLOR_GREEN}\]"
+export PS_COLOR_BROWN="\[${COLOR_BROWN}\]"
+export PS_COLOR_BLUE="\[${COLOR_BLUE}\]"
+export PS_COLOR_OFF="\[${COLOR_OFF}\]"
+export PS_COLOR_ON="\[${COLOR_ON}\]"
+
+PROMPT_COMMAND='prompt --check; printf "%s" '
+
+# vim: filetype=sh
