@@ -5,11 +5,11 @@
 set input-meta on
 set output-meta on
 
-# To allow the use of 8bit-characters like the german umlauts, comment out
+# To allow the use of 8bit-characters like the german umlauts, uncomment
 # the line below. However this makes the meta key not work as a meta key,
 # which is annoying to those which don't need to type in 8-bit characters.
 
-# set convert-meta off
+set convert-meta off
 
 # try to enable the application keypad when it is called.  Some systems
 # need this to enable the arrow keys.
@@ -19,6 +19,7 @@ set output-meta on
 
 # do not bell on tab-completion
 # set bell-style none
+# set bell-style visible
 
 # some defaults / modifications for the emacs mode
 $if mode=emacs
@@ -65,10 +66,9 @@ $endif
 $endif
 
 $if mode=vi
-set convert-meta on
-"\C-p": dynamic-complete-history
-"\C-n": menu-complete
-"\C-l": clear-screen
+  "\C-p": dynamic-complete-history
+  "\C-n": menu-complete
+  "\C-l": clear-screen
 $endif
 
 "\e[1;3A": history-search-backward
