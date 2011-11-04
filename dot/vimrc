@@ -246,7 +246,9 @@ vnoremap <c-k> :move-2<cr>gv=gv
 " ============================================================================
 
 set nofoldenable
-set foldmethod=indent foldlevelstart=1 foldnestmax=2
+set foldmethod=indent
+set foldlevelstart=1
+set foldnestmax=2
 
 " enable/disable folding
 map <leader>ze :set foldenable<cr>

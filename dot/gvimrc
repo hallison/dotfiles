@@ -21,7 +21,10 @@ set guioptions-=T
 set guioptions-=m
 
 " turn off right-hand scroll-bar
-set guioptions-=RLrl
+set guioptions-=R
+set guioptions-=r
+set guioptions-=L
+set guioptions-=l
 
 " Tabs
 " ============================================================================
