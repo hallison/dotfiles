@@ -92,6 +92,10 @@ set nowrap nowrapscan
 " load indentation files
 filetype plugin indent on
 
+" sane indentation
+vnoremap > >gv
+vnoremap < <gv
+
 " Spelling
 " ============================================================================
 
@@ -312,7 +316,9 @@ endfunction
 " get highlight
 map <leader>gh :echo HighlightGroup()<cr>
 
-" redo last command and macro registered at 'w' key
-vmap <silent><leader><leader>. :normal .<cr>
-vmap <silent><leader><leader>. :normal @w<cr>
+" redo last command in visual mode
+vnoremap <silent>. :normal .<cr>
+
+" redo last macro registered at 'w' key in visual mode
+vnoremap <silent><leader>. :normal @w<cr>
 
