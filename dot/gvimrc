@@ -26,8 +26,8 @@ set guioptions-=RLrl
 " Tabs
 " ============================================================================
 
-nnoremap <silent><a-[> :silent tabprevious<cr>
-nnoremap <silent><a-]> :silent tabnext<cr>
+nnoremap <silent><a-{> :silent tabprevious<cr>
+nnoremap <silent><a-}> :silent tabnext<cr>
 
 nnoremap <silent><a-1> 1gt
 nnoremap <silent><a-2> 2gt
@@ -54,5 +54,6 @@ nnoremap <silent><leader>tm0 :silent tabmove 9<cr>
 " Buffers
 " ============================================================================
 
-nnoremap <silent><a-{> :bprevious<cr>
-nnoremap <silent><a-}> :bnext<cr>
+nnoremap <silent><a-<> :bprevious<cr>
+nnoremap <silent><a->> :bnext<cr>
+

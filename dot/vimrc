@@ -181,8 +181,8 @@ set laststatus=2
 nnoremap <leader>to :silent tabnew<cr>
 
 " tab navigation
-nnoremap <silent><esc>[ :silent tabprevious<cr>
-nnoremap <silent><esc>] :silent tabnext<cr>
+nnoremap <silent><esc>{ :silent tabprevious<cr>
+nnoremap <silent><esc>} :silent tabnext<cr>
 
 " goto tab #
 nnoremap <silent><esc>1 1gt
@@ -210,10 +210,10 @@ nnoremap <silent><leader>tm0 :silent tabmove 9<cr>
 
 " Buffers
 " ============================================================================
-
+"
 " buffer navigation
-nnoremap <silent><esc>{ :bprevious<cr>
-nnoremap <silent><esc>} :bnext<cr>
+nnoremap <silent><esc>< :bprevious<cr>
+nnoremap <silent><esc>> :bnext<cr>
 
 " quickly save
 nnoremap <f2> :write<cr>
