@@ -19,6 +19,7 @@ autocmd FileType txt,txt2tags,markdown,textile set
   \ wrapscan
   \ wrapmargin=78
   \ formatoptions+=t
+  \ spell
 
 " Paths
 " ============================================================================
@@ -100,7 +101,9 @@ vnoremap < <gv
 " ============================================================================
 
 " spell checking
-set spell spelllang=en,pt
+set spelllang=pt,en
+" disable spell
+set nospell
 
 " UI
 " ============================================================================
@@ -264,25 +267,10 @@ map <leader>zd :set nofoldenable<cr>
 " limit in 3 lines bellow and above.
 set scrolloff=3
 
-" SuperTab
-" ============================================================================
-
-let g:SuperTabDefaultCompletionType = "<c-n>"
-
-" Sessions
-" ============================================================================
-
-let g:sessions_project_path = "$HOME/Code/applications:$HOME/Code/frameworks:$HOME/Code/resources:$HOME/Code/websites"
-
 " Bash
 " ============================================================================
 
 let is_bash=1
-
-" NERD tree
-" ============================================================================
-noremap <silent><leader>e :NERDTreeToggle<cr>
-let NERDTreeIgnore = ['\.rbc']
 
 function! HighlightGroup()
   if !exists("*synstack")
