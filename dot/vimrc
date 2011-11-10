@@ -264,14 +264,6 @@ map <leader>zd :set nofoldenable<cr>
 " limit in 3 lines bellow and above.
 set scrolloff=3
 
-" VimExplorer
-" ============================================================================
-
-let g:VEConf_externalExplorer = "thunar"
-let g:VEConf_showHiddenFiles = 0
-let g:VEConf_filePanelSortType = 1
-let g:VEConf_treeSortDirection = 1
-
 " SuperTab
 " ============================================================================
 
@@ -291,20 +283,6 @@ let is_bash=1
 " ============================================================================
 noremap <silent><leader>e :NERDTreeToggle<cr>
 let NERDTreeIgnore = ['\.rbc']
-
-" Ruby-Debugger
-" ============================================================================
-":let g:ruby_debugger_fast_sender = 1
-noremap <silent><leader>.b  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.toggle_breakpoint()<cr>
-noremap <silent><leader>.v  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.open_variables()<cr>
-noremap <silent><leader>.m  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.open_breakpoints()<cr>
-noremap <silent><leader>.t  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.open_frames()<cr>
-noremap <silent><leader>.s  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.step()<cr>
-noremap <silent><leader>.f  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.finish()<cr>
-noremap <silent><leader>.n  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.next()<cr>
-noremap <silent><leader>.c  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.continue()<cr>
-noremap <silent><leader>.e  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.exit()<cr>
-noremap <silent><leader>.d  :call ruby_debugger#load_debugger() <bar> call g:RubyDebugger.remove_breakpoints()<cr>
 
 function! HighlightGroup()
   if !exists("*synstack")
