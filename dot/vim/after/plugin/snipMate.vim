@@ -10,11 +10,11 @@ let s:did_snips_mappings = 1
 "
 " You can safely adjust these mappings to your preferences (as explained in
 " :help snipMate-remap).
-inoremap <silent><leader><tab> <c-r>=TriggerSnippet()<cr>
-snoremap <silent><tab>         <esc>i<right><c-r>=TriggerSnippet()<cr>
-inoremap <silent><s-tab>       <c-r>=BackwardsSnippet()<cr>
-snoremap <silent><s-tab>       <esc>i<right><c-r>=BackwardsSnippet()<cr>
-inoremap <silent><c-r><tab>    <c-r>=ShowAvailableSnips()<cr>
+inoremap <silent><leader><tab>    <c-r>=TriggerSnippet()<cr>
+snoremap <silent><tab>            <esc>i<right><c-r>=TriggerSnippet()<cr>
+inoremap <silent><leader><leader> <c-r>=BackwardsSnippet()<cr>
+snoremap <silent><s-tab>          <esc>i<right><c-r>=BackwardsSnippet()<cr>
+inoremap <silent><c-r><tab>       <c-r>=ShowAvailableSnips()<cr>
 
 " The default mappings for these are annoying & sometimes break snipMate.
 " You can change them back if you want, I've put them here for convenience.
