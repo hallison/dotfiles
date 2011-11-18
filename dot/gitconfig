@@ -23,6 +23,7 @@
   # who did this
   wdt = shortlog -se --
   msg = commit --allow-empty -m
+  io = "!sh -c 'curl -is http://git.io -F url=\"$1\" | grep Location | cut -d\\  -f2' -"
 [branch]
   autosetupmerge = true
 [apply]
