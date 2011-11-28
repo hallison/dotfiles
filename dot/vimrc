@@ -93,10 +93,6 @@ set nowrap nowrapscan
 " load indentation files
 filetype plugin indent on
 
-" sane indentation
-vnoremap > >gv
-vnoremap < <gv
-
 " Spelling
 " ============================================================================
 
