@@ -48,6 +48,12 @@ for file in ${SOURCE_PATH[@]}; do
   test -f ${file} && source ${file}
 done
 
+# Profiles
+# ============================================================================
+test -d ~/.profile.d && for rule in ~/.profile.d/*.sh; do
+  . $rule
+done
+
 # Aliases
 # ============================================================================
 
