@@ -1,0 +1,5 @@
+for i in $HOME/.bash_completion.d/*; do
+  . $i
+done
+
+# vim: ft=sh
