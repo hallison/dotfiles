@@ -22,16 +22,6 @@ export VISUAL="gvim -f"
 # Set 'readline' command parameters for binds
 export INPUTRC=${HOME}/.inputrc
 
-# RVM Settings
-if test -s /etc/rvmrc; then
-  source /etc/rvmrc
-  source ${rvm_path}/scripts/rvm
-elif test -s ${HOME}/.rvm/scripts/rvm; then
-  source ${HOME}/.rvm/scripts/rvm
-else
-  : rvm not found
-fi
-
 # Shell options
 # ============================================================================
 
@@ -138,30 +128,6 @@ alias svl='svn log'
 alias svr='svn delete'
 alias sva='svn add'
 alias svr='svn revert'
-
-# Development
-# ============================================================================
-
-# Ruby
-alias r187='rvm 1.8.7'
-alias r192='rvm 1.9.2'
-alias  rbx='rvm rbx'
-alias  irb='irb --readline --simple-prompt -r irb/completion'
-
-# Rake
-alias rake='rake --require rubygems'
-alias  rkd='rake --describe'
-alias  rkt='rake --tasks'
-alias  rkp='rake --prereqs'
-alias  rks='rake --system'
-
-# RubyGems
-alias rgu='gem update'
-alias rga='gem install'
-alias rgr='gem uninstall'
-alias rgs='gem search --remote'
-alias rgl='gem list'
-alias rgb='gem build'
 
 # Prompt
 # ============================================================================
