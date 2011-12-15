@@ -1,3 +1,6 @@
 # RVM Settings
-test -s "$HOME/.rvm/scripts/rvm" && . "$HOME/.rvm/scripts/rvm"
+test -s "$HOME/.rvm/scripts/rvm" && {
+  . "$HOME/.rvm/scripts/rvm"
+  . "$HOME/.rvm/scripts/completion"
+}
 
