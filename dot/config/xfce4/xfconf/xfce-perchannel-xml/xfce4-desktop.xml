@@ -24,5 +24,16 @@
       <property name="show-home" type="bool" value="true"/>
       <property name="show-filesystem" type="bool" value="true"/>
     </property>
+    <property name="use-custom-font-size" type="bool" value="false"/>
+    <property name="icon-size" type="uint" value="36"/>
+  </property>
+  <property name="windowlist-menu" type="empty">
+    <property name="show-icons" type="bool" value="true"/>
+    <property name="show-submenus" type="bool" value="true"/>
+    <property name="show-sticky-once" type="bool" value="true"/>
+  </property>
+  <property name="desktop-menu" type="empty">
+    <property name="show-icons" type="bool" value="true"/>
+    <property name="show" type="bool" value="true"/>
   </property>
 </channel>
