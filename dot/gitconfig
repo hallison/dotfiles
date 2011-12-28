@@ -8,9 +8,9 @@
   status      = auto
 [core]
   #excludesfile = /home/hallison/.gitignore
-  editor = gvim -f
+  editor = vim
 [diff]
-  tool = gvimdiff -f
+  tool = vim -d
 [alias]
   st = status
   ci = commit
