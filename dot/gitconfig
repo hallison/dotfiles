@@ -1,0 +1,37 @@
+[user]
+  name  = Hallison Batista
+  email = hallison.batista@gmail.com
+[color]
+  branch      = auto
+  diff        = auto
+  interactive = auto
+  status      = auto
+[core]
+  #excludesfile = /home/hallison/.gitignore
+  editor = vim
+[diff]
+  tool = vim -d
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  br = branch
+  df = diff
+  lg = log -p
+  #ls = log HEAD --stat --no-merges
+  ls = ls-tree HEAD:
+  # who did this
+  wdt = shortlog -se --
+  msg = commit --allow-empty -m
+  io = "!sh -c 'curl -is http://git.io -F url=\"$1\" | grep Location | cut -d\\  -f2' -"
+[branch]
+  autosetupmerge = true
+[apply]
+  whitespace = nowarn
+[gc]
+  auto = 1
+[push]
+	default = matching
+
+# vim: filetype=gitconfig
+
