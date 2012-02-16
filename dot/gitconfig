@@ -12,14 +12,17 @@
 [diff]
   tool = vim -d
 [alias]
-  st = status
+  #ls = log HEAD --stat --no-merges
   ci = commit
   co = checkout
-  br = branch
-  df = diff
-  lg = log -p
-  #ls = log HEAD --stat --no-merges
+  dc = diff --cached  # diff staged changes
+  di = diff           # basic diff
+  lB = branch -vr     # list remote branches
+  lb = branch -v      # list local branches
+  ld = log -p         # log listing all differences
   ls = ls-tree HEAD:
+  st = status
+  up = remote update
   # who did this
   wdt = shortlog -se --
   msg = commit --allow-empty -m
