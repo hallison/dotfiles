@@ -42,8 +42,8 @@ $if mode=vi
   "\C-l": clear-screen
 $endif
 
-"\e[1;3A": history-search-backward
-"\e[1;3B": history-search-forward
+"\e[A": history-search-backward
+"\e[B": history-search-forward
 
 # mappings for Ctrl-left-arrow and Ctrl-right-arrow for word moving
 "\e[1;5C": forward-word
