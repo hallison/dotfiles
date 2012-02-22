@@ -19,7 +19,7 @@ test -n "$(git tag -l $tag)" &> /dev/null && {
   commit=${2:-$(git log $tag --format="%H" | head -1 |  tr -d "\n")}
   date=${3:-$(git log $tag --format="%ai" | head -1 | tr -d "\n")}
 
-  GIT_COMITTER_DATE="${date}" git tag -a -s -F ${1} ${tag} ${commit}
+  GIT_COMITTER_DATE="${date}" git tag -asf -F ${1} ${tag} ${commit}
 
   unset usage tag commit date
 } || {
