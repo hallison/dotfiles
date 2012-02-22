@@ -154,4 +154,10 @@ export PS_COLOR_ON="\[${COLOR_ON}\]"
 
 PROMPT_COMMAND='prompt --check; printf "%s" '
 
+if [ -e /usr/share/terminfo/x/xterm?256color ]; then
+  export TERM='xterm-256color'
+else
+  export TERM='xterm-color'
+fi
+
 # vim: filetype=sh
