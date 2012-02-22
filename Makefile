@@ -11,8 +11,8 @@ dirname   = $(dir $(target))
 checkdir  = ! test -d $(dirname)
 mkdir     = $(checkdir) && install -d $(dirname)
 status    = printf "%s ... " $(target)
-install   = $(status) && install $(source) $(target) && echo ok || echo fail
-uninstall = $(status) && rm $(target) 2>/dev/null 	 && echo ok || echo fail
+install   = $(status) && cp $(source) $(target)   && echo ok || echo fail
+uninstall = $(status) && rm $(target) 2>/dev/null && echo ok || echo fail
 
 install: $(sources)
 	@$(foreach source,$^, $(mkdir); $(install);)
