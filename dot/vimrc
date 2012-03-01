@@ -223,13 +223,13 @@ nnoremap <f2> :write<cr>
 nnoremap <s-f2> :wall<cr>
 
 " make buffer
-noremap <leader>bm :make %<cr>
+noremap <silent><leader>m :make %<cr>
 
 " source buffer
-noremap <silent><leader>bs :source %<cr>
+noremap <silent><leader>s :source %<cr>
 
 " make buffer executable
-map <leader>bx :!chmod +x %<cr>
+noremap <silent><leader>x :!chmod +x %<cr>
 
 " Window
 " ============================================================================
