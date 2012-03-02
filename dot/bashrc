@@ -137,6 +137,22 @@ alias svr='svn revert'
 
 # Prompt
 # ============================================================================
+# 0;30 Black
+# 0;31 Red
+# 0;32 Green
+# 0;33 Brown
+# 0;34 Blue
+# 0;35 Purple
+# 0;36 Cyan
+# 0;37 Light Gray
+# 1;30 Dark Gray
+# 1;31 Light Red
+# 1;32 Light Green
+# 1;33 Yellow
+# 1;34 Light Blue
+# 1;35 Pink
+# 1;36 Light Cyan
+# 1;37 White
 
 export COLOR_RED="\033[0;31m"
 export COLOR_GREEN="\033[0;32m"
