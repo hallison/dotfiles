@@ -58,7 +58,7 @@ URxvt*scrollstyle: plain
 URxvt*thickness: 2
 
 !## Extensions
-URxvt*perl-ext-common: default,tabbed,matcher
+URxvt*perl-ext-common: default,matcher
 URxvt*urlLauncher: xdg-open
 URxvt.matcher.button: 1
 URxvt.tabbed.tabbar-fb: 237
