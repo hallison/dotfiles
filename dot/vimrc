@@ -4,12 +4,6 @@
 " enable file type detection
 filetype on
 
-autocmd BufNewFile,BufRead *.{t2t,txt2tags}         set filetype=txt2tags
-autocmd BufNewFile,BufRead *.{md,mkd,mark,markdown} set filetype=markdown
-autocmd BufNewFile,BufRead *.{tx,txl,text,textile}  set filetype=textile
-autocmd BufNewFile,BufRead *.ru                     set filetype=ruby
-autocmd BufNewFile,BufRead *.{rd,rdoc}              set filetype=rdoc
-
 " format documents
 autocmd FileType txt,txt2tags,markdown,textile set
   \ textwidth=78
@@ -24,9 +18,6 @@ autocmd FileType txt,txt2tags,markdown,textile set
 " Paths
 " ============================================================================
 
-" includes gems path
-autocmd FileType ruby set path+=/usr/lib/ruby/gems/*/gems/**
-
 " includes current path
 set path+=./**
 
@@ -39,16 +30,6 @@ set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
 
 " keep swp files under $HOME/.vim/swap
 set directory=$HOME/.vim/swap/,.,$HOME/tmp,/tmp
-
-" Compilers
-" ============================================================================
-
-autocmd BufNewFile,BufRead {test_*,*_test}.rb compiler rubyunit
-autocmd FileType txt2tags compiler txt2tags
-autocmd FileType ruby     compiler ruby
-
-" use only Bash for shell script
-let is_bash=1
 
 " Backups
 " ============================================================================
