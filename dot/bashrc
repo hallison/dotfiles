@@ -154,26 +154,10 @@ alias svr='svn revert'
 # 1;36 Light Cyan
 # 1;37 White
 
-export COLOR_RED="\033[0;31m"
-export COLOR_GREEN="\033[0;32m"
-export COLOR_BROWN="\033[0;33m"
-export COLOR_BLUE="\033[0;34m"
-export COLOR_OFF="\033[0m"
-export COLOR_ON=${COLOR_GREEN}
- 
-export PS_COLOR_RED="\[${COLOR_RED}\]"
-export PS_COLOR_GREEN="\[${COLOR_GREEN}\]"
-export PS_COLOR_BROWN="\[${COLOR_BROWN}\]"
-export PS_COLOR_BLUE="\[${COLOR_BLUE}\]"
-export PS_COLOR_OFF="\[${COLOR_OFF}\]"
-export PS_COLOR_ON="\[${COLOR_ON}\]"
-
-PROMPT_COMMAND='prompt --check; printf "%s" '
-
-if [ -e /usr/share/terminfo/x/xterm?256color ]; then
-  export TERM='xterm-256color'
-else
-  export TERM='xterm-color'
-fi
+export SH_VCP_NONE=' '
+export SH_VCP_FORMAT='#\033[0;32m%s:%b\033[0m\033[0;33m%m\033[0;34m%a\033[0;31m%u\033[0m'
+export PROMPT_COMMAND='SH_VCP=`shvcp`; printf "%s"'
+export PS1='\u@\h \[\033[0;36m\]\w\[\033[0m\]\[${SH_VCP}\]\$ '
+export TERM='xterm-256color'
 
 # vim: filetype=sh
