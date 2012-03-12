@@ -22,7 +22,7 @@ autocmd FileType txt,txt2tags,markdown,textile set
 set path+=./**
 
 " adjust tags path
-set tags=$HOME/.vim/tags,.
+set tags=$HOME/.vim/tags,./tags
 
 " store backups under $HOME/.vim/backup
 set backupdir=$HOME/.vim/backup
@@ -33,9 +33,6 @@ set directory=$HOME/.vim/swap/,.,$HOME/tmp,/tmp
 
 " Backups
 " ============================================================================
-
-" disable creation of backup files
-set nobackup
 
 " do keep a backup while working
 set writebackup
