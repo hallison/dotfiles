@@ -262,3 +262,5 @@ vnoremap <silent>. :normal .<cr>
 " redo last macro registered at 'w' key in visual mode
 vnoremap <silent><leader>. :normal @w<cr>
 
+" set italic mode
+set t_ZH=[3m
