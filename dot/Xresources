@@ -38,14 +38,14 @@ URxvt*background   : Black
 !URxvt*font        : xft:terminus:pixelsize=15:antialias=true
 !URxvt*boldFont    : xft:terminus:bold:pixelsize=15:antialias=true
 !URxvt*italicFont  : xft:terminus:italic:pixelsize=15:antialias=true
-!URxvt*font         : xft:Ubuntu Mono:pixelsize=16:antialias=true:hinting=true
-!URxvt*boldFont     : xft:Ubuntu Mono:bold:pixelsize=16:antialias=true:hinting=true
-!URxvt*italicFont   : xft:Ubuntu Mono:italic:pixelsize=16:antialias=true:hinting=true
+URxvt*font         : xft:Ubuntu Mono:pixelsize=14:antialias=true:hinting=true
+URxvt*boldFont     : xft:Ubuntu Mono:bold:pixelsize=14:antialias=true:hinting=true
+URxvt*italicFont   : xft:Ubuntu Mono:italic:pixelsize=14:antialias=true:hinting=true
 !URxvt*font:-*-courier-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
 !URxvt*boldFont:-*-courier-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
-URxvt*font         : xft:monospace:pixelsize=14:antialias=true:hinting=true
-URxvt*boldFont     : xft:monospace:bold:pixelsize=14:antialias=true:hinting=true
-URxvt*italicFont   : xft:monospace:italic:pixelsize=14:antialias=true:hinting=true
+!URxvt*font         : xft:monospace:pixelsize=14:antialias=true:hinting=true
+!URxvt*boldFont     : xft:monospace:bold:pixelsize=14:antialias=true:hinting=true
+!URxvt*italicFont   : xft:monospace:italic:pixelsize=14:antialias=true:hinting=true
 !URxvt*letterSpace: -1
 
 !## Colors
