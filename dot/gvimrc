@@ -5,11 +5,10 @@
 colorscheme darkdevel
 
 " font for gvim
-set guifont=Ubuntu\ Mono\ 12
+set guifont=Ubuntu\ Mono\ 11
 
 " set GUI window size and position
-set lines=53 columns=168
-winpos 1 1
+set lines=44 columns=158
 
 " Custom shortcuts
 " ============================================================================
