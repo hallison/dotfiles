@@ -10,7 +10,7 @@
   #excludesfile = /home/hallison/.gitignore
   editor = vim
 [diff]
-  tool = vim -d
+  tool = vimdiff
 [alias]
   #ls = log HEAD --stat --no-merges
   ci = commit
