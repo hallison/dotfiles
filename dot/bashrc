@@ -51,7 +51,7 @@ done
 # Profiles
 # ============================================================================
 test -d ~/.profile.d && for rule in ~/.profile.d/*.sh; do
-  . $rule
+  source $rule
 done
 
 # Aliases
@@ -155,7 +155,7 @@ alias svr='svn revert'
 # 1;37 White
 
 export SH_VCP_NONE=' '
-export SH_VCP_FORMAT='#\033[0;32m%s:%b\033[0m\033[0;33m%m\033[0;34m%a\033[0;31m%u\033[0m'
+export SH_VCP_FORMAT="$(echo -e '#\033[0;32m%s:%b\033[0m\033[0;33m%m\033[0;34m%a\033[0;31m%u\033[0m')"
 export PROMPT_COMMAND='SH_VCP=`shvcp`; printf "%s"'
 export PS1='\u@\h \[\033[0;36m\]\w\[\033[0m\]\[${SH_VCP}\]\$ '
 export TERM='xterm-256color'
