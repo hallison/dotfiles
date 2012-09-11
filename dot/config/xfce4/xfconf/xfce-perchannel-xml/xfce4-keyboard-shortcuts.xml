@@ -23,9 +23,8 @@
       <property type="string" name="&lt;Super&gt;slash"                 value="xfmedia-remote --toggle"/>
       <property type="string" name="&lt;Super&gt;space"                 value="xfce4-appfinder"/>
       <property type="string" name="Print"                              value="xfce4-screenshooter"/>
-      <property type="string" name="XF86HomePage"                       value="xfbrowser4"/>
+      <property type="string" name="XF86HomePage"                       value="exo-open --launch WebBrowser"/>
       <property type="string" name="&lt;Super&gt;n"                     value="xfce4-popup-notes"/>
-      <property type="string" name="&lt;Super&gt;m"                     value="xfce4-popup-menu"/>
       <property type="string" name="&lt;Super&gt;l"                     value="xflock4"/>
       <property type="string" name="XF86AudioRaiseVolume"               value="amixer set Master 1+"/>
       <property type="string" name="XF86AudioLowerVolume"               value="amixer set Master 1-"/>
@@ -33,12 +32,12 @@
       <property type="string" name="&lt;Shift&gt;XF86AudioLowerVolume"  value="amixer set PCM 1-"/>
       <property type="string" name="XF86AudioMute"                      value="amixer set Master toggle"/>
       <property type="string" name="&lt;Super&gt;Down"                  value="xfce4-popup-applicationsmenu"/>
-      <property type="string" name="&lt;Super&gt;c"                     value="xfterm4"/>
+      <property type="string" name="&lt;Super&gt;t"                     value="exo-open --launch TerminalEmulator"/>
       <property type="string" name="&lt;Super&gt;m"                     value="xfmedia"/>
       <property type="string" name="&lt;Super&gt;s"                     value="xfce4-settings-manager"/>
-      <property type="string" name="&lt;Super&gt;b"                     value="xfbrowser4"/>
-      <property type="string" name="&lt;Super&gt;n"                     value="thunar network://"/>
-      <property type="string" name="&lt;Super&gt;e"                     value="thunar"/>
+      <property type="string" name="&lt;Super&gt;b"                     value="exo-open --launch WebBrowser"/>
+      <property type="string" name="&lt;Super&gt;n"                     value="exo-open --launch FileManager network://"/>
+      <property type="string" name="&lt;Super&gt;e"                     value="exo-open --launch FileManager"/>
       <property type="string" name="&lt;Super&gt;r"                     value="xfrun4"/>
     </property>
   </property>
