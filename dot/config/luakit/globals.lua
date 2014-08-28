@@ -20,8 +20,8 @@ local _, arch = luakit.spawn_sync("uname -sm")
 -- Only use the luakit version if in date format (reduces identifiability)
 local lkv = string.match(luakit.version, "^(%d+.%d+.%d+)")
 globals.useragent = string.format("Mozilla/5.0 (%s) AppleWebKit/%s+ (KHTML, like Gecko) WebKitGTK+/%s luakit%s",
-string.sub(arch, 1, -2), (luakit.webkit_user_agent_version or ""),
-( luakit.webkit_version or ""), (lkv and ("/" .. lkv)) or "")
+    string.sub(arch, 1, -2), luakit.webkit_user_agent_version,
+    luakit.webkit_version, (lkv and ("/" .. lkv)) or "")
 
 -- Search common locations for a ca file which is used for ssl connection validation.
 local ca_files = {
@@ -51,13 +51,11 @@ soup.accept_policy = cookie_policy.always
 -- it to avoid collisions with lua's string.format characters.
 -- See: http://www.lua.org/manual/5.1/manual.html#pdf-string.format
 search_engines = {
-    luakit      = "http://luakit.org/search/index/luakit?q=%s",
-    google      = "http://google.com/search?q=%s",
-    duckduckgo  = "http://duckduckgo.com/?q=%s",
-    wikipedia   = "http://en.wikipedia.org/wiki/Special:Search?search=%s",
-    debbugs     = "http://bugs.debian.org/%s",
-    imdb        = "http://imdb.com/find?s=all&q=%s",
-    sourceforge = "http://sf.net/search/?words=%s",
+    duckduckgo  = "https://duckduckgo.com/?q=%s",
+    github      = "https://github.com/search?q=%s",
+    google      = "https://google.com/search?q=%s",
+    imdb        = "http://www.imdb.com/find?s=all&q=%s",
+    wikipedia   = "https://en.wikipedia.org/wiki/Special:Search?search=%s",
 }
 
 -- Set google as fallback search engine
@@ -66,7 +64,7 @@ search_engines.default = search_engines.google
 --search_engines.default = "%s"
 
 -- Per-domain webview properties
--- See http://webkitgtk.org/reference/webkitgtk-WebKitWebSettings.html
+-- See http://webkitgtk.org/reference/webkitgtk/stable/WebKitWebSettings.html
 domain_props = { --[[
     ["all"] = {
         enable_scripts          = false,
