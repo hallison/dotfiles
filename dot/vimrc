@@ -1,6 +1,9 @@
 " File types
 " ============================================================================
 
+" auto reload
+autocmd! BufWritePost .vimrc source %
+
 " enable file type detection
 filetype on
 

@@ -1,3 +1,6 @@
+" auto reload
+autocmd! BufWritePost .gvimrc source %
+
 " GUI style
 " ============================================================================
 
