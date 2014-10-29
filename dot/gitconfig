@@ -1,6 +1,6 @@
 [user]
   name  = Hallison Batista
-  email = hallison.batista@gmail.com
+  email = hallisonbatista@gmail.com
 [color]
   branch      = auto
   diff        = auto
@@ -12,21 +12,20 @@
 [diff]
   tool = vimdiff
 [alias]
-  #ls = log HEAD --stat --no-merges
   ci = commit
   co = checkout
-  dc = diff --cached  # diff staged changes
-  di = diff           # basic diff
-  lB = branch -vr     # list remote branches
-  lb = branch -v      # list local branches
-  ld = log -p         # log listing all differences
   ls = ls-tree HEAD:
   st = status
   up = remote update
-  # who did this
-  wdt = shortlog -se --
-  msg = commit --allow-empty
-  io = "!sh -c 'curl -is http://git.io -F url=\"$1\" | grep Location | cut -d\\  -f2' -"
+  lsrb  = branch -vr      # list remote branches
+  lslb  = branch -v       # list local branches
+  lsdf  = log -p          # log listing all differences
+  lscis = shortlog -se -- # who did this - list commiters
+  msg   = commit --allow-empty
+  diffc = diff --cached  # diff staged changes
+  logstat  = log HEAD --stat --no-merges
+  branches = branch -av     # list remote branches
+  tags     = tag -l
 [branch]
   autosetupmerge = true
 [apply]
