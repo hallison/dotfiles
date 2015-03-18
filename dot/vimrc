@@ -19,6 +19,7 @@ autocmd FileType txt,txt2tags,markdown,textile set
   \ wrapmargin=78
   \ formatoptions+=t
   \ spell
+autocmd FileType textile set wrapmargin=0
 
 " Paths
 " ============================================================================
