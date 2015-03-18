@@ -1,17 +1,19 @@
+" Leader key
+let mapleader = '='
+
 " File types
 " ============================================================================
 
-" auto reload
+" Auto reload
 autocmd! BufWritePost .vimrc source %
 
-" enable file type detection
+" Enable file type detection
 filetype on
 
-" format documents
+" Format documents
 autocmd FileType txt,txt2tags,markdown,textile set
   \ textwidth=78
   \ shiftwidth=2
-  \ expandtab
   \ wrap
   \ wrapscan
   \ wrapmargin=78
@@ -21,129 +23,131 @@ autocmd FileType txt,txt2tags,markdown,textile set
 " Paths
 " ============================================================================
 
-" includes current path
+" Includes current path
 set path+=./**
 
-" adjust tags path
+" Adjust tags path
 set tags=$HOME/.vim/tags,./tags
 
-" store backups under $HOME/.vim/backup
+" Store backups under $HOME/.vim/backup
 set backupdir=$HOME/.vim/backup
 set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
 
-" keep swp files under $HOME/.vim/swap
+" Keep swap files under $HOME/.vim/swap
 set directory=$HOME/.vim/swap/,.,$HOME/tmp,/tmp
 
 " Backups
 " ============================================================================
 
-" do keep a backup while working
+" Do keep a backup while working
 set writebackup
 
-" keep attributes of original file
+" Keep attributes of original file
 set backupcopy=yes
 
 " Indentation
 " ============================================================================
 
-" preserve current indent on new lines
+" Preserve current indent on new lines
 set autoindent
 
-" uses auto-indent when start new line
+" Uses auto-indent when start new line
 set smartindent
 
-" indentation levels every two columns
+" Indentation levels every two columns
 set tabstop=2
 set softtabstop=2
 
-" convert all tabs to space
+" Convert all tabs to space
 set expandtab
 
-" indent/outdent by two columns
+" Indent/outdent by two columns
 set shiftwidth=2
 
-" indent/outdent to nearest tabstops
+" Indent/outdent to nearest tabstops
 set shiftround
 
-" make backspaces delete sensibly
+" Make backspaces delete sensibly
 set backspace=indent,eol,start
 
-" no line wraps
+" No line wraps
+set wrapmargin=0
 set nowrap nowrapscan
+set textwidth=0
 
-" load indentation files
+" Load indentation files
 filetype plugin indent on
 
 " Spelling
 " ============================================================================
 
-" spell checking
+" Spell checking
 set spelllang=pt,en
-" disable spell
+" Disable spell
 set nospell
 
 " UI
 " ============================================================================
 
-" adjust color scheme
+" Adjust color scheme
 colorscheme darkdevel
 
-" show line numbers
+" Show line numbers
 set number
 
-" enable syntax for buffer
+" Enable syntax for buffer
 syntax on
 
 set autowrite
-set encoding=utf8
 
-" text and file should be encoded UTF-8.
+" Text and file should be encoded UTF-8.
 set fileencoding=utf8
 setglobal encoding=utf-8
 setglobal fileencoding=utf-8
 
-" display incomplete commands
+" Display incomplete commands
 set showcmd
 
-" incremental searching
+" Incremental searching
 set incsearch
 
-" highlight search maches
+" Highlight search maches
 set hlsearch
 
-" show cursor position
+" Show cursor position
 set ruler
 
-" turn on menu in command line
+" Turn on menu in command line
 set wildmenu
 set wildmode=list:longest,full
 
-" show matches in searching
+" Show matches in searching
 set showmatch
+nnoremap <leader>- :nohlsearch<cr>
 
-" ignore case for searching
+" Ignore case for searching
 set ignorecase
 
-" duration to show brace matches (1/10)
+" Duration to show brace matches (1/10)
 set matchtime=2
 
-" enable commands in comments
+" Enable commands in comments
 set modeline
 
-" sane moves
+" Sane moves
 nnoremap j gj
 nnoremap k gk
 inoremap <left> <left>
 inoremap <right> <right>
 
-" quoting paragraphs
+" Quoting paragraphs
 nmap Q gqap
 vmap Q gq
 
 " Windows
 " ============================================================================
 
-" split buffers and set half size.
+" Split buffers and set half size.
 set equalalways
 
 " Trailing whitespaces
@@ -162,13 +166,14 @@ set laststatus=2
 " Tabs
 " ============================================================================
 
-nnoremap <leader>to :silent tabnew<cr>
+nnoremap <leader>te :silent tabnew<cr>
+nnoremap <leader>to :browse tabedit
 
-" tab navigation
+" Tab navigation
 nnoremap <silent><esc>{ :silent tabprevious<cr>
 nnoremap <silent><esc>} :silent tabnext<cr>
 
-" goto tab #
+" Go to tab #
 nnoremap <silent><esc>1 1gt
 nnoremap <silent><esc>2 2gt
 nnoremap <silent><esc>3 3gt
@@ -180,45 +185,45 @@ nnoremap <silent><esc>8 8gt
 nnoremap <silent><esc>9 9gt
 nnoremap <silent><esc>0 10gt
 
-" tab and re-tab
-nnoremap <silent><leader>tm1 :silent tabmove 0<cr>
-nnoremap <silent><leader>tm2 :silent tabmove 1<cr>
-nnoremap <silent><leader>tm3 :silent tabmove 2<cr>
-nnoremap <silent><leader>tm4 :silent tabmove 3<cr>
-nnoremap <silent><leader>tm5 :silent tabmove 4<cr>
-nnoremap <silent><leader>tm6 :silent tabmove 5<cr>
-nnoremap <silent><leader>tm7 :silent tabmove 6<cr>
-nnoremap <silent><leader>tm8 :silent tabmove 7<cr>
-nnoremap <silent><leader>tm9 :silent tabmove 8<cr>
-nnoremap <silent><leader>tm0 :silent tabmove 9<cr>
+" Tab and re-tab
+nnoremap <silent><leader>tt1 :silent tabmove 0<cr>
+nnoremap <silent><leader>tt2 :silent tabmove 1<cr>
+nnoremap <silent><leader>tt3 :silent tabmove 2<cr>
+nnoremap <silent><leader>tt4 :silent tabmove 3<cr>
+nnoremap <silent><leader>tt5 :silent tabmove 4<cr>
+nnoremap <silent><leader>tt6 :silent tabmove 5<cr>
+nnoremap <silent><leader>tt7 :silent tabmove 6<cr>
+nnoremap <silent><leader>tt8 :silent tabmove 7<cr>
+nnoremap <silent><leader>tt9 :silent tabmove 8<cr>
+nnoremap <silent><leader>tt0 :silent tabmove 9<cr>
 
 " Buffers
 " ============================================================================
 "
-" buffer navigation
+" Buffer navigation
 nnoremap <silent><esc>< :bprevious<cr>
 nnoremap <silent><esc>> :bnext<cr>
 
-" quickly save
+" Quickly save
 nnoremap <f2> :write<cr>
 nnoremap <s-f2> :wall<cr>
 
-" make buffer
+" Make buffer
 noremap <silent><leader>m :make %<cr>
 
-" source buffer
+" Source buffer
 noremap <silent><leader>s :source %<cr>
 
-" make buffer executable
+" Make buffer executable
 noremap <silent><leader>x :!chmod +x %<cr>
 
 " Window
 " ============================================================================
 
-" window cycle
+" Window cycle
 nnoremap <c-tab> <c-w>w
 
-" move lines around
+" Move lines around
 nnoremap <c-j> :move+<cr>==
 nnoremap <c-k> :move-2<cr>==
 inoremap <c-j> <esc>:move+<cr>==gi
@@ -234,14 +239,14 @@ set foldmethod=indent
 set foldlevelstart=1
 set foldnestmax=2
 
-" enable/disable folding
+" Enable/disable folding
 map <leader>ze :set foldenable<cr>
 map <leader>zd :set nofoldenable<cr>
 
 " Scrolling
 " ============================================================================
 
-" limit in 3 lines bellow and above.
+" Limit in 3 lines bellow and above.
 set scrolloff=3
 
 " Bash
@@ -256,14 +261,14 @@ function! HighlightGroup()
   return string(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'))
 endfunction
 
-" get highlight
+" Get highlight
 map <leader>gh :echo HighlightGroup()<cr>
 
-" redo last command in visual mode
+" Redo last command in visual mode
 vnoremap <silent>. :normal .<cr>
 
-" redo last macro registered at 'w' key in visual mode
+" Redo last macro registered at 'w' key in visual mode
 vnoremap <silent><leader>. :normal @w<cr>
 
-" set italic mode
+" Set italic mode
 set t_ZH=[3m
