@@ -137,7 +137,9 @@ set modeline
 
 " Sane moves
 nnoremap j gj
+vnoremap j gj
 nnoremap k gk
+vnoremap k gk
 inoremap <left> <left>
 inoremap <right> <right>
 
