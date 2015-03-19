@@ -1,9 +1,6 @@
 " Leader key
 let mapleader = '='
 
-" File types
-" ============================================================================
-
 " Auto reload
 autocmd! BufWritePost .vimrc source %
 
@@ -19,16 +16,21 @@ autocmd FileType txt,txt2tags,markdown,textile set
   \ wrapmargin=78
   \ formatoptions+=t
   \ spell
+
 autocmd FileType textile set wrapmargin=0
 
-" Paths
-" ============================================================================
+" Even save files
+autocmd FocusLost * :wall
 
 " Includes current path
 set path+=./**
 
 " Adjust tags path
 set tags=$HOME/.vim/tags,./tags
+
+" Undo ever...
+set undodir=$HOME/vim/undo
+set undofile
 
 " Store backups under $HOME/.vim/backup
 set backupdir=$HOME/.vim/backup
@@ -37,17 +39,11 @@ set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
 " Keep swap files under $HOME/.vim/swap
 set directory=$HOME/.vim/swap/,.,$HOME/tmp,/tmp
 
-" Backups
-" ============================================================================
-
 " Do keep a backup while working
 set writebackup
 
 " Keep attributes of original file
 set backupcopy=yes
-
-" Indentation
-" ============================================================================
 
 " Preserve current indent on new lines
 set autoindent
@@ -79,26 +75,19 @@ set textwidth=0
 " Load indentation files
 filetype plugin indent on
 
-" Spelling
-" ============================================================================
-
 " Spell checking
 set spelllang=pt,en
 " Disable spell
 set nospell
 
-" UI
-" ============================================================================
-
 " Adjust color scheme
 colorscheme darkdevel
 
-" Show line numbers
-set number
+" Show the current line and improve moves using others line relatively
+set relativenumber
 
 " Enable syntax for buffer
 syntax on
-
 set autowrite
 
 " Text and file should be encoded UTF-8.
@@ -147,28 +136,17 @@ inoremap <right> <right>
 nmap Q gqap
 vmap Q gq
 
-" Windows
-" ============================================================================
-
 " Split buffers and set half size.
 set equalalways
-
-" Trailing whitespaces
-" ============================================================================
 
 set listchars=trail:.,tab:▸\ ,eol:¬
 
 nnoremap <leader>l :set list<cr>
 
-" Status line
-" ============================================================================
-
 set statusline=\ %Y\ \|\ %{&ff}\ \|\ %04lx%04v/%04p%%\ %L\ \|\ %F%m%=%r%h[%n]
 set laststatus=2
 
-" Tabs
-" ============================================================================
-
+" Open tab
 nnoremap <leader>te :silent tabnew<cr>
 nnoremap <leader>to :browse tabedit
 
@@ -200,9 +178,6 @@ nnoremap <silent><leader>tt8 :silent tabmove 7<cr>
 nnoremap <silent><leader>tt9 :silent tabmove 8<cr>
 nnoremap <silent><leader>tt0 :silent tabmove 9<cr>
 
-" Buffers
-" ============================================================================
-"
 " Buffer navigation
 nnoremap <silent><esc>< :bprevious<cr>
 nnoremap <silent><esc>> :bnext<cr>
@@ -215,16 +190,18 @@ nnoremap <s-f2> :wall<cr>
 noremap <silent><leader>m :make %<cr>
 
 " Source buffer
-noremap <silent><leader>s :source %<cr>
+noremap <silent><leader>sf :source %<cr>
 
 " Make buffer executable
-noremap <silent><leader>x :!chmod +x %<cr>
-
-" Window
-" ============================================================================
+noremap <silent><leader>xf :!chmod +x %<cr>
 
 " Window cycle
 nnoremap <c-tab> <c-w>w
+nnoremap <leader>w<tab> <c-w>w
+"
+" Split curren window
+nnoremap <leader>ws <c-w>s<c-w>j
+nnoremap <leader>ww <c-w>v<c-w>l
 
 " Move lines around
 nnoremap <c-j> :move+<cr>==
@@ -235,8 +212,6 @@ vnoremap <c-j> :move'>+<cr>gv=gv
 vnoremap <c-k> :move-2<cr>gv=gv
 
 " Folding
-" ============================================================================
-
 set nofoldenable
 set foldmethod=indent
 set foldlevelstart=1
@@ -246,17 +221,13 @@ set foldnestmax=2
 map <leader>ze :set foldenable<cr>
 map <leader>zd :set nofoldenable<cr>
 
-" Scrolling
-" ============================================================================
-
 " Limit in 3 lines bellow and above.
 set scrolloff=3
 
 " Bash
-" ============================================================================
-
 let is_bash=1
 
+" Show highlight group
 function! HighlightGroup()
   if !exists("*synstack")
     return
@@ -275,3 +246,4 @@ vnoremap <silent><leader>. :normal @w<cr>
 
 " Set italic mode
 set t_ZH=[3m
+
