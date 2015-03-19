@@ -17,7 +17,9 @@ autocmd FileType txt,txt2tags,markdown,textile set
   \ formatoptions+=t
   \ spell
 
-autocmd FileType textile set wrapmargin=0
+autocmd FileType textile set
+  \ wrapmargin=0
+  \ textwidth=0
 
 " Even save files
 autocmd FocusLost * :wall
@@ -133,7 +135,7 @@ inoremap <left> <left>
 inoremap <right> <right>
 
 " Quoting paragraphs
-nmap Q gqap
+nmap Q gqip
 vmap Q gq
 
 " Split buffers and set half size.
