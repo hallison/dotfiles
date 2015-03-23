@@ -15,7 +15,7 @@
   ci = commit
   co = checkout
   ls = ls-tree HEAD:
-  st = status
+  st = status .
   up = remote update
   lsrb  = branch -vr      # list remote branches
   lslb  = branch -v       # list local branches
