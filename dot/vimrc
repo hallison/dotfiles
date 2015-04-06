@@ -17,7 +17,7 @@ autocmd FileType txt,txt2tags,markdown,textile set
   \ formatoptions+=t
   \ spell
 
-autocmd FileType textile set
+autocmd FileType html,textile set
   \ wrapmargin=0
   \ textwidth=0
 
@@ -84,6 +84,9 @@ set nospell
 
 " Adjust color scheme
 colorscheme darkdevel
+
+" Show line numbers
+set number
 
 " Show the current line and improve moves using others line relatively
 set relativenumber
