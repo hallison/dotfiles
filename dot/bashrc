@@ -159,4 +159,7 @@ export SH_VCP_FORMAT="$(echo -e '#\033[0;32m%s:%b\033[0m\033[0;33m%m\033[0;34m%a
 export PROMPT_COMMAND='SH_VCP=`shvcp`; printf "%s"'
 export PS1='\u@\h \[\033[0;36m\]\w\[\033[0m\]\[${SH_VCP}\]\$ '
 
+# Cleanup PATH
+export PATH=$(hash -r && echo $PATH | tr ':' '\n' | sort -u | tr '\n' ':')
+
 # vim: filetype=sh
