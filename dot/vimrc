@@ -24,8 +24,14 @@ autocmd FileType html,textile set
 " Even save files
 autocmd FocusLost * :wall
 
+" Load local configuraions
+"set exrc
+
 " Includes current path
 set path+=./**
+
+" Any directoy can have a Vim directory
+set runtimepath+=$PWD/.vim
 
 " Adjust tags path
 set tags=$HOME/.vim/tags,./tags
