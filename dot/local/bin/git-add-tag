@@ -1,0 +1,21 @@
+#!/bin/bash
+#@Create a tag for versioning using a changelog file.
+#@
+#@Usage:
+#@  ${0##*/} <file> [date]
+#@
+#@Example:
+#@  # tag named to v0.1.0
+#@  $ ${0##*/} doc/releases/v0.1.0.rdoc 2012-02-22
+#@
+
+: ${1:?tag file is required}
+
+tag=${1##*/}
+
+git tag -a -s -F ${1} ${tag%.*}
+
+unset tag
+
+exit 0
+

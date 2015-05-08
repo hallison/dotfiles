@@ -1,0 +1,39 @@
+[user]
+  name  = Hallison Batista
+  email = hallisonbatista@gmail.com
+[color]
+  branch      = auto
+  diff        = auto
+  interactive = auto
+  status      = auto
+[core]
+  #excludesfile = /home/hallison/.gitignore
+  editor = vim
+[diff]
+  tool = vimdiff
+[alias]
+  ci = commit
+  co = checkout
+  ls = ls-tree HEAD:
+  st = status .
+  up = remote update
+  lsrb  = branch -vr      # list remote branches
+  lslb  = branch -v       # list local branches
+  lsdf  = log -p          # log listing all differences
+  lscis = shortlog -se -- # who did this - list commiters
+  msg   = commit --allow-empty
+  diffc = diff --cached  # diff staged changes
+  logstat  = log HEAD --stat --no-merges
+  branches = branch -av     # list remote branches
+  tags     = tag -l
+[branch]
+  autosetupmerge = true
+[apply]
+  whitespace = nowarn
+[gc]
+  auto = 1
+[push]
+	default = matching
+
+# vim: filetype=gitconfig
+

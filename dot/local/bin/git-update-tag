@@ -1,0 +1,32 @@
+#!/bin/bash
+#@Updating of a tag restoring all information from a file.
+#@
+#@Usage:
+#@  ${0##*/} <file> [commit] [timestamp]
+#@
+#@Example:
+#@  # create tag using commit reference and timestamp
+#@  $ ${0##*/} v0.0.1.tag 49107a62fbe04d2e7f74d9873bd32347ac101991 '2010-10-01 23:58:00'
+#@
+
+: ${1:?tag file is required}
+: ${2}#Commit hash
+: ${3}#Commit timestamp
+
+tag=${1##*/}; tag=${tag%.*}
+
+test -n "$(git tag -l $tag)" &> /dev/null && {
+  commit=${2:-$(git log $tag --format="%H" | head -1 |  tr -d "\n")}
+  date=${3:-$(git log $tag --format="%ai" | head -1 | tr -d "\n")}
+
+  GIT_COMITTER_DATE="${date}" git tag -asf -F ${1} ${tag} ${commit}
+
+  unset usage tag commit date
+} || {
+  sed -run 's|^#@(.*)|\1|p' $0
+  echo "Tags:"
+  git tag | sed -run 's|(.*)|  \1|p'
+}
+
+exit 0
+
