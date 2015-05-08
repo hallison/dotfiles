@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-keyboard-shortcuts" version="1.0">
+  <property type="empty" name="commands">
+    <property type="empty" name="default">
+      <property type="empty" name="&lt;Alt&gt;F2"/>
+      <property type="empty" name="&lt;Control&gt;&lt;Alt&gt;Delete"/>
+      <property type="empty" name="XF86Display"/>
+    </property>
+    <property name="custom" type="empty">
+      <property type="string" name="&lt;Alt&gt;F2"                      value="xfrun4"/>
+      <property type="string" name="&lt;Control&gt;&lt;Alt&gt;Delete"   value="xflock4"/>
+      <property type="string" name="XF86Display"                        value="xrandr --auto"/>
+      <property type="bool"   name="override"                           value="true"/>
+      <property type="string" name="XF86AudioPlay"                      value="mpc toggle"/>
+      <property type="string" name="XF86AudioPrev"                      value="mpc prev"/>
+      <property type="string" name="XF86AudioNext"                      value="mpc next"/>
+      <property type="string" name="XF86AudioStop"                      value="mpc stop"/>
+      <property type="string" name="&lt;Control&gt;&lt;Super&gt;period" value="mpc seek +5%"/>
+      <property type="string" name="&lt;Control&gt;&lt;Super&gt;comma"  value="mpc seek -5%"/>
+      <property type="string" name="&lt;Super&gt;period"                value="xfmedia-remote --next"/>
+      <property type="string" name="&lt;Super&gt;comma"                 value="xfmedia-remote --previous"/>
+      <property type="string" name="&lt;Super&gt;slash"                 value="xfmedia-remote --toggle"/>
+      <property type="string" name="&lt;Super&gt;space"                 value="xfce4-appfinder"/>
+      <property type="string" name="Print"                              value="xfce4-screenshooter"/>
+      <property type="string" name="XF86HomePage"                       value="exo-open --launch WebBrowser"/>
+      <property type="string" name="&lt;Super&gt;n"                     value="xfce4-popup-notes"/>
+      <property type="string" name="&lt;Super&gt;l"                     value="xflock4"/>
+      <property type="string" name="XF86AudioRaiseVolume"               value="amixer set Master 1+"/>
+      <property type="string" name="XF86AudioLowerVolume"               value="amixer set Master 1-"/>
+      <property type="string" name="&lt;Shift&gt;XF86AudioRaiseVolume"  value="amixer set PCM 1+"/>
+      <property type="string" name="&lt;Shift&gt;XF86AudioLowerVolume"  value="amixer set PCM 1-"/>
+      <property type="string" name="XF86AudioMute"                      value="amixer set Master toggle"/>
+      <property type="string" name="&lt;Super&gt;Down"                  value="xfce4-popup-applicationsmenu"/>
+      <property type="string" name="&lt;Super&gt;t"                     value="exo-open --launch TerminalEmulator"/>
+      <property type="string" name="&lt;Super&gt;m"                     value="xfmedia"/>
+      <property type="string" name="&lt;Super&gt;s"                     value="xfce4-settings-manager"/>
+      <property type="string" name="&lt;Super&gt;b"                     value="exo-open --launch WebBrowser"/>
+      <property type="string" name="&lt;Super&gt;n"                     value="exo-open --launch FileManager network://"/>
+      <property type="string" name="&lt;Super&gt;e"                     value="exo-open --launch FileManager"/>
+      <property type="string" name="&lt;Super&gt;r"                     value="xfrun4"/>
+    </property>
+  </property>
+  <property name="xfwm4" type="empty">
+    <property name="default" type="empty">
+      <property name="&lt;Alt&gt;Insert"                            type="empty"/>
+      <property name="Escape"                                       type="empty"/>
+      <property name="Left"                                         type="empty"/>
+      <property name="Right"                                        type="empty"/>
+      <property name="Up"                                           type="empty"/>
+      <property name="Down"                                         type="empty"/>
+      <property name="&lt;Alt&gt;Tab"                               type="empty"/>
+      <property name="&lt;Alt&gt;&lt;Shift&gt;Tab"                  type="empty"/>
+      <property name="&lt;Alt&gt;Delete"                            type="empty"/>
+      <property name="&lt;Control&gt;&lt;Alt&gt;Down"               type="empty"/>
+      <property name="&lt;Control&gt;&lt;Alt&gt;Left"               type="empty"/>
+      <property name="&lt;Shift&gt;&lt;Alt&gt;Page_Down"            type="empty"/>
+      <property name="&lt;Alt&gt;F4"                                type="empty"/>
+      <property name="&lt;Alt&gt;F6"                                type="empty"/>
+      <property name="&lt;Alt&gt;F7"                                type="empty"/>
+      <property name="&lt;Alt&gt;F8"                                type="empty"/>
+      <property name="&lt;Alt&gt;F9"                                type="empty"/>
+      <property name="&lt;Alt&gt;F10"                               type="empty"/>
+      <property name="&lt;Alt&gt;F11"                               type="empty"/>
+      <property name="&lt;Alt&gt;F12"                               type="empty"/>
+      <property name="&lt;Control&gt;&lt;Shift&gt;&lt;Alt&gt;Left"  type="empty"/>
+      <property name="&lt;Alt&gt;&lt;Control&gt;End"                type="empty"/>
+      <property name="&lt;Alt&gt;&lt;Control&gt;Home"               type="empty"/>
+      <property name="&lt;Control&gt;&lt;Shift&gt;&lt;Alt&gt;Right" type="empty"/>
+      <property name="&lt;Control&gt;&lt;Shift&gt;&lt;Alt&gt;Up"    type="empty"/>
+      <property name="&lt;Alt&gt;&lt;Control&gt;KP_1"               type="empty"/>
+      <property name="&lt;Alt&gt;&lt;Control&gt;KP_2"               type="empty"/>
+      <property name="&lt;Alt&gt;&lt;Control&gt;KP_3"               type="empty"/>
+      <property name="&lt;Alt&gt;&lt;Control&gt;KP_4"               type="empty"/>
+      <property name="&lt;Alt&gt;&lt;Control&gt;KP_5"               type="empty"/>
+      <property name="&lt;Alt&gt;&lt;Control&gt;KP_6"               type="empty"/>
+      <property name="&lt;Alt&gt;&lt;Control&gt;KP_7"               type="empty"/>
+      <property name="&lt;Alt&gt;&lt;Control&gt;KP_8"               type="empty"/>
+      <property name="&lt;Alt&gt;&lt;Control&gt;KP_9"               type="empty"/>
+      <property name="&lt;Alt&gt;space"                             type="empty"/>
+      <property name="&lt;Shift&gt;&lt;Alt&gt;Page_Up"              type="empty"/>
+      <property name="&lt;Control&gt;&lt;Alt&gt;Right"              type="empty"/>
+      <property name="&lt;Control&gt;&lt;Alt&gt;d"                  type="empty"/>
+      <property name="&lt;Control&gt;&lt;Alt&gt;Up"                 type="empty"/>
+      <property name="&lt;Control&gt;F1"                            type="empty"/>
+      <property name="&lt;Control&gt;F2"                            type="empty"/>
+      <property name="&lt;Control&gt;F3"                            type="empty"/>
+      <property name="&lt;Control&gt;F4"                            type="empty"/>
+      <property name="&lt;Control&gt;F5"                            type="empty"/>
+      <property name="&lt;Control&gt;F6"                            type="empty"/>
+      <property name="&lt;Control&gt;F7"                            type="empty"/>
+      <property name="&lt;Control&gt;F8"                            type="empty"/>
+      <property name="&lt;Control&gt;F9"                            type="empty"/>
+      <property name="&lt;Control&gt;F10"                           type="empty"/>
+      <property name="&lt;Control&gt;F11"                           type="empty"/>
+      <property name="&lt;Control&gt;F12"                           type="empty"/>
+    </property>
+    <property name="custom" type="empty">
+      <property type="string" name="&lt;Control&gt;F8"                            value="workspace_8_key"/>
+      <property type="string" name="&lt;Control&gt;F10"                           value="workspace_10_key"/>
+      <property type="string" name="&lt;Control&gt;F11"                           value="workspace_11_key"/>
+      <property type="string" name="&lt;Control&gt;F12"                           value="workspace_12_key"/>
+      <property type="string" name="&lt;Control&gt;F9"                            value="workspace_9_key"/>
+      <property type="string" name="&lt;Alt&gt;F10"                               value="maximize_window_key"/>
+      <property type="string" name="&lt;Alt&gt;F11"                               value="fullscreen_key"/>
+      <property type="string" name="&lt;Alt&gt;F12"                               value="above_key"/>
+      <property type="string" name="&lt;Control&gt;&lt;Alt&gt;Up"                 value="up_workspace_key"/>
+      <property type="string" name="Escape"                                       value="cancel_key"/>
+      <property type="string" name="&lt;Alt&gt;&lt;Shift&gt;Tab"                  value="cycle_reverse_windows_key"/>
+      <property type="string" name="&lt;Alt&gt;space"                             value="popup_menu_key"/>
+      <property type="string" name="&lt;Alt&gt;Delete"                            value="del_workspace_key"/>
+      <property type="string" name="&lt;Alt&gt;F4"                                value="close_window_key"/>
+      <property type="string" name="&lt;Shift&gt;&lt;Alt&gt;Page_Down"            value="lower_window_key"/>
+      <property type="string" name="&lt;Alt&gt;F6"                                value="stick_window_key"/>
+      <property type="string" name="&lt;Alt&gt;F8"                                value="resize_window_key"/>
+      <property type="string" name="&lt;Alt&gt;F9"                                value="hide_window_key"/>
+      <property type="string" name="&lt;Alt&gt;F7"                                value="move_window_key"/>
+      <property type="string" name="&lt;Control&gt;&lt;Shift&gt;&lt;Alt&gt;Up"    value="move_window_up_key"/>
+      <property type="string" name="&lt;Control&gt;F5"                            value="workspace_5_key"/>
+      <property type="string" name="&lt;Control&gt;&lt;Alt&gt;Left"               value="left_workspace_key"/>
+      <property type="string" name="&lt;Control&gt;&lt;Alt&gt;Down"               value="down_workspace_key"/>
+      <property type="string" name="&lt;Alt&gt;&lt;Control&gt;KP_1"               value="move_window_workspace_1_key"/>
+      <property type="string" name="&lt;Control&gt;&lt;Shift&gt;&lt;Alt&gt;Left"  value="move_window_left_key"/>
+      <property type="string" name="&lt;Alt&gt;&lt;Control&gt;KP_3"               value="move_window_workspace_3_key"/>
+      <property type="string" name="&lt;Alt&gt;&lt;Control&gt;KP_4"               value="move_window_workspace_4_key"/>
+      <property type="string" name="&lt;Alt&gt;&lt;Control&gt;KP_5"               value="move_window_workspace_5_key"/>
+      <property type="string" name="&lt;Alt&gt;&lt;Control&gt;KP_6"               value="move_window_workspace_6_key"/>
+      <property type="string" name="&lt;Alt&gt;&lt;Control&gt;KP_7"               value="move_window_workspace_7_key"/>
+      <property type="string" name="&lt;Alt&gt;&lt;Control&gt;KP_2"               value="move_window_workspace_2_key"/>
+      <property type="string" name="Left"                                         value="left_key"/>
+      <property type="string" name="&lt;Alt&gt;&lt;Control&gt;KP_9"               value="move_window_workspace_9_key"/>
+      <property type="string" name="&lt;Alt&gt;&lt;Control&gt;KP_8"               value="move_window_workspace_8_key"/>
+      <property type="string" name="Down"                                         value="down_key"/>
+      <property type="string" name="&lt;Alt&gt;&lt;Control&gt;Home"               value="move_window_prev_workspace_key"/>
+      <property type="string" name="&lt;Alt&gt;&lt;Control&gt;End"                value="move_window_next_workspace_key"/>
+      <property type="string" name="&lt;Control&gt;&lt;Alt&gt;Right"              value="right_workspace_key"/>
+      <property type="string" name="&lt;Control&gt;&lt;Shift&gt;&lt;Alt&gt;Right" value="move_window_right_key"/>
+      <property type="string" name="Right"                                        value="right_key"/>
+      <property type="string" name="&lt;Alt&gt;Tab"                               value="cycle_windows_key"/>
+      <property type="string" name="&lt;Control&gt;F1"                            value="workspace_1_key"/>
+      <property type="string" name="&lt;Shift&gt;&lt;Alt&gt;Page_Up"              value="raise_window_key"/>
+      <property type="string" name="&lt;Control&gt;F2"                            value="workspace_2_key"/>
+      <property type="string" name="&lt;Control&gt;F3"                            value="workspace_3_key"/>
+      <property type="string" name="Up"                                           value="up_key"/>
+      <property type="string" name="&lt;Control&gt;&lt;Alt&gt;d"                  value="show_desktop_key"/>
+      <property type="string" name="&lt;Control&gt;F7"                            value="workspace_7_key"/>
+      <property type="string" name="&lt;Alt&gt;Insert"                            value="add_workspace_key"/>
+      <property type="string" name="&lt;Control&gt;F6"                            value="workspace_6_key"/>
+      <property type="string" name="&lt;Control&gt;F4"                            value="workspace_4_key"/>
+      <property type="bool"   name="override"                                     value="true"/>
+    </property>
+  </property>
+  <property name="providers" type="array">
+    <value type="string" value="xfwm4"/>
+    <value type="string" value="commands"/>
+  </property>
+</channel>
