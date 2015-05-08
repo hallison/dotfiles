@@ -1,0 +1,64 @@
+" auto reload
+autocmd! BufWritePost .gvimrc source %
+
+" GUI style
+" ============================================================================
+
+" adjust color scheme
+colorscheme darkdevel
+
+" font for gvim
+set guifont=Ubuntu\ Mono\ 11
+
+" set GUI window size and position
+set lines=44 columns=158
+
+" Custom shortcuts
+" ============================================================================
+
+" turn off useless toolbar
+set guioptions-=T
+
+" turn off menu bar
+set guioptions-=m
+
+" turn off right-hand scroll-bar
+set guioptions-=R
+set guioptions-=r
+set guioptions-=L
+set guioptions-=l
+
+" Tabs
+" ============================================================================
+
+nnoremap <silent><a-{> :silent tabprevious<cr>
+nnoremap <silent><a-}> :silent tabnext<cr>
+
+nnoremap <silent><a-1> 1gt
+nnoremap <silent><a-2> 2gt
+nnoremap <silent><a-3> 3gt
+nnoremap <silent><a-4> 4gt
+nnoremap <silent><a-5> 5gt
+nnoremap <silent><a-6> 6gt
+nnoremap <silent><a-7> 7gt
+nnoremap <silent><a-8> 8gt
+nnoremap <silent><a-9> 9gt
+nnoremap <silent><a-0> 10gt
+
+nnoremap <silent><leader>tm1 :silent tabmove 0<cr>
+nnoremap <silent><leader>tm2 :silent tabmove 1<cr>
+nnoremap <silent><leader>tm3 :silent tabmove 2<cr>
+nnoremap <silent><leader>tm4 :silent tabmove 3<cr>
+nnoremap <silent><leader>tm5 :silent tabmove 4<cr>
+nnoremap <silent><leader>tm6 :silent tabmove 5<cr>
+nnoremap <silent><leader>tm7 :silent tabmove 6<cr>
+nnoremap <silent><leader>tm8 :silent tabmove 7<cr>
+nnoremap <silent><leader>tm9 :silent tabmove 8<cr>
+nnoremap <silent><leader>tm0 :silent tabmove 9<cr>
+
+" Buffers
+" ============================================================================
+
+nnoremap <silent><a-<> :bprevious<cr>
+nnoremap <silent><a->> :bnext<cr>
+

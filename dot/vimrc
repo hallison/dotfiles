@@ -1,0 +1,260 @@
+" Leader key
+let mapleader = '='
+
+" Auto reload
+autocmd! BufWritePost .vimrc source %
+
+" Enable file type detection
+filetype on
+
+" Format documents
+autocmd FileType txt,txt2tags,markdown,textile set
+  \ textwidth=78
+  \ shiftwidth=2
+  \ wrap
+  \ wrapscan
+  \ wrapmargin=78
+  \ formatoptions+=t
+  \ spell
+
+autocmd FileType html,textile set
+  \ wrapmargin=0
+  \ textwidth=0
+
+" Even save files
+autocmd FocusLost * :wall
+
+" Load local configuraions
+"set exrc
+
+" Includes current path
+set path+=./**
+
+" Any directoy can have a Vim directory
+set runtimepath+=$PWD/.vim
+
+" Adjust tags path
+set tags=$HOME/.vim/tags,./tags
+
+" Undo ever...
+set undodir=$HOME/.vim/undo
+set undofile
+
+" Store backups under $HOME/.vim/backup
+set backupdir=$HOME/.vim/backup
+set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
+
+" Keep swap files under $HOME/.vim/swap
+set directory=$HOME/.vim/swap/,.,$HOME/tmp,/tmp
+
+" Do keep a backup while working
+set writebackup
+
+" Keep attributes of original file
+set backupcopy=yes
+
+" Preserve current indent on new lines
+set autoindent
+
+" Uses auto-indent when start new line
+set smartindent
+
+" Indentation levels every two columns
+set tabstop=2
+set softtabstop=2
+
+" Convert all tabs to space
+set expandtab
+
+" Indent/outdent by two columns
+set shiftwidth=2
+
+" Indent/outdent to nearest tabstops
+set shiftround
+
+" Make backspaces delete sensibly
+set backspace=indent,eol,start
+
+" No line wraps
+set wrapmargin=0
+set nowrap nowrapscan
+set textwidth=0
+
+" Load indentation files
+filetype plugin indent on
+
+" Spell checking
+set spelllang=pt,en
+" Disable spell
+set nospell
+
+" Adjust color scheme
+colorscheme darkdevel
+
+" Show line numbers
+set number
+
+" Show the current line and improve moves using others line relatively
+set relativenumber
+
+" Enable syntax for buffer
+syntax on
+set autowrite
+
+" Text and file should be encoded UTF-8.
+set fileencoding=utf8
+setglobal encoding=utf-8
+setglobal fileencoding=utf-8
+
+" Display incomplete commands
+set showcmd
+
+" Incremental searching
+set incsearch
+
+" Highlight search maches
+set hlsearch
+
+" Show cursor position
+set ruler
+
+" Turn on menu in command line
+set wildmenu
+set wildmode=list:longest,full
+
+" Show matches in searching
+set showmatch
+nnoremap <leader>- :nohlsearch<cr>
+
+" Ignore case for searching
+set ignorecase
+
+" Duration to show brace matches (1/10)
+set matchtime=2
+
+" Enable commands in comments
+set modeline
+
+" Sane moves
+nnoremap j gj
+vnoremap j gj
+nnoremap k gk
+vnoremap k gk
+inoremap <left> <left>
+inoremap <right> <right>
+
+" Quoting paragraphs
+nmap Q gqip
+vmap Q gq
+
+" Split buffers and set half size.
+set equalalways
+
+set listchars=trail:.,tab:▸\ ,eol:¬
+
+nnoremap <leader>l :set list<cr>
+
+set statusline=\ %Y\ \|\ %{&ff}\ \|\ %04lx%04v/%04p%%\ %L\ \|\ %F%m%=%r%h[%n]
+set laststatus=2
+
+" Open tab
+nnoremap <leader>te :silent tabnew<cr>
+nnoremap <leader>to :browse tabedit
+
+" Tab navigation
+nnoremap <silent><esc>{ :silent tabprevious<cr>
+nnoremap <silent><esc>} :silent tabnext<cr>
+
+" Go to tab #
+nnoremap <silent><esc>1 1gt
+nnoremap <silent><esc>2 2gt
+nnoremap <silent><esc>3 3gt
+nnoremap <silent><esc>4 4gt
+nnoremap <silent><esc>5 5gt
+nnoremap <silent><esc>6 6gt
+nnoremap <silent><esc>7 7gt
+nnoremap <silent><esc>8 8gt
+nnoremap <silent><esc>9 9gt
+nnoremap <silent><esc>0 10gt
+
+" Tab and re-tab
+nnoremap <silent><leader>tt1 :silent tabmove 0<cr>
+nnoremap <silent><leader>tt2 :silent tabmove 1<cr>
+nnoremap <silent><leader>tt3 :silent tabmove 2<cr>
+nnoremap <silent><leader>tt4 :silent tabmove 3<cr>
+nnoremap <silent><leader>tt5 :silent tabmove 4<cr>
+nnoremap <silent><leader>tt6 :silent tabmove 5<cr>
+nnoremap <silent><leader>tt7 :silent tabmove 6<cr>
+nnoremap <silent><leader>tt8 :silent tabmove 7<cr>
+nnoremap <silent><leader>tt9 :silent tabmove 8<cr>
+nnoremap <silent><leader>tt0 :silent tabmove 9<cr>
+
+" Buffer navigation
+nnoremap <silent><esc>< :bprevious<cr>
+nnoremap <silent><esc>> :bnext<cr>
+
+" Quickly save
+nnoremap <f2> :write<cr>
+nnoremap <s-f2> :wall<cr>
+
+" Make buffer
+noremap <silent><leader>m :make %<cr>
+
+" Source buffer
+noremap <silent><leader>sf :source %<cr>
+
+" Make buffer executable
+noremap <silent><leader>xf :!chmod +x %<cr>
+
+" Window cycle
+nnoremap <c-tab> <c-w>w
+nnoremap <leader>w<tab> <c-w>w
+"
+" Split curren window
+nnoremap <leader>ws <c-w>s<c-w>j
+nnoremap <leader>ww <c-w>v<c-w>l
+
+" Move lines around
+nnoremap <c-j> :move+<cr>==
+nnoremap <c-k> :move-2<cr>==
+inoremap <c-j> <esc>:move+<cr>==gi
+inoremap <c-k> <esc>:move-2<cr>==gi
+vnoremap <c-j> :move'>+<cr>gv=gv
+vnoremap <c-k> :move-2<cr>gv=gv
+
+" Folding
+set nofoldenable
+set foldmethod=indent
+set foldlevelstart=1
+set foldnestmax=2
+
+" Enable/disable folding
+map <leader>ze :set foldenable<cr>
+map <leader>zd :set nofoldenable<cr>
+
+" Limit in 3 lines bellow and above.
+set scrolloff=3
+
+" Bash
+let is_bash=1
+
+" Show highlight group
+function! HighlightGroup()
+  if !exists("*synstack")
+    return
+  endif
+  return string(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'))
+endfunction
+
+" Get highlight
+map <leader>gh :echo HighlightGroup()<cr>
+
+" Redo last command in visual mode
+vnoremap <silent>. :normal .<cr>
+
+" Redo last macro registered at 'w' key in visual mode
+vnoremap <silent><leader>. :normal @w<cr>
+
+" Set italic mode
+set t_ZH=[3m
+
