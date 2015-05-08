@@ -1,0 +1,55 @@
+# enable 8bit input (utf-8)
+set meta-flag on
+set input-meta on
+
+# keep the 8th bit for display (utf-8)
+set output-meta on
+
+# turn off 8th bit stripping (utf-8)
+set convert-meta off
+
+# do not bell on tab-completion
+set bell-style none
+set bell-style visible
+
+# some defaults / modifications for the emacs mode
+$if mode=emacs
+
+  # allow the use of the Home/End keys
+  "\e[1~": beginning-of-line
+  "\e[4~": end-of-line
+
+  # allow the use of the Delete/Insert keys
+  "\e[3~": delete-char
+  "\e[2~": quoted-insert
+
+  # alternate mappings for "page up" and "page down" to search the history
+  "\e[5~": history-search-backward
+  "\e[6~": history-search-forward
+
+  $if term=rxvt
+    "\e[8~": end-of-line
+    "\eOc": forward-word
+    "\eOd": backward-word
+  $endif
+
+$endif
+
+$if mode=vi
+  set editing-mode vi
+  "\C-p": dynamic-complete-history
+  "\C-n": menu-complete
+  "\C-l": clear-screen
+$endif
+
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+# mappings for Ctrl-left-arrow and Ctrl-right-arrow for word moving
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+
