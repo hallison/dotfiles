@@ -1,0 +1,45 @@
+# bash completion for lua
+
+have lua &&
+_lua()
+{
+    local prev cur i
+
+    COMPREPLY=()
+    _get_comp_words_by_ref cur prev
+
+    case $prev in
+        -[-live])
+            return 0
+            ;;
+        !(?(*/)lua*([0-9.])|-?))
+            [[ $COMP_CWORD -lt 2 ]] && _filedir
+            ;;
+    esac
+
+
+    # if '-c' is already given, complete all kind of files.
+    for (( i=0; i < ${#COMP_WORDS[@]}-1; i++ )); do
+        if [[ ${COMP_WORDS[i]} == -c ]]; then
+            _filedir
+        fi
+    done
+
+
+    if [[ "$cur" != -* ]]; then
+        _filedir 'lua?([co])'
+    else
+        COMPREPLY=( $( compgen -W "$( _parse_help $1 -h )" -- "$cur" ) )
+    fi
+
+    return 0
+} &&
+complete -F _lua lua lua50 lua5.1
+
+# Local variables:
+# mode: shell-script
+# sh-basic-offset: 4
+# sh-indent-comment: t
+# indent-tabs-mode: nil
+# End:
+# ex: ts=4 sw=4 et filetype=sh

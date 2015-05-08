@@ -1,0 +1,65 @@
+# LuaRocks completion
+
+have luarocks &&
+__luarocks_commands() {
+  echo "build download help install list make pack path remove search show unpack"
+} &&
+__luarocks_options() {
+  echo "--from= --only-from= --to= --server= --only-server= --only-sources= --tree= --local"
+} &&
+__luarocks_find() {
+  command find -iname '*'$1 -printf "%P\n"
+} &&
+_luarocks() {
+  local cur prev special i commands
+
+  commands="$(__luarocks_commands)"
+  COMPREPLY=()
+
+  _get_comp_words_by_ref cur prev
+
+  for (( i=0; i < ${#COMP_WORDS[@]}-1; i++ )); do
+    if [[ ${COMP_WORDS[i]} == @(build|make|pack|unpack) ]]; then
+      special=${COMP_WORDS[i]}
+    fi
+  done
+
+  case $special in
+    build)
+      COMPREPLY=( $(compgen -W "$(__luarocks_find .rockspec)" -- "$cur") )
+      return 0
+      ;;
+    push)
+      COMPREPLY=( $(compgen -W "$(__luarocks_find .gem)" -- "$cur") )
+      return 0
+      ;;
+    *.gemspec)
+      special=build
+      ;;
+    *.gem)
+      special=push
+      ;;
+  esac
+
+  case $prev in
+    luarocks*|help)
+      COMPREPLY=( $(compgen -W "${commands}" -- "$cur") )
+      return 0
+      ;;
+    ${commands// /|})
+      COMPREPLY=()
+      return 0
+      ;;
+  esac
+
+  if [[ $cur == --* ]]; then
+    COMPREPLY=( $(compgen -W "$(__luarocks_options ${special:-$prev})" -- $cur) )
+  else
+    COMPREPLY=()
+  fi
+
+  return 0
+
+} && complete -F _luarocks luarocks
+
+# vim: ts=2 sw=2 et filetype=sh
