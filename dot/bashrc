@@ -6,11 +6,11 @@ shopt -s dirspell
 # Profile Environment
 # ============================================================================
 
+# Set my directories shortcuts
+export CDPATH=$HOME:.
+
 # Set my applications on path
 export PATH=./bin:${HOME}/.local/bin:$HOME/.luarocks/bin:${PATH}
-
-# Set my shortcuts
-export CDPATH=${HOME}/Code:.:${HOME}:${HOME}/Games
 
 # Set 'ls' command options
 export LS_OPTIONS='--color=auto'
