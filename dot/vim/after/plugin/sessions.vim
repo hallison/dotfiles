@@ -1,4 +1,5 @@
 " session path
+let g:sessions_project_path = ''
 let g:sessions_project_path = g:sessions_project_path . ':$CODING_HOME/applications'
 let g:sessions_project_path = g:sessions_project_path . ':$CODING_HOME/frameworks'
 let g:sessions_project_path = g:sessions_project_path . ':$CODING_HOME/resources'
