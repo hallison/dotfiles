@@ -34,6 +34,7 @@
   auto = 1
 [push]
 	default = matching
-
-# vim: filetype=gitconfig
-
+[url "https://github.com/"]
+	insteadOf = git://github.com/
+[url "https://gitlab.com/"]
+	insteadOf = git://gitlab.com/
