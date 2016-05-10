@@ -258,3 +258,7 @@ vnoremap <silent><leader>. :normal @w<cr>
 " Set italic mode
 set t_ZH=[3m
 
+" Load last session
+if filereadable('.vimsession')
+  silent source .vimsession
+endif
