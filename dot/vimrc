@@ -259,6 +259,17 @@ vnoremap <silent><leader>. :normal @w<cr>
 set t_ZH=[3m
 
 " Load last session
-if filereadable('.vimsession')
-  silent source .vimsession
-endif
+" if filereadable('.vimsession')
+"   silent source .vimsession
+" endif
+
+" Plugins managed by Plug
+call plug#begin('~/.vim/plugged')
+Plug 'kien/ctrlp.vim'
+Plug 'sjl/gundo.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'marcweber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'ervandew/supertab'
+call plug#end()
