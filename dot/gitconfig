@@ -12,6 +12,7 @@
 [diff]
   tool = vimdiff
 [alias]
+  ap = add --patch
   ci = commit
   co = checkout
   ls = ls-tree HEAD:
