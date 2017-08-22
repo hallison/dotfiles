@@ -278,4 +278,5 @@ Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
 Plug 'guns/xterm-color-table.vim'
+Plug 'rhysd/vim-crystal'
 call plug#end()
