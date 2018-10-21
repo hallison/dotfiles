@@ -5,7 +5,9 @@ autocmd! BufWritePost .gvimrc source %
 " ============================================================================
 
 " adjust color scheme
-colorscheme darkdevel
+set background=dark
+colorscheme solarized
+set cursorline
 
 " font for gvim
 set guifont=Ubuntu\ Mono\ 11
