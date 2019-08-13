@@ -20,9 +20,13 @@ autocmd FileType txt,txt2tags,markdown,textile set
   \ formatoptions+=t
   \ spell
 
-autocmd FileType html,textile set
+autocmd FileType * set
   \ wrapmargin=0
   \ textwidth=0
+
+autocmd FileType go set
+  \ noexpandtab
+  \ noignorecase
 
 " Even save files
 autocmd FocusLost * :wall
