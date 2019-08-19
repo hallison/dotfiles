@@ -92,6 +92,9 @@ alias sudo='sudo -E'
 alias sush='sudo bash -l'
 alias .bashrc='source ~/.bashrc'
 
+alias recycle='gvfs-trash'
+alias rm='rm -i'
+
 # Prompt
 # ============================================================================
 # 0;30 Black
