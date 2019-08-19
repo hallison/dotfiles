@@ -111,10 +111,7 @@ alias .bashrc='source ~/.bashrc'
 # 1;36 Light Cyan
 # 1;37 White
 
-export SH_VCP_NONE=' '
-export SH_VCP_FORMAT="$(echo -e '#\033[0;32m%s:%b\033[0m\033[0;33m%m\033[0;34m%a\033[0;31m%u\033[0m')"
-export PROMPT_COMMAND='SH_VCP=`shvcp`; printf "%s"'
-export PS1='\[\033[0;36m\]\w\[\033[0m\]\[${SH_VCP}\]\n\u@\h\$ '
+export PS1='\[\033[0;36m\]\w\[\033[0m\]\n\u@\h\$ '
 
 # Cleanup PATH
 export PATH=$(hash -r && echo $PATH | tr ':' '\n' | sort -u | tr '\n' ':')
