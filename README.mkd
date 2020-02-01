@@ -1,5 +1,5 @@
 My dot files
 ============
 
-This is my configurations (a.k.a dot files).
+_This_ is my configurations (a.k.a dot files).
 
