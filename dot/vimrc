@@ -298,6 +298,7 @@ Plug 'majutsushi/tagbar'
 Plug 'guns/xterm-color-table.vim'
 Plug 'rhysd/vim-crystal'
 Plug 'altercation/vim-colors-solarized'
+Plug 'kylef/apiblueprint.vim'
 call plug#end()
 
 set secure
