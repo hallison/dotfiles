@@ -92,48 +92,8 @@ alias sudo='sudo -E'
 alias sush='sudo bash -l'
 alias .bashrc='source ~/.bashrc'
 
-alias rm='gvfs-trash'
-
-# SCM
-# ============================================================================
-
-# Git
-alias go='git checkout'
-alias gs='git status'
-alias ga='git add'
-alias gr='git rm'
-alias gd='git diff'
-alias gm='git merge'
-alias gb='git branch'
-alias gc='git commit --verbose'
-alias gu='git pull'
-alias gp='git push'
-alias gt='git tag'
-alias gl='git log --summary'
-alias gF='git ls-files'
-
-if test -e /etc/bash_completion.d/git; then
-  complete -o default -o nospace -F _git_checkout go
-  complete -o default -o nospace -F _git_add      ga
-  complete -o default -o nospace -F _git_rm       gr
-  complete -o default -o nospace -F _git_diff     gd
-  complete -o default -o nospace -F _git_merge    gm
-  complete -o default -o nospace -F _git_branch   gb
-  complete -o default -o nospace -F _git_commit   gc
-  complete -o default -o nospace -F _git_pull     gu
-  complete -o default -o nospace -F _git_push     gp
-  complete -o default -o nospace -F _git_tag      gt
-  complete -o default -o nospace -F _git_log      gl
-fi
-
-# SVN
-alias svk='svn checkout'
-alias svu='svn update'
-alias svs='svn status'
-alias svl='svn log'
-alias svr='svn delete'
-alias sva='svn add'
-alias svr='svn revert'
+alias recycle='gvfs-trash'
+alias rm='rm -i'
 
 # Prompt
 # ============================================================================
@@ -154,10 +114,7 @@ alias svr='svn revert'
 # 1;36 Light Cyan
 # 1;37 White
 
-export SH_VCP_NONE=' '
-export SH_VCP_FORMAT="$(echo -e '#\033[0;32m%s:%b\033[0m\033[0;33m%m\033[0;34m%a\033[0;31m%u\033[0m')"
-export PROMPT_COMMAND='SH_VCP=`shvcp`; printf "%s"'
-export PS1='\[\033[0;36m\]\w\[\033[0m\]\[${SH_VCP}\]\n\u@\h\$ '
+export PS1='\[\033[0;36m\]\w\[\033[0m\]\n\u@\h\$ '
 
 # Cleanup PATH
 export PATH=$(hash -r && echo $PATH | tr ':' '\n' | sort -u | tr '\n' ':')
