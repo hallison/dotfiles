@@ -34,6 +34,19 @@ install.ruby:
 	@test -d ${rbenv.ruby-build.home} || ${rbenv.ruby-build.install()}
 	@${install.files()}
 
+#? # Install Go environment
+#?
+#? 	$ make install.go
+#?
+goenv.install() = $(git) clone https://github.com/syndbg/goenv.git ${goenv.home}
+
+goenv.home    = ${HOME}/.goenv
+goenv.plugins = ${goenv.home}/plugins
+
+install.go:
+	@test -d ${goenv.home} || ${goenv.install()}
+	@${install.files()}
+
 #? # Install Python environment
 #?
 #? 	$ make install.python
