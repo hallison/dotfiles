@@ -16,26 +16,35 @@ install.source.files     = $(shell $(git) ls-files ${install.source.directory})
 
 file.target = ${HOME}/$(subst ${install.source.directory}/,.,${file.source})
 
-#? # Install Python environment
-#?
-#? 	$ make install.python
-#?
-install.python:
-	@${install.files()}
-
 #? # Install Ruby environment
 #?
 #? 	$ make install.ruby
 #?
+rbenv.install() = $(git) clone https://github.com/rbenv/rbenv.git ${rbenv.home}
+
 rbenv.home    = ${HOME}/.rbenv
 rbenv.plugins = ${rbenv.home}/plugins
-rbenv.install() = $(git) clone https://github.com/rbenv/rbenv.git ${rbenv.home}
-rbenv.ruby-build.home = ${rbenv.plugins}/ruby-build
+
 rbenv.ruby-build.install() = $(git) clone https://github.com/rbenv/ruby-build.git ${rbenv.ruby-build.home}
+
+rbenv.ruby-build.home = ${rbenv.plugins}/ruby-build
 
 install.ruby:
 	@test -d ${rbenv.home} || ${rbenv.install()}
 	@test -d ${rbenv.ruby-build.home} || ${rbenv.ruby-build.install()}
+	@${install.files()}
+
+#? # Install Python environment
+#?
+#? 	$ make install.python
+#?
+pyenv.install() = $(git) clone https://github.com/pyenv/pyenv.git ${pyenv.home}
+
+pyenv.home    = ${HOME}/.pyenv
+pyenv.plugins = ${pyenv.home}/plugins
+
+install.python:
+	@test -d ${pyenv.home} || ${pyenv.install()}
 	@${install.files()}
 
 help:
