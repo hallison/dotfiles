@@ -60,6 +60,19 @@ install.python:
 	@test -d ${pyenv.home} || ${pyenv.install()}
 	@${install.files()}
 
+#? # Install Java environment
+#?
+#? 	$ make install.java
+#?
+jenv.install() = $(git) clone https://github.com/gcuisinier/jenv.git ${jenv.home}
+
+jenv.home    = ${HOME}/.jenv
+jenv.plugins = ${jenv.home}/plugins
+
+install.java:
+	@test -d ${jenv.home} || ${jenv.install()}
+	@${install.files()}
+
 help:
 	@echo From Makefile
 	@echo
