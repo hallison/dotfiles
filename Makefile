@@ -16,6 +16,15 @@ install.source.files     = $(shell $(git) ls-files ${install.source.directory})
 
 file.target = ${HOME}/$(subst ${install.source.directory}/,.,${file.source})
 
+.PHONY: install.bash
+
+#? # Install Bash
+#?
+#?	$ make install.bash
+#?
+install.bash:
+	@${install.files()}
+
 #? # Install Ruby environment
 #?
 #? 	$ make install.ruby
