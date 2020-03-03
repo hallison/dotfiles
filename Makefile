@@ -1,8 +1,10 @@
 default:: help
 
-git  = $$(command -v git)
-grep = $$(command -v grep)
-cut  = $$(command -v cut)
+git   := $$(command -v git)
+wget  := $$(command -v wget)
+grep  := $$(command -v grep)
+cut   := $$(command -v cut)
+unzip := $$(command -v unzip)
 
 install.status()    = printf "%s ... " ${file.target}
 install.ok()        = echo ok
@@ -90,6 +92,21 @@ jenv.plugins = ${jenv.home}/plugins
 install.java:
 	@test -d ${jenv.home} || ${jenv.install()}
 	@${install.files()}
+
+#? # Install Android SDK environment
+#?
+#? 	$ make install.android
+#?
+android.sdk.download() = $(wget) https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
+android.sdk.install() = mkdir -p ${android.sdk.home} && cd ${android.home} && $(unzip) sdk-tools-linux-4333796.zip
+
+android.home    = ${HOME}/.android
+android.sdk.home = ${android.home}/tools
+
+install.android:
+	@test -d ${android.home} || (${android.sdk.download()} && @${android.sdk.install()})
+	@${install.files()}
+
 
 help:
 	@echo From Makefile
