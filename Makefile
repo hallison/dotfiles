@@ -7,9 +7,9 @@ cut  = $$(command -v cut)
 install.status()    = printf "%s ... " ${file.target}
 install.ok()        = echo ok
 install.fail()      = echo fail
-install.directory() = install -d $(dir ${file.target})
-install.file()      = ${install.status()} && cp ${file.source} ${file.target} && ${install.ok()} || ${install.fail()}
-install.files()     = $(foreach file.source, ${install.source.files}, ${install.directory()}; ${install.file()})
+install.directory() = (test -d $(dir ${file.target}) || install -d $(dir ${file.target}))
+install.file()      = (${install.status()} && cp ${file.source} ${file.target} && ${install.ok()} || ${install.fail()})
+install.files()     = $(foreach file.source, ${install.source.files}, ${install.directory()}; ${install.file()};)
 
 install.source.directory = $(@:install.%=%)
 install.source.files     = $(shell $(git) ls-files ${install.source.directory})
@@ -36,7 +36,7 @@ install.ruby:
 
 #? # Install NodeJS environment
 #?
-#? 	$ make install.node
+#?	$ make install.node
 #?
 nodenv.install() = $(git) clone https://github.com/nodenv/nodenv.git ${nodenv.home}
 
@@ -54,7 +54,7 @@ install.node:
 
 #? # Install Go environment
 #?
-#? 	$ make install.go
+#?	$ make install.go
 #?
 goenv.install() = $(git) clone https://github.com/syndbg/goenv.git ${goenv.home}
 
@@ -67,7 +67,7 @@ install.go:
 
 #? # Install Python environment
 #?
-#? 	$ make install.python
+#?	$ make install.python
 #?
 pyenv.install() = $(git) clone https://github.com/pyenv/pyenv.git ${pyenv.home}
 
@@ -80,7 +80,7 @@ install.python:
 
 #? # Install Java environment
 #?
-#? 	$ make install.java
+#?	$ make install.java
 #?
 jenv.install() = $(git) clone https://github.com/gcuisinier/jenv.git ${jenv.home}
 
