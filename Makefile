@@ -25,6 +25,13 @@ file.target = ${HOME}/$(subst ${install.source.directory}/,.,${file.source})
 install.bash:
 	@${install.files()}
 
+#? # Install Git environment]
+#?
+#?	$ make install.git
+#?
+install.git:
+	@${install.files()}
+
 #? # Install Ruby environment
 #?
 #? 	$ make install.ruby
