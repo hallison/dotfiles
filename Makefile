@@ -30,6 +30,13 @@ install.bash:
 install.git:
 	@${install.files()}
 
+#? # Install Vim environment and configurations
+#?
+#?	$ make install.vim
+#?
+install.vim:
+	@${install.files()}
+
 #? # Install Ruby environment
 #?
 #? 	$ make install.ruby
