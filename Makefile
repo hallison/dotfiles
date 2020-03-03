@@ -14,9 +14,7 @@ install.files()     = $(foreach file.source, ${install.source.files}, ${install.
 install.source.directory = $(@:install.%=%)
 install.source.files     = $(shell $(git) ls-files ${install.source.directory})
 
-file.target = ${HOME}/$(subst ${install.source.directory}/,.,${file.source})
-
-.PHONY: install.bash
+file.target = ${HOME}/${file.source:${install.source.directory}/%=.%}
 
 #? # Install Bash
 #?
@@ -25,7 +23,7 @@ file.target = ${HOME}/$(subst ${install.source.directory}/,.,${file.source})
 install.bash:
 	@${install.files()}
 
-#? # Install Git environment]
+#? # Install Git environment
 #?
 #?	$ make install.git
 #?
