@@ -34,6 +34,24 @@ install.ruby:
 	@test -d ${rbenv.ruby-build.home} || ${rbenv.ruby-build.install()}
 	@${install.files()}
 
+#? # Install NodeJS environment
+#?
+#? 	$ make install.node
+#?
+nodenv.install() = $(git) clone https://github.com/nodenv/nodenv.git ${nodenv.home}
+
+nodenv.home    = ${HOME}/.nodenv
+nodenv.plugins = ${nodenv.home}/plugins
+
+nodenv.node-build.install() = $(git) clone https://github.com/nodenv/node-build.git ${nodenv.node-build.home}
+
+nodenv.node-build.home = ${nodenv.plugins}/node-build
+
+install.node:
+	@test -d ${nodenv.home} || ${nodenv.install()}
+	@test -d ${nodenv.node-build.home} || ${nodenv.node-build.install()}
+	@${install.files()}
+
 #? # Install Go environment
 #?
 #? 	$ make install.go
