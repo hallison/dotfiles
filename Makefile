@@ -57,7 +57,7 @@ install.ruby:
 
 #? # Install NodeJS environment
 #?
-#?	$ make install.node
+#?	$ make install.nodejs
 #?
 nodenv.install() = $(git) clone https://github.com/nodenv/nodenv.git ${nodenv.home}
 
@@ -68,7 +68,7 @@ nodenv.node-build.install() = $(git) clone https://github.com/nodenv/node-build.
 
 nodenv.node-build.home = ${nodenv.plugins}/node-build
 
-install.node:
+install.nodejs:
 	@test -d ${nodenv.home} || ${nodenv.install()}
 	@test -d ${nodenv.node-build.home} || ${nodenv.node-build.install()}
 	@${install.files()}
