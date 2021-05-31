@@ -114,7 +114,7 @@ alias rm='rm -i'
 # 1;36 Light Cyan
 # 1;37 White
 
-export PS1='\[\033[0;36m\]\w\[\033[0m\]\n\u@\h\$ '
+export PS1='\[\033[0;36m\]\w\[\033[0m\]$($(command -v __git_ps1))\n\u@\h\$ '
 
 # Cleanup PATH
 export PATH=$(hash -r && echo $PATH | tr ':' '\n' | sort -u | tr '\n' ':')
