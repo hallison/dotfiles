@@ -51,8 +51,8 @@ rbenv.ruby-build.install() = $(git) clone https://github.com/rbenv/ruby-build.gi
 rbenv.ruby-build.home = ${rbenv.plugins}/ruby-build
 
 install.ruby:
-	@test -d ${rbenv.home} || ${rbenv.install()}
-	@test -d ${rbenv.ruby-build.home} || ${rbenv.ruby-build.install()}
+	# @test -d ${rbenv.home} || ${rbenv.install()}
+	# @test -d ${rbenv.ruby-build.home} || ${rbenv.ruby-build.install()}
 	@${install.files()}
 
 #? # Install NodeJS environment
