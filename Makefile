@@ -23,6 +23,13 @@ file.target = ${HOME}/${file.source:${install.source.directory}/%=.%}
 install.bash:
 	@${install.files()}
 
+#? # Install Terminual Multiplexer - tmux
+#?
+#? $ make install.tmux
+#?
+install.tmux:
+	@${install.files()}
+
 #? # Install Git environment
 #?
 #?	$ make install.git
