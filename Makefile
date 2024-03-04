@@ -124,4 +124,11 @@ help:
 	@echo
 	@$(grep) '^#?' Makefile | $(cut) -c4- 
 
+asdf.install() = $(git) clone https://github.com/asdf-vm/asdf.git ${asdf.home}
+asdf.home = ${HOME}/.asdf
+
+install.asdf:
+	@test -d ${asdf.home} || ${asdf.install()}
+	@${install.files()}
+
 #find $(@:install.%=%) -mindepth 1 -type d | sed "s|$(@:install.%=%)/|${HOME}/.|g" | xargs mkdir -p
