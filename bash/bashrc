@@ -117,6 +117,6 @@ alias rm='rm -i'
 export PS1='\[\033[0;36m\]\w\[\033[0m\]$($(command -v __git_ps1))\n\u@\h\$ '
 
 # Cleanup PATH
-export PATH=$(hash -r && echo $PATH | tr ':' '\n' | sort -u | tr '\n' ':')
+export PATH=$(hash -r && echo $PATH | tr ':' '\n' | sed -run "s|$HOME|0_|;p" | sort -u | sed -run "s|0_|$HOME|;p" | tr '\n' ':')
 
 # vim: filetype=sh
