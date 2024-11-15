@@ -121,13 +121,16 @@ set spelllang=pt,en
 set nospell
 
 " Adjust color scheme
-colorscheme gruvbox
 
-let g:gruvbox_contrast_light = "light"
-let g:gruvbox_contrast_dark = "light"
+let g:gruvbox_contrast_light = "soft"
+let g:gruvbox_contrast_dark = "soft"
 let g:gruvbox_transparent_bg = 1
+let g:gruvbox_italic = 1
+let g:gruvbox_termcolors = 256
+let g:gruvbox_vert_split = "bg1"
+let g:gruvbox_number_column = "bg1"
 
-" colorscheme solarized
+colorscheme gruvbox
 
 " let g:solarized_termcolors = 256
 " let g:solarized_termtrans = 0
@@ -138,10 +141,10 @@ let g:gruvbox_transparent_bg = 1
 " let g:solarized_contrast = 'normal'
 " let g:solarized_visibility = 'normal'
 
-set background=dark
-set cursorline
+" colorscheme solarized
 
 set background=dark
+set cursorline
 
 " Show line numbers
 set number
