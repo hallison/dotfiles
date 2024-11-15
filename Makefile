@@ -1,8 +1,9 @@
 default:: help
 
-git  = $$(command -v git)
-grep = $$(command -v grep)
-cut  = $$(command -v cut)
+git  = $(shell command -v git)
+grep = $(shell command -v grep)
+cut  = $(shell command -v cut)
+curl = $(shell command -v curl)
 
 install.status()    = printf "%s ... " ${file.target}
 install.ok()        = echo ok
