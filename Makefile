@@ -36,6 +36,7 @@ install.git:
 #?	$ make install.vim
 #?
 install.vim:
+	$(curl) -fLo vim/vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	@${install.files()}
 
 #? # Install Ruby environment
