@@ -51,7 +51,7 @@ done
 # Profiles
 # ============================================================================
 test -d ~/.profile.d && for rule in ~/.profile.d/*.sh; do
-  source $rule
+  source ${rule}
 done
 
 # Aliases

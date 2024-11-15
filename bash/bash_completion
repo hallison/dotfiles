@@ -1,5 +1,5 @@
-for i in $HOME/.bash_completion.d/*; do
-  . $i
+for file in $HOME/.bash_completion.d/*; do
+  source ${file}
 done
 
 # vim: ft=sh
