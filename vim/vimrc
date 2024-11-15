@@ -17,6 +17,7 @@ Plug 'rhysd/vim-crystal'
 Plug 'altercation/vim-colors-solarized'
 Plug 'kylef/apiblueprint.vim'
 Plug 'morhetz/gruvbox'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 set secure
