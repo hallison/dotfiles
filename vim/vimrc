@@ -213,8 +213,7 @@ set statusline=\ %Y\ \|\ %{&ff}\ \|\ %04lx%04v/%04p%%\ %L\ \|\ %F%m%=%r%h[%n]
 set laststatus=2
 
 " Open tab
-nnoremap <leader>te :silent tabnew<cr>
-nnoremap <leader>to :browse tabedit
+nnoremap <silent><c-t>n :silent tabnew<cr>
 
 " Tab navigation
 nnoremap <silent><esc>{ :silent tabprevious<cr>
@@ -231,18 +230,6 @@ nnoremap <silent><esc>7 7gt
 nnoremap <silent><esc>8 8gt
 nnoremap <silent><esc>9 9gt
 nnoremap <silent><esc>0 10gt
-
-" Tab and re-tab
-nnoremap <silent><leader>tt1 :silent tabmove 0<cr>
-nnoremap <silent><leader>tt2 :silent tabmove 1<cr>
-nnoremap <silent><leader>tt3 :silent tabmove 2<cr>
-nnoremap <silent><leader>tt4 :silent tabmove 3<cr>
-nnoremap <silent><leader>tt5 :silent tabmove 4<cr>
-nnoremap <silent><leader>tt6 :silent tabmove 5<cr>
-nnoremap <silent><leader>tt7 :silent tabmove 6<cr>
-nnoremap <silent><leader>tt8 :silent tabmove 7<cr>
-nnoremap <silent><leader>tt9 :silent tabmove 8<cr>
-nnoremap <silent><leader>tt0 :silent tabmove 9<cr>
 
 " Buffer navigation
 nnoremap <silent><esc>< :bprevious<cr>

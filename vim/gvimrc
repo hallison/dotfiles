@@ -61,17 +61,6 @@ nnoremap <silent><a-8> 8gt
 nnoremap <silent><a-9> 9gt
 nnoremap <silent><a-0> 10gt
 
-nnoremap <silent><leader>tm1 :silent tabmove 0<cr>
-nnoremap <silent><leader>tm2 :silent tabmove 1<cr>
-nnoremap <silent><leader>tm3 :silent tabmove 2<cr>
-nnoremap <silent><leader>tm4 :silent tabmove 3<cr>
-nnoremap <silent><leader>tm5 :silent tabmove 4<cr>
-nnoremap <silent><leader>tm6 :silent tabmove 5<cr>
-nnoremap <silent><leader>tm7 :silent tabmove 6<cr>
-nnoremap <silent><leader>tm8 :silent tabmove 7<cr>
-nnoremap <silent><leader>tm9 :silent tabmove 8<cr>
-nnoremap <silent><leader>tm0 :silent tabmove 9<cr>
-
 " Buffers
 " ============================================================================
 
