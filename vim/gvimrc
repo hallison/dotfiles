@@ -5,12 +5,22 @@ autocmd! BufWritePost .gvimrc source %
 " ============================================================================
 
 " adjust color scheme
+colorscheme gruvbox
+
+let g:gruvbox_contrast_light = "light"
+let g:gruvbox_contrast_dark = "light"
+let g:gruvbox_transparent_bg = 1
+
 set background=dark
-colorscheme solarized
 set cursorline
 
 " font for gvim
-set guifont=Ubuntu\ Mono\ 11
+" set guifont=Bitstream\ Vera\ Sans\ Mono\ 13
+" set guifont=Ubuntu\ Mono\ 13
+" set guifont=Fantasque\ Sans\ Mono\ 12
+" set guifont=Inconsolata\ 13
+" set guifont=Fira\ Code\ 12
+set guifont=Cascadia\ Code\ 12
 
 " set GUI window size and position
 set lines=44 columns=158

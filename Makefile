@@ -1,8 +1,9 @@
 default:: help
 
-git  = $$(command -v git)
-grep = $$(command -v grep)
-cut  = $$(command -v cut)
+git  = $(shell command -v git)
+grep = $(shell command -v grep)
+cut  = $(shell command -v cut)
+curl = $(shell command -v curl)
 
 install.status()    = printf "%s ... " ${file.target}
 install.ok()        = echo ok
@@ -30,11 +31,15 @@ install.bash:
 install.git:
 	@${install.files()}
 
+install.fonts:
+	@${install.files()}
+
 #? # Install Vim environment and configurations
 #?
 #?	$ make install.vim
 #?
-install.vim:
+install.vim: install.fonts
+	$(curl) -fLo vim/vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	@${install.files()}
 
 #? # Install Ruby environment
