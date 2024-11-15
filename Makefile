@@ -31,11 +31,14 @@ install.bash:
 install.git:
 	@${install.files()}
 
+install.fonts:
+	@${install.files()}
+
 #? # Install Vim environment and configurations
 #?
 #?	$ make install.vim
 #?
-install.vim:
+install.vim: install.fonts
 	$(curl) -fLo vim/vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	@${install.files()}
 
