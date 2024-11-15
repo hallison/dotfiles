@@ -1,8 +1,32 @@
+" Plugins managed by Plug
+call plug#begin('~/.vim/plugged')
+Plug 'kien/ctrlp.vim'
+Plug 'sjl/gundo.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'marcweber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'ervandew/supertab'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'godlygeek/tabular'
+Plug 'majutsushi/tagbar'
+Plug 'guns/xterm-color-table.vim'
+Plug 'rhysd/vim-crystal'
+Plug 'altercation/vim-colors-solarized'
+Plug 'kylef/apiblueprint.vim'
+Plug 'morhetz/gruvbox'
+call plug#end()
+
+set secure
+
 " Autoconfig per directory
 set exrc
 
 " Leader key
-let mapleader = '='
+let mapleader = '\'
+let maplocalleader = '='
 
 " Auto reload
 autocmd! BufWritePost .vimrc source %
@@ -96,18 +120,27 @@ set spelllang=pt,en
 set nospell
 
 " Adjust color scheme
+colorscheme gruvbox
+
+let g:gruvbox_contrast_light = "light"
+let g:gruvbox_contrast_dark = "light"
+let g:gruvbox_transparent_bg = 1
+
+" colorscheme solarized
+
+" let g:solarized_termcolors = 256
+" let g:solarized_termtrans = 0
+" let g:solarized_degrade = 0
+" let g:solarized_bold = 0
+" let g:solarized_underline = 0
+" let g:solarized_italic = 0
+" let g:solarized_contrast = 'normal'
+" let g:solarized_visibility = 'normal'
+
 set background=dark
+set cursorline
 
-let g:solarized_termcolors = 256
-let g:solarized_termtrans = 0
-let g:solarized_degrade = 0
-let g:solarized_bold = 0
-let g:solarized_underline = 0
-let g:solarized_italic = 0
-let g:solarized_contrast = 'normal'
-let g:solarized_visibility = 'normal'
-
-colorscheme solarized
+set background=dark
 
 " Show line numbers
 set number
@@ -280,25 +313,3 @@ set t_ZH=[3m
 " if filereadable('.vimsession')
 "   silent source .vimsession
 " endif
-
-" Plugins managed by Plug
-call plug#begin('~/.vim/plugged')
-Plug 'kien/ctrlp.vim'
-Plug 'sjl/gundo.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'marcweber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-Plug 'ervandew/supertab'
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'godlygeek/tabular'
-Plug 'majutsushi/tagbar'
-Plug 'guns/xterm-color-table.vim'
-Plug 'rhysd/vim-crystal'
-Plug 'altercation/vim-colors-solarized'
-Plug 'kylef/apiblueprint.vim'
-call plug#end()
-
-set secure
