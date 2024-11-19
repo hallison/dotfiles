@@ -1,3 +1,3 @@
 " show revisions (undo history)
-nnoremap <silent><leader>r :GundoToggle<cr>
+nnoremap <silent><leader>u :GundoToggle<cr>
 

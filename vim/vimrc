@@ -1,8 +1,33 @@
+" Plugins managed by Plug
+call plug#begin('~/.vim/plugged')
+Plug 'kien/ctrlp.vim'
+Plug 'sjl/gundo.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'marcweber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'ervandew/supertab'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'godlygeek/tabular'
+Plug 'majutsushi/tagbar'
+Plug 'guns/xterm-color-table.vim'
+Plug 'rhysd/vim-crystal'
+Plug 'altercation/vim-colors-solarized'
+Plug 'kylef/apiblueprint.vim'
+Plug 'morhetz/gruvbox'
+Plug 'itchyny/lightline.vim'
+call plug#end()
+
+set secure
+
 " Autoconfig per directory
 set exrc
 
 " Leader key
-let mapleader = '='
+let mapleader = '\'
+let maplocalleader = '='
 
 " Auto reload
 autocmd! BufWritePost .vimrc source %
@@ -96,18 +121,30 @@ set spelllang=pt,en
 set nospell
 
 " Adjust color scheme
+
+let g:gruvbox_contrast_light = "soft"
+let g:gruvbox_contrast_dark = "soft"
+let g:gruvbox_transparent_bg = 1
+let g:gruvbox_italic = 1
+let g:gruvbox_termcolors = 256
+let g:gruvbox_vert_split = "bg1"
+let g:gruvbox_number_column = "bg1"
+
+colorscheme gruvbox
+
+" let g:solarized_termcolors = 256
+" let g:solarized_termtrans = 0
+" let g:solarized_degrade = 0
+" let g:solarized_bold = 0
+" let g:solarized_underline = 0
+" let g:solarized_italic = 0
+" let g:solarized_contrast = 'normal'
+" let g:solarized_visibility = 'normal'
+
+" colorscheme solarized
+
 set background=dark
-
-let g:solarized_termcolors = 256
-let g:solarized_termtrans = 0
-let g:solarized_degrade = 0
-let g:solarized_bold = 0
-let g:solarized_underline = 0
-let g:solarized_italic = 0
-let g:solarized_contrast = 'normal'
-let g:solarized_visibility = 'normal'
-
-colorscheme solarized
+set cursorline
 
 " Show line numbers
 set number
@@ -176,8 +213,7 @@ set statusline=\ %Y\ \|\ %{&ff}\ \|\ %04lx%04v/%04p%%\ %L\ \|\ %F%m%=%r%h[%n]
 set laststatus=2
 
 " Open tab
-nnoremap <leader>te :silent tabnew<cr>
-nnoremap <leader>to :browse tabedit
+nnoremap <silent><c-t>n :silent tabnew<cr>
 
 " Tab navigation
 nnoremap <silent><esc>{ :silent tabprevious<cr>
@@ -194,18 +230,6 @@ nnoremap <silent><esc>7 7gt
 nnoremap <silent><esc>8 8gt
 nnoremap <silent><esc>9 9gt
 nnoremap <silent><esc>0 10gt
-
-" Tab and re-tab
-nnoremap <silent><leader>tt1 :silent tabmove 0<cr>
-nnoremap <silent><leader>tt2 :silent tabmove 1<cr>
-nnoremap <silent><leader>tt3 :silent tabmove 2<cr>
-nnoremap <silent><leader>tt4 :silent tabmove 3<cr>
-nnoremap <silent><leader>tt5 :silent tabmove 4<cr>
-nnoremap <silent><leader>tt6 :silent tabmove 5<cr>
-nnoremap <silent><leader>tt7 :silent tabmove 6<cr>
-nnoremap <silent><leader>tt8 :silent tabmove 7<cr>
-nnoremap <silent><leader>tt9 :silent tabmove 8<cr>
-nnoremap <silent><leader>tt0 :silent tabmove 9<cr>
 
 " Buffer navigation
 nnoremap <silent><esc>< :bprevious<cr>
@@ -280,25 +304,3 @@ set t_ZH=[3m
 " if filereadable('.vimsession')
 "   silent source .vimsession
 " endif
-
-" Plugins managed by Plug
-call plug#begin('~/.vim/plugged')
-Plug 'kien/ctrlp.vim'
-Plug 'sjl/gundo.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'marcweber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-Plug 'ervandew/supertab'
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'godlygeek/tabular'
-Plug 'majutsushi/tagbar'
-Plug 'guns/xterm-color-table.vim'
-Plug 'rhysd/vim-crystal'
-Plug 'altercation/vim-colors-solarized'
-Plug 'kylef/apiblueprint.vim'
-call plug#end()
-
-set secure
